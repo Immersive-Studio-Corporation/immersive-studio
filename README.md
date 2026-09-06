@@ -43,8 +43,8 @@ Le site fonctionne sans base de données ni serveur applicatif en production.
 - Vercel : importer le dossier avec Node 22.x ; `vercel.json` est prêt.
 - Hébergeur existant : déposer tout le contenu de `dist/client` à la racine du domaine ou sous-domaine, en conservant `_next`.
 - `../immersive-studio-site.zip` contient la dernière version autonome.
-- Hébergement retenu : OG-YOSHUN (91.197.6.63), sous immersive.heritagedepoudlard.fr. Le propriétaire a ajouté le DNS A chez IONOS ; sa résolution est vérifiée. Service Docker rootless installé sur 127.0.0.1:8088 ; routage public et HTTPS à demander à Yoshun.
-- L’ancien aperçu Sites est public ; le domaine choisi pointe directement vers OG-YOSHUN.
+- Hébergement retenu : OG-YOSHUN (91.197.6.63), sur https://immersive-studio.fr. Service Docker rootless installé sur 127.0.0.1:8088. DNS IONOS, HTTPS 200 et redirections HTTP/www vers HTTPS sans www vérifiés le 6 septembre 2026. Les métadonnées canonical et og:url utilisent la nouvelle adresse.
+- L’ancien aperçu Sites est public ; le domaine principal pointe directement vers OG-YOSHUN. L'ancien sous-domaine immersive.heritagedepoudlard.fr présente une erreur de certificat depuis la bascule ; sa redirection doit être rétablie par Yoshun.
 
 ## Vérification
 
@@ -65,4 +65,4 @@ V6 : nom complet de L’Héritage de Poudlard dans le menu, logos agrandis, coll
 
 ## Installation indépendante de ChatGPT
 
-La procédure et les configurations sont dans `hosting/yoshun/README.md`. Les fichiers publics sont déposés sur OG-YOSHUN sous `/home/hdpbots/immersive-studio/staging/20260906-domain`. La configuration Nginx a passé sa validation, et un serveur local temporaire a servi la page et ses 24 ressources distinctes avec succès. Ce serveur de test est arrêté. Le README actif de la machine confirme que le compte hdpbots n’a pas l’administration du serveur. Le conteneur autonome immersive-studio-web est maintenant démarré en Docker rootless sur 127.0.0.1:8088. Aucun hôte virtuel public n’a été changé ; Yoshun doit ajouter le routage et le certificat.
+La procédure et les configurations sont dans `hosting/yoshun/README.md`. Les fichiers publics sont déposés sur OG-YOSHUN sous `/home/hdpbots/immersive-studio/staging/20260906-domain`. Le conteneur autonome immersive-studio-web est démarré en Docker rootless sur 127.0.0.1:8088. Le domaine https://immersive-studio.fr est opérationnel : certificat validé, HTTPS 200, HTTP et www redirigés en 301 vers HTTPS sans www. Les 24 ressources publiques ont été vérifiées ; après publication des nouvelles métadonnées, le HTML et ses 6 CSS/JS ont été vérifiés de nouveau. L'export précédent est sauvegardé sous `backups/before-20260906-immersive-fr.tar.gz`. Le compte hdpbots n'a pas l'administration du serveur. Nginx public et certificats restent gérés par Yoshun, sans modification par Codex ; il reste à rétablir le certificat et la redirection de l'ancien sous-domaine.

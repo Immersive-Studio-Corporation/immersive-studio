@@ -1,0 +1,28 @@
+DOMAINE PRINCIPAL : https://immersive-studio.fr
+Raccordement terminé et vérifié le 6 septembre 2026.
+
+IONOS — TERMINÉ PAR LE PROPRIÉTAIRE
+A immersive-studio.fr : 91.197.6.63 ; aucun AAAA ; CNAME www : immersive-studio.fr.
+Enregistrements Mail et Domain Connect conservés.
+
+PUBLIC — VÉRIFIÉ
+HTTPS 200 sur l'adresse principale, certificat accepté normalement.
+HTTP et www redirigés en 301 vers HTTPS sans www, avec conservation du chemin et des paramètres.
+24 ressources vérifiées. Métadonnées, canonical et og:url publiés avec https://immersive-studio.fr.
+Après publication, HTML et 6 CSS/JS référencés vérifiés en HTTPS.
+
+ANCIEN LIEN — À CORRIGER PAR YOSHUN
+https://immersive.heritagedepoudlard.fr présente maintenant le certificat c.yoshun.fr. L'erreur TLS empêche une redirection utilisable depuis les anciens liens HTTPS. Le nouveau domaine fonctionne.
+
+MESSAGE À COPIER
+Frérot, le nouveau domaine et www fonctionnent, merci ! Il reste juste l'ancien immersive.heritagedepoudlard.fr : il présente maintenant un certificat pour c.yoshun.fr. Tu peux lui remettre un hôte Nginx avec un certificat valide et une redirection 301 vers https://immersive-studio.fr, en conservant les chemins et paramètres ? Comme ça les anciens liens continuent de fonctionner.
+
+SUIVI TECHNIQUE
+Service existant : immersive-studio-web sur http://127.0.0.1:8088.
+Dossier : /home/hdpbots/immersive-studio/staging/20260906-domain.
+Export : immersive-studio-fr-20260906.tar.gz.
+Version extraite : releases/20260906-immersive-fr.
+Sauvegarde précédente : backups/before-20260906-immersive-fr.tar.gz.
+Publication fichier par fichier via remplacement atomique, sans redémarrage, anciens fichiers hashés conservés.
+Aucun DNS ni Nginx public modifié par Codex. Aucun message envoyé.
+Le renouvellement automatique des certificats reste géré par Yoshun et n'a pas été inspecté dans ces vérifications externes.
