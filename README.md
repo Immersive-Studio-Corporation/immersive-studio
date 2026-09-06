@@ -43,7 +43,7 @@ Le site fonctionne sans base de données ni serveur applicatif en production.
 - Vercel : importer le dossier avec Node 22.x ; `vercel.json` est prêt.
 - Hébergeur existant : déposer tout le contenu de `dist/client` à la racine du domaine ou sous-domaine, en conservant `_next`.
 - `../immersive-studio-site.zip` contient la dernière version autonome.
-- Hébergement retenu : OG-YOSHUN (91.197.6.63), sous immersive.heritagedepoudlard.fr. Le propriétaire a ajouté le DNS A chez IONOS ; sa résolution est vérifiée. Activation administrateur Nginx/HTTPS encore nécessaire.
+- Hébergement retenu : OG-YOSHUN (91.197.6.63), sous immersive.heritagedepoudlard.fr. Le propriétaire a ajouté le DNS A chez IONOS ; sa résolution est vérifiée. Service Docker rootless installé sur 127.0.0.1:8088 ; routage public et HTTPS à demander à Yoshun.
 - L’ancien aperçu Sites est public ; le domaine choisi pointe directement vers OG-YOSHUN.
 
 ## Vérification
@@ -65,4 +65,4 @@ V6 : nom complet de L’Héritage de Poudlard dans le menu, logos agrandis, coll
 
 ## Installation indépendante de ChatGPT
 
-La procédure et les configurations sont dans `hosting/yoshun/README.md`. Les fichiers publics sont déposés sur OG-YOSHUN sous `/home/hdpbots/immersive-studio/staging/20260906-domain`. La configuration Nginx a passé sa validation, et un serveur local temporaire a servi la page et ses 24 ressources distinctes avec succès. Ce serveur de test est arrêté. Le compte SSH disponible ne permet pas l’activation administrateur ; aucun hôte virtuel public n’a été changé.
+La procédure et les configurations sont dans `hosting/yoshun/README.md`. Les fichiers publics sont déposés sur OG-YOSHUN sous `/home/hdpbots/immersive-studio/staging/20260906-domain`. La configuration Nginx a passé sa validation, et un serveur local temporaire a servi la page et ses 24 ressources distinctes avec succès. Ce serveur de test est arrêté. Le README actif de la machine confirme que le compte hdpbots n’a pas l’administration du serveur. Le conteneur autonome immersive-studio-web est maintenant démarré en Docker rootless sur 127.0.0.1:8088. Aucun hôte virtuel public n’a été changé ; Yoshun doit ajouter le routage et le certificat.

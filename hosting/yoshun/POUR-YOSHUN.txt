@@ -1,0 +1,19 @@
+Bonjour Yoshun,
+
+Peux-tu ajouter le sous-domaine immersive.heritagedepoudlard.fr dans le Nginx
+de la machine OG-YOSHUN, avec HTTPS et renouvellement du certificat ?
+
+Le DNS A pointe déjà vers 91.197.6.63.
+La vitrine statique Immersive Studio est servie par notre nouveau conteneur
+Docker rootless immersive-studio-web, accessible uniquement en local sur :
+
+http://127.0.0.1:8088
+
+Il suffit d'un hôte Nginx avec proxy_pass HTTP
+vers ce port, puis d'un certificat pour immersive.heritagedepoudlard.fr.
+Pas de WebSocket, d'API, de base de données ni de changement des services existants.
+
+Les sources et le Compose sont dans notre espace :
+/home/hdpbots/immersive-studio/staging/20260906-domain
+
+Merci !

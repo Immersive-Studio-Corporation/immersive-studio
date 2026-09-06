@@ -1,40 +1,32 @@
 # Hébergement sur OG-YOSHUN
 
-Machine existante vérifiée le 6 septembre 2026 : `91.197.6.63`, Nginx 1.22.1,
-HTTP/HTTPS déjà en service et Certbot installé. Les anciens documents de Familiers
-décrivent Caddy sur OVH ; ils ne correspondent pas au serveur actuel.
+Le README actif de la machine, /home/hdpbots/README.md, décrit la migration du 29 août 2026 : compte hdpbots non privilégié, Docker rootless et Nginx/TLS gérés par Yoshun. Les anciens documents OVH/Caddy ne s'appliquent plus.
 
-Le site est un export statique. Aucun serveur Node, base de données, conteneur,
-abonnement ChatGPT ou accès à Vercel n'est nécessaire pour le servir.
+Le service Immersive Studio est installé et répond sur http://127.0.0.1:8088.
+Conteneur : immersive-studio-web. Image Nginx officielle figée par digest, utilisateur 101, volumes et système de fichiers en lecture seule, redémarrage unless-stopped. Aucun port public supplémentaire.
 
-## DNS à saisir par le propriétaire dans IONOS
+Dossier actif : /home/hdpbots/immersive-studio/staging/20260906-domain
 
-| Type | Nom | Valeur |
-| --- | --- | --- |
-| A | immersive | 91.197.6.63 |
+## Connexion et gestion
 
-Conserver les autres entrées, notamment `@`, `www` et les emails. Si un CNAME
-`immersive` vers ChatGPT a déjà été ajouté, le remplacer par cette entrée A.
-Ne pas ajouter d'AAAA sans avoir configuré et vérifié une IPv6 publique du serveur.
-Les TXT de validation ChatGPT ne sont pas nécessaires pour cette installation.
+Depuis PowerShell :
 
-## Activation administrateur
+    ssh -i "C:\Users\Derek\.ssh\id_ed25519" hdpbots@91.197.6.63
 
-Le paquet contient `public/`, les configurations HTTP et HTTPS, les sommes SHA256
-et `activate.sh`. Les accès disponibles à Codex permettent le dépôt des fichiers,
-mais pas l'activation de Nginx : le compte `hdpbots` demande un mot de passe sudo.
+Puis dans la session SSH, sans sudo :
 
-Après propagation du DNS, ouvrir une console administrateur de **OG-YOSHUN** et lancer
-le script du paquet préalablement relu. Il copie les fichiers dans une release
-dédiée sous `/var/www/immersive-studio`, active son seul hôte virtuel, contrôle Nginx,
-recharge sa configuration et demande le certificat avec le compte Certbot existant.
-Le rechargement Nginx ne redémarre pas les applications et jeux.
+    cd ~/immersive-studio/staging/20260906-domain
+    docker compose ps
+    docker compose logs --tail=30 web
 
-Une validation TLS impossible laisse HTTP disponible et permet de relancer le script
-après correction DNS. La configuration précédente de ce seul hôte est sauvegardée.
-Le hook existant `/etc/letsencrypt/renewal-hooks/deploy/reload-nginx.sh` doit rester
-en place pour les renouvellements de certificats.
+Pour relancer ce seul service : bash activate.sh. Nginx public et certificats restent gérés côté machine.
 
-Contrôler ensuite HTTPS, les images, les polices, les langues et les ancres ; vérifier
-aussi les services existants. Le domaine/DNS et le serveur doivent rester actifs.
-Les sources restent sur le PC ; le site public s'exécute sur la machine distante.
+## DNS et étape restante
+
+Le propriétaire a ajouté chez IONOS l'entrée A immersive vers 91.197.6.63, TTL 60 secondes. Résolution vérifiée, pas d'AAAA ni de CNAME détecté.
+
+Il reste à demander à Yoshun la route HTTPS immersive.heritagedepoudlard.fr vers http://127.0.0.1:8088. Message prêt dans POUR-YOSHUN.txt. Aucun message n'a été envoyé.
+
+Les fichiers http.conf et https.conf décrivent l'ancienne proposition d'installation directe administrateur, jamais exécutée ; ils ne sont pas utilisés par le Compose. La configuration active est nginx-container.conf avec static-locations.conf.
+
+Le TTL est une durée de cache, pas une expiration du sous-domaine. Domaine/DNS et serveur doivent rester actifs. Les sources restent sur le PC ; le site public est servi par la machine distante. Aucun serveur Node, base de données, Vercel ou abonnement ChatGPT n'est nécessaire pour ce déploiement.
