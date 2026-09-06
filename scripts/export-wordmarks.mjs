@@ -4,6 +4,26 @@ import sharp from 'sharp';
 // The bitmap textures remain unchanged; the vector paths define the visible silhouette.
 const items = [
   {
+    name: 'percy',
+    source: 'percy',
+    output: 'percy-emblem',
+    w: 1200,
+    h: 1200,
+    crop: '10 0 1180 1175',
+    outW: 1200,
+    outH: 1195,
+  },
+  {
+    name: 'newgen',
+    source: 'newgen-original',
+    output: 'newgen-wordmark',
+    w: 1774,
+    h: 887,
+    crop: '174 245 1460 490',
+    outW: 1460,
+    outH: 490,
+  },
+  {
     name: 'teen',
     source: 'teen-wolf',
     output: 'teen-wordmark',
@@ -48,7 +68,7 @@ for (const item of items) {
     .replace(/<(title|desc)>[\s\S]*?<\/\1>/g, '')
     .replaceAll('fill-rule', 'clip-rule')
     .replace(/<\/?g\b[^>]*>/g, '');
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${item.outW}" height="${item.outH}" viewBox="${item.crop}"><defs><clipPath id="silhouette" clip-rule="${item.name === 'nations' ? 'nonzero' : 'evenodd'}">${mask}</clipPath></defs><image width="${item.w}" height="${item.h}" xlink:href="data:image/png;base64,${bitmap.toString('base64')}" clip-path="url(#silhouette)"/></svg>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${item.outW}" height="${item.outH}" viewBox="${item.crop}"><defs><clipPath id="silhouette" clip-rule="${['nations', 'percy', 'newgen'].includes(item.name) ? 'nonzero' : 'evenodd'}">${mask}</clipPath></defs><image width="${item.w}" height="${item.h}" xlink:href="data:image/png;base64,${bitmap.toString('base64')}" clip-path="url(#silhouette)"/></svg>`;
   await sharp(Buffer.from(svg))
     .png()
     .toFile(`public/images/${item.output}.png`);
@@ -57,5 +77,5 @@ for (const item of items) {
     .toFile(`public/images/${item.output}.webp`);
 }
 console.log(
-  'Exported three opaque brand silhouettes with transparent exteriors.',
+  'Exported five opaque brand silhouettes with transparent exteriors.',
 );

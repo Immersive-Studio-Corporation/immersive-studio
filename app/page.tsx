@@ -45,7 +45,7 @@ const worlds = [
     id: 'percy',
     backdrop: '/images/percy-world.webp',
     name: 'Percy Jackson RP',
-    image: '/images/percy.webp',
+    image: '/images/percy-emblem.webp',
     color: '#5AACE0',
   },
   {
@@ -58,7 +58,7 @@ const worlds = [
   {
     id: 'nations',
     backdrop: '/images/nations-world.webp',
-    name: 'Les Quatres Nations',
+    name: 'Avatar — Les Quatre Nations',
     image: '/images/nations-emblem.webp',
     color: '#E2A359',
   },
@@ -77,6 +77,13 @@ const worlds = [
     color: '#B5C289',
   },
 ] as const;
+const newgen = {
+  id: 'newgen',
+  name: 'Newgen',
+  image: '/images/newgen-wordmark.webp',
+  backdrop: '/images/newgen-world.webp',
+  color: '#b4ecfa',
+} as const;
 
 function subscribeLocale(onChange: () => void) {
   window.addEventListener('immersive-language', onChange);
@@ -153,6 +160,7 @@ export default function Home() {
   }
   useEffect(() => {
     document.documentElement.lang = locale;
+    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
     document.title = t.metadataTitle;
     const description = document.querySelector('meta[name="description"]');
     description?.setAttribute('content', t.metadataDescription);
@@ -299,7 +307,7 @@ export default function Home() {
       <a href="#heritage" className="skip-link">
         {t.skip}
       </a>
-      <header className="header">
+      <header className="header" dir="ltr">
         <Brand label={t.home} />
         <nav
           id="main-nav"
@@ -311,14 +319,17 @@ export default function Home() {
               id: 'heritage',
               name: 'L’Héritage de Poudlard',
               image: '/images/heritage-logo.webp',
-              backdrop: '/images/heritage-background.webp',
+              backdrop: '/images/heritage-luminous.webp',
               color: '#b887ef',
             },
             ...worlds,
+            newgen,
           ].map((world) => (
             <a
               key={world.id}
               href={'#' + world.id}
+              aria-label={world.name}
+              title={world.name}
               onClick={() => setMenu(false)}
               aria-current={activeProject === world.id ? 'location' : undefined}
             >
@@ -328,13 +339,6 @@ export default function Home() {
                 aria-hidden="true"
               >
                 <Image
-                  className="nav-icon-scene"
-                  src={world.backdrop.replace('.webp', '-thumb.webp')}
-                  alt=""
-                  width={100}
-                  height={100}
-                />
-                <Image
                   className="nav-icon-logo"
                   src={world.image}
                   alt=""
@@ -342,7 +346,13 @@ export default function Home() {
                   height={100}
                 />
               </span>
-              <span>{world.name}</span>
+              <span dir="auto">
+                {world.id === 'heritage'
+                  ? t.navHeritage
+                  : world.id === 'nations'
+                    ? 'Avatar'
+                    : world.name.replace(' RP', '')}
+              </span>
             </a>
           ))}
           <a
@@ -389,6 +399,7 @@ export default function Home() {
           </Select>
           <a
             className="header-discord"
+            aria-label={t.join}
             href={DISCORD}
             target="_blank"
             rel="noopener noreferrer"
@@ -479,7 +490,7 @@ export default function Home() {
               </>
             }
             image="/images/heritage-logo.webp"
-            backdrop="/images/heritage-background.webp"
+            backdrop="/images/heritage-luminous.webp"
             color="#eac998"
             genre={t.heritageGenre}
             status={t.development}
@@ -487,6 +498,7 @@ export default function Home() {
             cta={t.heritageCta}
             href={HERITAGE}
             note={t.heritageNote}
+            illustration={t.visualNote}
             paused={paused}
           />
         </section>
@@ -523,6 +535,24 @@ export default function Home() {
             ))}
           </div>
         </section>
+        <section className="newgen-section" aria-labelledby="newgen-heading">
+          <div className="section-wrap newgen-heading reveal">
+            <p className="eyebrow">{t.newgenLabel}</p>
+            <h2 id="newgen-heading">{t.newgenHeading}</h2>
+          </div>
+          <ProjectBanner
+            {...newgen}
+            genre={t.newgenGenre}
+            status={t.newgenStatus}
+            line={t.newgenLine}
+            text={t.newgenText}
+            cta={t.newgenCta}
+            href={DISCORD}
+            note={t.newgenNote}
+            illustration={t.visualNote}
+            paused={paused}
+          />
+        </section>
         <section
           className="studio-section section-wrap"
           id="studio"
@@ -541,13 +571,13 @@ export default function Home() {
             <div className="studio-mosaic reveal">
               {[
                 {
-                  image: '/images/heritage-background.webp',
+                  image: '/images/heritage-luminous.webp',
                   name: 'L’Héritage de Poudlard',
                   id: 'heritage',
                 },
                 {
                   image: '/images/nations-world.webp',
-                  name: 'Les Quatres Nations',
+                  name: 'Avatar — Les Quatre Nations',
                   id: 'nations',
                 },
                 {
@@ -610,7 +640,7 @@ export default function Home() {
             </div>
           </div>
           <Accordion className="faq-list reveal" defaultValue={['question-1']}>
-            {[1, 2, 3, 4].map((n) => (
+            {[1, 2, 3, 4, 5].map((n) => (
               <AccordionItem
                 className="faq-item"
                 key={n}
@@ -686,6 +716,7 @@ export default function Home() {
                   {[
                     '/images/heritage-logo.webp',
                     ...worlds.map((world) => world.image),
+                    newgen.image,
                   ].map((image) => (
                     <Image
                       key={image}
@@ -734,7 +765,7 @@ export default function Home() {
             <a href={HERITAGE} target="_blank" rel="noopener noreferrer">
               L’Héritage de Poudlard
             </a>
-            {worlds.map((world) => (
+            {[...worlds, newgen].map((world) => (
               <a key={world.id} href={'#' + world.id}>
                 {world.name}
               </a>

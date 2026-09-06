@@ -1,3 +1,11 @@
+import id from './locales/id.json';
+import hi from './locales/hi.json';
+import ar from './locales/ar.json';
+import tr from './locales/tr.json';
+import ru from './locales/ru.json';
+import pl from './locales/pl.json';
+import nl from './locales/nl.json';
+import it from './locales/it.json';
 import fr from './locales/fr.json';
 import en from './locales/en.json';
 import de from './locales/de.json';
@@ -15,6 +23,14 @@ export const languages = [
   { code: 'ko', label: '한국어' },
   { code: 'ja', label: '日本語' },
   { code: 'pt', label: 'Português' },
+  { code: 'it', label: 'Italiano' },
+  { code: 'nl', label: 'Nederlands' },
+  { code: 'pl', label: 'Polski' },
+  { code: 'ru', label: 'Русский' },
+  { code: 'tr', label: 'Türkçe' },
+  { code: 'ar', label: 'العربية' },
+  { code: 'hi', label: 'हिन्दी' },
+  { code: 'id', label: 'Bahasa Indonesia' },
 ] as const;
 export type Locale = (typeof languages)[number]['code'];
 export type Messages = typeof fr;
@@ -27,6 +43,14 @@ export const dictionaries: Record<Locale, Messages> = {
   ko,
   ja,
   pt,
+  it,
+  nl,
+  pl,
+  ru,
+  tr,
+  ar,
+  hi,
+  id,
 };
 export function isLocale(value: string | null): value is Locale {
   return languages.some((language) => language.code === value);

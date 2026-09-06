@@ -1,6 +1,6 @@
 # Immersive Studio
 
-Vitrine multilingue des projets roleplay du studio, version 3.
+Vitrine multilingue des sept projets Minecraft du studio, version 4.
 
 ## Développement
 
@@ -17,12 +17,12 @@ Node.js **22.x** et npm. Node 24 présente un problème d’arrêt du processus 
 ## Contenu et langues
 
 Les liens du studio et les visuels des projets sont dans `app/page.tsx`.
-Les textes sont dans `app/locales/{langue}.json` : français, anglais, allemand, espagnol, chinois simplifié, coréen, japonais et portugais européen.
-Le sélecteur traduit toute la page, adapte sa langue et son titre, et mémorise le choix localement. Une URL avec `?lang=en`, par exemple, permet de partager un choix de langue.
+Les textes sont dans `app/locales/{langue}.json` : français, anglais, allemand, espagnol, chinois simplifié, coréen, japonais, portugais européen, italien, néerlandais, polonais, russe, turc, arabe, hindi et indonésien.
+Le sélecteur traduit toute la page, adapte sa langue, son sens de lecture et son titre, et mémorise le choix localement. Une URL avec `?lang=en`, par exemple, permet de partager un choix de langue.
 L’export HTML initial est en français ; la langue sélectionnée est appliquée à l’hydratation côté navigateur.
-Poudlard est présenté dans sa propre section, en développement ; les cinq autres univers sont en préparation. Aucune date d’ouverture n’est promise.
+Poudlard est présenté dans sa propre section, en développement ; les cinq autres univers roleplay sont en préparation. Newgen est un projet futur de mini-jeux, encore au stade du concept. Aucune date d’ouverture n’est promise.
 Le nouveau logo Percy Jackson vient du dossier Bureau/Percy Jackson RP/LOGO.png.
-Le nom « Les Quatres Nations » reprend le nom fourni.
+Le projet des éléments est présenté sous le nom « Avatar — Les Quatre Nations » ; le menu utilise « Avatar ».
 
 ## Identité et animation
 
@@ -31,9 +31,9 @@ La séquence de défilement est une animation vectorielle, pas une vidéo : le c
 La scène d’ouverture comporte trois temps sur environ quatre hauteurs d’écran. Un fond Canvas de cubes à facettes et de pixels accompagne le logo. Le calcul est limité à environ 30 images/seconde, avec moins de particules sur mobile et arrêt hors écran ou en arrière-plan.
 Le défilement reste natif. L’animation peut être passée, rejouée et mise en pause depuis le bouton du menu. Sur écran très court, l’introduction reste dans le flux de la page. Elle est réduite automatiquement lorsque le système demande moins de mouvement.
 La version SVG autonome est livrée dans le dossier parent. Le logo d’origine et le PNG de la première version sont conservés.
-Les six univers disposent du même format de bandeau panoramique, avec parallaxe au défilement et effets au pointeur : étincelles dorées, bulles océaniques, griffures effilées, quatre éléments, arcs d’énergie et feuilles naturelles. Les bulles sont limitées à Percy Jackson ; l’intro ne contient que des cubes et des pixels. Tous sont directement accessibles depuis le menu avec leur nom et leur logo.
-Le studio présente une mosaïque de ses univers ; la carte Discord réunit l’identité du studio et les six projets, sans compteurs ni messages fictifs.
-Les décors thématiques des Nations, de la Survie, de Percy Jackson, de Teen Wolf et d’Avengers ont été créés avec ImageGen ; ils sont identifiés comme des illustrations d’ambiance. Sources et prompts : `ASSETS.md`.
+Les sept projets disposent du même format de bandeau panoramique, avec parallaxe au défilement et effets au pointeur : étincelles dorées, bulles océaniques, griffures effilées, quatre éléments, arcs d’énergie et feuilles naturelles. Les bulles sont limitées à Percy Jackson ; l’intro ne contient que des cubes et des pixels. Tous sont directement accessibles depuis le menu avec leur nom et leur logo.
+Le studio présente une mosaïque de ses univers ; la carte Discord réunit l’identité du studio et les sept projets, sans compteurs ni messages fictifs.
+Les décors thématiques de Poudlard, Avatar, de la Survie, de Percy Jackson, de Teen Wolf, d’Avengers et de Newgen ont été créés avec ImageGen ; ils sont identifiés comme des illustrations d’ambiance. Sources et prompts : `ASSETS.md`.
 Les polices latines et les images WebP sont incluses dans l’export. Les caractères asiatiques utilisent aussi les polices disponibles sur l’appareil.
 
 ## Hébergement
@@ -48,11 +48,13 @@ Le site fonctionne sans base de données ni serveur applicatif en production.
 
 ## Vérification
 
-Construction statique avec Node 22, vérification TypeScript, lint du code de la vitrine, contrôle des 102 clés pour chaque langue et des ressources/liens de l’export.
+Construction statique avec Node 22, vérification TypeScript, lint du code de la vitrine, contrôle des 113 clés pour chaque langue et des ressources/liens de l’export.
 Adaptations mobile, navigation clavier, FAQ accessible et réduction des mouvements implémentées.
-Aucun test visuel automatisé de navigateur n’a été exécuté.
+Contrôles navigateur effectués sur mobile (390 × 844) et bureau (1600 × 950) : changement des seize langues, lecture RTL arabe, titres longs, absence de débordement horizontal, menu mobile, ancres des projets, transparence de Percy et nouveau décor de Poudlard. L’en-tête reste sur une seule ligne sur écran large. Les contenus italiens et russes ont été ajustés après détection de débordements.
 
 ## Logos détourés et effets
 
-Les silhouettes de Teen Wolf, Avengers et des Nations sont définies dans `assets/wordmark-masks/`. `node scripts/export-wordmarks.mjs` exporte ces découpes vectorielles sur les pixels d’origine vers des PNG transparents et leurs versions WebP. Les textures restent opaques. Les PNG livrés se trouvent dans `public/images/` ; les originaux sont conservés.
+Les silhouettes de Teen Wolf, Avengers, Avatar, Percy Jackson et Newgen sont définies dans `assets/wordmark-masks/`. `node scripts/export-wordmarks.mjs` exporte ces découpes vectorielles sur les pixels d’origine vers des PNG transparents et leurs versions WebP. Les textures restent opaques. Les PNG livrés se trouvent dans `public/images/` ; les originaux sont conservés.
 Les feuilles utilisent une photographie détourée CC0, décrite dans `ASSETS.md`. Les effets au pointeur ne capturent pas les clics, s’arrêtent après dissipation, hors écran, lors de la pause et lorsque le système réduit les animations. Les Canvas sont décoratifs et masqués aux lecteurs d’écran.
+
+Le bandeau supérieur est stylé dans `app/header.css`, avec une navigation compacte à partir de 1351 pixels et un menu mobile en dessous. La barre de défilement utilise les couleurs du studio. Les illustrations générées ne représentent pas des captures de gameplay.

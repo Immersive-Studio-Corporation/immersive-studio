@@ -245,6 +245,33 @@ export function WorldEffects({
         ctx.lineTo(-size * 0.7, size * 0.7);
         ctx.lineTo(size * 1.8, size * 0.3);
         ctx.stroke();
+      } else if (theme === 'newgen') {
+        // Tiny faceted blocks echo the Minecraft minigame playground.
+        const s = size * 1.8;
+        ctx.fillStyle = ['#95e8f6', '#eed3a4', '#b9a2ee', '#9fdcca'][tone];
+        ctx.beginPath();
+        ctx.moveTo(0, -s);
+        ctx.lineTo(s, -s * 0.45);
+        ctx.lineTo(0, s * 0.1);
+        ctx.lineTo(-s, -s * 0.45);
+        ctx.closePath();
+        ctx.fill();
+        ctx.fillStyle = '#397b9d';
+        ctx.beginPath();
+        ctx.moveTo(-s, -s * 0.45);
+        ctx.lineTo(0, s * 0.1);
+        ctx.lineTo(0, s * 1.15);
+        ctx.lineTo(-s, s * 0.6);
+        ctx.closePath();
+        ctx.fill();
+        ctx.fillStyle = '#76bcd3';
+        ctx.beginPath();
+        ctx.moveTo(s, -s * 0.45);
+        ctx.lineTo(0, s * 0.1);
+        ctx.lineTo(0, s * 1.15);
+        ctx.lineTo(s, s * 0.6);
+        ctx.closePath();
+        ctx.fill();
       } else if (leaf?.complete && leaf.naturalWidth) {
         const flutter = 0.68 + Math.sin(age * 2.7 + angle) * 0.27;
         ctx.rotate(Math.sin(age * 2.3 + angle) * 0.4);

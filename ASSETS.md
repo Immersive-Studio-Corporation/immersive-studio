@@ -91,3 +91,68 @@ Le fond de l’introduction est un Canvas procédural de géométrie abstraite (
 - Les Quatres Nations : cercle et quatre pointes du médaillon conservés opaques ; extérieur transparent, export PNG/WebP.
 - Les tentatives ImageGen de détourage avec damier peint n’ont pas été utilisées. Aucun logo n’a été remplacé par leur résultat.
 - Feuille naturelle : `leaf-sprite.webp`, dérivée par redimensionnement de `plant_17.png`, source [OpenGameArt](https://opengameart.org/node/20070), contributeur rubberduck, photographie burningwell selon la collection. Licence [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+
+
+## V4 — luminous Hogwarts and Newgen
+
+# Hogwarts luminous banner v4
+
+Generator: built-in image_gen.imagegen
+Date: 2026-09-06
+Intent: one new project-bound cinematic Minecraft panorama
+Original: C:/Users/Derek/.codex/generated_images/01a0773b-6262-7973-9a84-0c4563955a6a/exec-24394d80-1234-470e-80c8-144677915340.png
+Selected workspace asset: C:/Users/Derek/Desktop/IMMERSIVE STUDIOS/work-v4/assets/hogwarts-luminous-v4.png
+Dimensions: 1672 × 941 pixels, approximately 16:9
+
+## Exact prompt
+
+Use case: stylized-concept
+Asset type: premium website cinematic project banner, wide 16:9 landscape.
+Primary request: a breathtaking luminous Hogwarts (Poudlard) castle panorama, the recognizable majestic 2010 Harry Potter film-era Hogwarts silhouette faithfully reimagined as an exceptionally sophisticated Minecraft build, with refined small-scale voxel architecture and beautiful cinematic shader rendering. This is a polished aspirational showcase of a Minecraft world.
+Scene/backdrop: Highland lake, green steep hills, distant blue mountains and a stone viaduct approaching the castle across the water. Lush natural landscape, beautiful tranquil lake reflections.
+Subject: monumental intricately detailed Hogwarts castle dominating center-right, iconic clustered soaring towers with pointed slate roofs, large central tower, Great Hall, layered courtyards and arched stone bridge, pale honey limestone. Clear and coherent castle silhouette, refined construction with visible subtle voxel steps and block-built stonework, not a generic fantasy castle.
+Style/medium: premium cinematic Minecraft architectural screenshot, very high fidelity path-traced shaders, tangible fine voxel geometry, delicately detailed stone, physically beautiful light and water, filmic color grading and tremendous sense of scale.
+Composition/framing: expansive wide elevated establishing shot, castle centered around 66% across the frame with its complete tallest tower visible and generous sky above. Left third relatively quiet with broad lake and atmospheric blue-green hills for later white headline overlay. No foreground object obstructing the landscape. Beautiful balanced panorama, not a centered postcard crop.
+Lighting/mood: bright early golden daylight after clearing clouds, airy luminous blue and cream sky, warm sunbeams illuminate castle stone and green hills, a restrained trace of golden magical shimmer gently catching the air around the turrets. Optimistic, wondrous, elegant, vividly alive.
+Color palette: luminous ivory and warm gold, verdant green, atmospheric blue, soft cream clouds. Rich but refined, natural highlights.
+Constraints: no text, no typography, no logos, no watermark, no UI, no people, no characters. Bright daylight, never nighttime, avoid oppressive shadows, avoid garish purple effects, avoid cartoon toy castle, avoid large crude chunky blocks or muddy low-detail geometry. Preserve recognizable Minecraft construction while delivering cinema-quality light and atmosphere.
+
+## Visual QA
+
+Passed: bright golden daylight; coherent recognizable Hogwarts castle; fine voxel stone and terraced terrain; center-right dominant castle; calm left lake and mountains for text placement; blue and cream cloud sky; green highlands, bridge, lake reflections; restrained gold magical sparkles; no text, logo, watermark or UI visible. The tallest turret sits near the top edge, so use object-fit positioning that preserves the tower in taller crops. Text on the bright upper-left sky will benefit from a local subtle contrast treatment; lower-left water naturally carries white copy more readily.
+
+
+
+# Newgen world concept v4
+
+Generator: built-in image_gen.imagegen
+Date: 2026-09-06
+Intent: one new speculative concept backdrop for a future Minecraft minigame project; not evidence of an actual game world or gameplay screenshot.
+Reference image: C:/Users/Derek/Desktop/NEW GEN/7e89996d-e97e-439d-b98d-dcb3ec653e82.png (tropical atmosphere and palette only)
+Generated original: C:/Users/Derek/.codex/generated_images/01a0773b-6262-7973-9a84-0c4563955a6a/exec-a97e6730-5ab5-4433-b8d3-b4647580c215.png
+Selected workspace asset: C:/Users/Derek/Desktop/IMMERSIVE STUDIOS/work-v4/assets/newgen-world-v4.png
+Dimensions: 1672 × 941 pixels, approximately 16:9
+
+## Exact prompt
+
+Use case: stylized-concept
+Asset type: one 16:9 wide panoramic concept-art backdrop for a future Minecraft minigame project website.
+Primary request: an elegant premium cinematic Minecraft tropical dreamworld, serene and mysterious, floating voxel islands over a beautiful turquoise lagoon, palms, ancient stone gateways and imaginative parkour stepping platforms suspended over water. It is evocative future-world concept art, not documentary gameplay.
+Input images: Image 1 is a visual reference ONLY for tropical atmosphere and warm wood / turquoise / ivory / gold palette. Do not reproduce or include any part of its lettering, logo or wooden sign. Generate only a NEW scenic environment, without lettering.
+Scene/backdrop: inviting clear lagoon, distant hazy tropical islands and luminous clouds, pale golden beaches, block-built floating islands with green grass, small detailed palm trees and weathered stone arches; a few elegant stepping platforms tracing a playful route between the main islands, waterfalls dropping into the lagoon. Mysterious imaginative world on the horizon, expansive and serene.
+Composition/framing: broad 16:9 panorama. Rich visual subject in the right 60 percent: several distinct floating islands, temple gateways and suspended paths over water. Quieter atmospheric left 40 percent with broad lagoon, distant silhouettes and open sky for later copy overlay. Strong sense of depth, refined coherent architecture, generous sky with all tall structures visible.
+Style/medium: sophisticated voxel environment concept art with recognizable Minecraft blocks, finely built architecture and blocky palm leaves, cinematic physically rendered shaders, beautiful volumetric atmosphere, exquisite water reflections, natural rather than cartoonish, premium project showcase.
+Lighting/mood: luminous late afternoon, warm golden sunlight playing on ivory stone and lush green vegetation, rich turquoise water grading into cobalt distance, subtle lavender cloud shadows and a restrained magical glow inside stone gateways. Hopeful, mysterious and inviting.
+Constraints: Absolutely no words, no text, no logos, no watermark, no wooden sign, no people, no avatars, no characters, no UI, no frame. Avoid garish neon, crude chunky geometry, dark nighttime, excessive magical particles or busy left foreground. Preserve serene cinematic sophistication and clear voxel construction.
+
+## Visual QA
+
+Passed: recognizable sophisticated voxel construction; luminous gold afternoon light; turquoise lagoon and cobalt distance; subtle lavender clouds; floating temple islands and palm trees on the right; glowing stone gateway; parkour stepping platforms; quiet left water and distant atmospheric silhouettes; no words, logos, sign, watermark, people, avatars or UI. The scene is a generated speculative concept; label as a future project/concept if needed in the page context. Preserve the top of the large center-right stone gateway when cropping. White copy over the upper-left sunlight needs a local contrast treatment; lower-left water is calmer and darker.
+
+
+
+Integration: generated images exported as heritage-luminous.webp and newgen-world.webp (WebP quality90). These are labeled atmospheric illustrations, not gameplay captures.
+
+Percy Jackson: the supplied original percy.webp is preserved behind editable assets/wordmark-masks/percy.svg. The silhouette follows the medallion and four jewels; exported to transparent percy-emblem.png and .webp by scripts/export-wordmarks.mjs. No internal opacity, blend or fade mask.
+
+Newgen: supplied by the user in Desktop/NEW GEN/7e89996d-e97e-439d-b98d-dcb3ec653e82.png. Original stored as newgen-original.webp; the existing artwork is preserved behind assets/wordmark-masks/newgen.svg to isolate the wooden sign and grass block. Native vector export produces transparent newgen-wordmark.png and .webp. The palm and beach are not part of the isolated sign.

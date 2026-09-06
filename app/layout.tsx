@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import './header.css';
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Immersive Studio — L’imaginaire. En grand.',
   description:
-    'Découvrez L’Héritage de Poudlard et les univers roleplay en préparation d’Immersive Studio. Des mondes à vivre, ensemble.',
+    'Immersive Studio imagine des mondes dans Minecraft : L’Héritage de Poudlard, cinq univers roleplay en préparation et Newgen, notre futur projet de mini-jeux.',
   metadataBase: new URL('https://immersive-studio.derekhoganclem.chatgpt.site'),
   icons: {
     icon: '/images/studio-mark.svg',
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Immersive Studio — L’imaginaire. En grand.',
     description:
-      'L’Héritage de Poudlard et cinq univers roleplay en préparation. Des mondes à vivre, ensemble.',
+      'Immersive Studio imagine des mondes dans Minecraft : L’Héritage de Poudlard, cinq univers roleplay en préparation et Newgen, notre futur projet de mini-jeux.',
     locale: 'fr_FR',
     type: 'website',
   },

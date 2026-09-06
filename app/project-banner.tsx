@@ -28,6 +28,16 @@ type BannerProps = {
 export function ProjectBanner(props: BannerProps) {
   const { paused } = props;
   const panel = useRef<HTMLElement>(null);
+  const logoDimensions: Record<string, [number, number]> = {
+    heritage: [650, 366],
+    percy: [1200, 1195],
+    teen: [1000, 617],
+    nations: [1100, 1100],
+    avengers: [1200, 492],
+    last: [1100, 440],
+    newgen: [1460, 490],
+  };
+  const [logoWidth, logoHeight] = logoDimensions[props.id] || [800, 800];
   const Heading = props.headingLevel || 'h3';
   useEffect(() => {
     const element = panel.current;
@@ -137,8 +147,8 @@ export function ProjectBanner(props: BannerProps) {
             className="panorama-logo"
             src={props.image}
             alt=""
-            width={800}
-            height={800}
+            width={logoWidth}
+            height={logoHeight}
             loading="lazy"
           />
         </div>
