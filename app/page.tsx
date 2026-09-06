@@ -143,6 +143,7 @@ export default function Home() {
   const [activeProject, setActiveProject] = useState('');
   const [introKey, setIntroKey] = useState(0);
   const scene = useRef<HTMLElement>(null);
+  const introProgress = useRef(0);
   const menuButton = useRef<HTMLButtonElement>(null);
 
   function changeLanguage(value: string | null) {
@@ -199,27 +200,25 @@ export default function Home() {
   }, []);
   useEffect(() => {
     const element = scene.current;
-    if (!element) return;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const compact = window.matchMedia('(max-height: 580px)');
-    let frame = 0;
-    const paint = () => {
-      const rect = element.getBoundingClientRect();
-      const stickyHeight =
-        element.querySelector<HTMLElement>('.intro-sticky')?.offsetHeight ??
-        window.innerHeight;
-      const p =
-        reduced.matches || compact.matches
-          ? 0
-          : paused
-            ? Number(element.style.getPropertyValue('--progress') || 0)
-            : Math.max(
-                0,
-                Math.min(
-                  1,
-                  -rect.top / Math.max(1, element.offsetHeight - stickyHeight),
-                ),
-              );
+    const sticky = element?.querySelector<HTMLElement>('.intro-sticky');
+    if (!element || !sticky) return;
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    const compact = matchMedia('(max-height: 580px)');
+    let frame = 0,
+      last = 0,
+      startY = 0,
+      extent = 1;
+    let current = introProgress.current,
+      painted = -1,
+      visible = true;
+    const targetProgress = () =>
+      reduced.matches || compact.matches
+        ? 0
+        : Math.max(0, Math.min(1, (scrollY - startY) / extent));
+    const paint = (p: number) => {
+      if (p === painted) return;
+      painted = p;
+      introProgress.current = p;
       const ramp = (start: number, end: number) => {
         const x = Math.max(0, Math.min(1, (p - start) / (end - start)));
         return x * x * (3 - 2 * x);
@@ -242,24 +241,92 @@ export default function Home() {
         '--letter-turn',
         Math.sin(flight * Math.PI * 2) * 8 + 'deg',
       );
-      element.dataset.phase = p > 0.22 ? 'logo' : 'intro';
-      element.dataset.chapter = p < 0.29 ? '1' : p < 0.74 ? '2' : '3';
+      const phase = p > 0.22 ? 'logo' : 'intro';
+      const chapter = p < 0.29 ? '1' : p < 0.74 ? '2' : '3';
+      if (element.dataset.phase !== phase) element.dataset.phase = phase;
+      if (element.dataset.chapter !== chapter)
+        element.dataset.chapter = chapter;
+    };
+    const tick = (now: number) => {
       frame = 0;
+      if (paused || document.hidden) {
+        last = 0;
+        return;
+      }
+      const target = targetProgress();
+      const dt = Math.min((now - (last || now - 16.67)) / 1000, 0.05);
+      last = now;
+      // Time-based easing fills the gaps between wheel events at any refresh rate.
+      current += (target - current) * (1 - Math.exp(-dt / 0.065));
+      if (
+        !visible ||
+        reduced.matches ||
+        compact.matches ||
+        Math.abs(target - current) < 0.00005
+      )
+        current = target;
+      paint(current);
+      if (current !== target) frame = requestAnimationFrame(tick);
+      else last = 0;
     };
     const schedule = () => {
-      if (!frame) frame = requestAnimationFrame(paint);
+      if (!frame && !paused && !document.hidden)
+        frame = requestAnimationFrame(tick);
     };
-    paint();
+    const measure = () => {
+      const rect = element.getBoundingClientRect();
+      startY = rect.top + scrollY;
+      extent = Math.max(1, element.offsetHeight - sticky.offsetHeight);
+      element.style.setProperty('--stage-width', sticky.offsetWidth + 'px');
+      element.style.setProperty('--stage-height', sticky.offsetHeight + 'px');
+      schedule();
+    };
+    const visibility = () => {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      last = 0;
+      if (!document.hidden) schedule();
+    };
+    const preference = () => {
+      if (reduced.matches || compact.matches) {
+        current = 0;
+        paint(0);
+      }
+      measure();
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (!visible) {
+        cancelAnimationFrame(frame);
+        frame = 0;
+        last = 0;
+        if (!paused) {
+          current = targetProgress();
+          paint(current);
+        }
+      } else schedule();
+    });
+    const sizes = new ResizeObserver(measure);
+    sizes.observe(element);
+    sizes.observe(sticky);
+    observer.observe(element);
+    measure();
+    if (reduced.matches || compact.matches) current = 0;
+    paint(current);
     window.addEventListener('scroll', schedule, { passive: true });
-    window.addEventListener('resize', schedule);
-    reduced.addEventListener('change', schedule);
+    document.addEventListener('visibilitychange', visibility);
+    reduced.addEventListener('change', preference);
+    compact.addEventListener('change', preference);
     return () => {
       cancelAnimationFrame(frame);
+      sizes.disconnect();
+      observer.disconnect();
       window.removeEventListener('scroll', schedule);
-      window.removeEventListener('resize', schedule);
-      reduced.removeEventListener('change', schedule);
+      document.removeEventListener('visibilitychange', visibility);
+      reduced.removeEventListener('change', preference);
+      compact.removeEventListener('change', preference);
     };
-  }, [paused]);
+  }, [paused, introKey]);
   useEffect(() => {
     const visible = new Map<string, number>();
     const observer = new IntersectionObserver(
@@ -297,6 +364,7 @@ export default function Home() {
     };
   }, []);
   function replay() {
+    introProgress.current = 0;
     setPaused(false);
     setIntroKey((key) => key + 1);
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -429,7 +497,7 @@ export default function Home() {
         >
           <div className="intro-sticky">
             <div className="intro-color" aria-hidden="true" />
-            <CinemaField paused={paused} />
+            <CinemaField paused={paused} progress={introProgress} />
             <div className="intro-chapters" aria-hidden="true">
               <span>{t.introChapter1}</span>
               <span>{t.introChapter2}</span>

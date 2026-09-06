@@ -1,9 +1,16 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import type { RefObject } from 'react';
 
 /** A lightweight, procedural field of faceted cubes and floating pixels. */
-export function CinemaField({ paused }: { paused: boolean }) {
+export function CinemaField({
+  paused,
+  progress,
+}: {
+  paused: boolean;
+  progress: RefObject<number>;
+}) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const elapsed = useRef(0);
   const pointerPosition = useRef({ x: 0, y: 0 });
@@ -13,15 +20,31 @@ export function CinemaField({ paused }: { paused: boolean }) {
     const context = element.getContext('2d', { alpha: true });
     if (!context) return;
     const ctx = context;
-    const parent = element.closest<HTMLElement>('.intro-scroll');
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
     let width = 1,
       height = 1,
       frame = 0,
       time = elapsed.current,
-      last = 0;
+      last = 0,
+      pointerLeft = 0,
+      pointerTop = 0;
     let visible = true;
+    const diagnostics = process.env.NODE_ENV === 'development';
+    let sampleStart = 0,
+      sampleFrames = 0,
+      sampleDrawMs = 0;
     const pointer = pointerPosition.current;
+    const target = { ...pointer };
+    // Reuse unit paths instead of allocating hundreds of polygon arrays per frame.
+    const faces = [
+      new Path2D('M0 -1L1 -.4L0 .2L-1 -.4Z'),
+      new Path2D('M-1 -.4L0 .2L0 1.3L-1 .7Z'),
+      new Path2D('M0 .2L1 -.4L1 .7L0 1.3Z'),
+    ];
+    const colors = [
+      ['#fff0ffbb', '#c991ee88', '#7533bd99'],
+      ['#efd2ff', '#a865e5', '#6521b3'],
+    ];
     // Stable seed: particles do not jump when motion is paused or resumed.
     let seed = 287;
     const random = () => {
@@ -37,15 +60,8 @@ export function CinemaField({ paused }: { paused: boolean }) {
       kind: i % 3,
       depth: 0.25 + random() * 0.75,
     }));
-    const polygon = (points: number[][], color: string) => {
-      ctx.beginPath();
-      points.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
-      ctx.closePath();
-      ctx.fillStyle = color;
-      ctx.fill();
-    };
     const render = () => {
-      const p = Number(parent?.style.getPropertyValue('--progress') || 0);
+      const p = reduced.matches ? 0 : progress.current;
       ctx.clearRect(0, 0, width, height);
       const centerX = width * (0.78 - Math.min(1, p * 2.4) * 0.28);
       const centerY = height * 0.46;
@@ -77,33 +93,11 @@ export function CinemaField({ paused }: { paused: boolean }) {
         ctx.globalAlpha = quiet ? 0.12 : 0.35 + dot.depth * 0.42;
         if (dot.kind !== 2) {
           ctx.rotate(Math.sin(time * 0.15 + dot.phase) * 0.2);
-          polygon(
-            [
-              [0, -size],
-              [size, -size * 0.4],
-              [0, size * 0.2],
-              [-size, -size * 0.4],
-            ],
-            dot.kind === 0 ? '#fff0ffbb' : '#efd2ff',
-          );
-          polygon(
-            [
-              [-size, -size * 0.4],
-              [0, size * 0.2],
-              [0, size * 1.3],
-              [-size, size * 0.7],
-            ],
-            dot.kind === 0 ? '#c991ee88' : '#a865e5',
-          );
-          polygon(
-            [
-              [0, size * 0.2],
-              [size, -size * 0.4],
-              [size, size * 0.7],
-              [0, size * 1.3],
-            ],
-            dot.kind === 0 ? '#7533bd99' : '#6521b3',
-          );
+          ctx.scale(size, size);
+          for (let face = 0; face < faces.length; face++) {
+            ctx.fillStyle = colors[dot.kind][face];
+            ctx.fill(faces[face]);
+          }
         } else {
           ctx.rotate(dot.phase + time * 0.1);
           ctx.fillStyle = i % 2 ? '#f9ebff' : '#7133b6';
@@ -113,10 +107,28 @@ export function CinemaField({ paused }: { paused: boolean }) {
       }
     };
     const tick = (now: number) => {
-      if (now - last >= 32) {
-        time += Math.min((now - (last || now)) / 1000, 0.05);
-        last = now;
-        render();
+      const dt = Math.min((now - (last || now)) / 1000, 0.05);
+      last = now;
+      time += dt;
+      const blend = 1 - Math.exp(-dt * 18);
+      pointer.x += (target.x - pointer.x) * blend;
+      pointer.y += (target.y - pointer.y) * blend;
+      const renderStart = diagnostics ? performance.now() : 0;
+      render();
+      if (diagnostics) {
+        if (!sampleStart) sampleStart = now;
+        sampleFrames++;
+        sampleDrawMs += performance.now() - renderStart;
+        if (now - sampleStart >= 1000) {
+          element.dataset.fps = (
+            ((sampleFrames - 1) * 1000) /
+            (now - sampleStart)
+          ).toFixed(1);
+          element.dataset.drawMs = (sampleDrawMs / sampleFrames).toFixed(2);
+          sampleStart = now;
+          sampleFrames = 1;
+          sampleDrawMs = 0;
+        }
       }
       frame = requestAnimationFrame(tick);
     };
@@ -124,6 +136,9 @@ export function CinemaField({ paused }: { paused: boolean }) {
       cancelAnimationFrame(frame);
       frame = 0;
       last = 0;
+      sampleStart = 0;
+      sampleFrames = 0;
+      sampleDrawMs = 0;
       render();
       if (!paused && !reduced.matches && visible && !document.hidden)
         frame = requestAnimationFrame(tick);
@@ -132,6 +147,8 @@ export function CinemaField({ paused }: { paused: boolean }) {
       const bounds = element.getBoundingClientRect();
       width = bounds.width;
       height = bounds.height;
+      pointerLeft = bounds.left;
+      pointerTop = bounds.top;
       const dpr = Math.min(devicePixelRatio || 1, 1.5);
       element.width = Math.round(width * dpr);
       element.height = Math.round(height * dpr);
@@ -139,13 +156,29 @@ export function CinemaField({ paused }: { paused: boolean }) {
       render();
     };
     const move = (event: PointerEvent) => {
-      if (paused || reduced.matches || event.pointerType !== 'mouse') return;
-      const rect = element.getBoundingClientRect();
-      pointer.x = (event.clientX - rect.left) / width - 0.5;
-      pointer.y = (event.clientY - rect.top) / height - 0.5;
+      if (
+        paused ||
+        reduced.matches ||
+        !visible ||
+        document.hidden ||
+        event.pointerType !== 'mouse'
+      )
+        return;
+      target.x = Math.max(
+        -0.5,
+        Math.min(0.5, (event.clientX - pointerLeft) / width - 0.5),
+      );
+      target.y = Math.max(
+        -0.5,
+        Math.min(0.5, (event.clientY - pointerTop) / height - 0.5),
+      );
     };
     const observer = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
+      if (visible) {
+        pointerLeft = entry.boundingClientRect.left;
+        pointerTop = entry.boundingClientRect.top;
+      }
       sync();
     });
     const sizes = new ResizeObserver(resize);
@@ -165,6 +198,6 @@ export function CinemaField({ paused }: { paused: boolean }) {
       reduced.removeEventListener('change', sync);
       window.removeEventListener('pointermove', move);
     };
-  }, [paused]);
+  }, [paused, progress]);
   return <canvas className="cinema-field" ref={canvas} aria-hidden="true" />;
 }

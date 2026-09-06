@@ -1,6 +1,6 @@
 # Immersive Studio
 
-Vitrine multilingue des sept projets Minecraft du studio, version 4.
+Vitrine multilingue des sept projets Minecraft du studio, version 5.
 
 ## Développement
 
@@ -28,7 +28,7 @@ Le projet des éléments est présenté sous le nom « Avatar — Les Quatre Nat
 
 Le monogramme IS et son cube sont redessinés en SVG net, à partir de la géométrie du logo fourni.
 La séquence de défilement est une animation vectorielle, pas une vidéo : le cube et les lettres se déplacent et se réassemblent dans une scène fixe.
-La scène d’ouverture comporte trois temps sur environ quatre hauteurs d’écran. Un fond Canvas de cubes à facettes et de pixels accompagne le logo. Le calcul est limité à environ 30 images/seconde, avec moins de particules sur mobile et arrêt hors écran ou en arrière-plan.
+La scène d’ouverture comporte trois temps sur environ quatre hauteurs d’écran. Un fond Canvas de cubes à facettes et de pixels accompagne le logo. Le dessin suit la cadence native de requestAnimationFrame (sans plafond à 30 images/seconde), avec moins de particules sur mobile et arrêt hors écran ou en arrière-plan. Trois chemins unitaires sont réutilisés pour les faces des cubes. Le défilement est interpolé dans le temps et les déplacements du logo utilisent translate3d au lieu de left/top animés. La géométrie de la scène est mesurée au redimensionnement.
 Le défilement reste natif. L’animation peut être passée, rejouée et mise en pause depuis le bouton du menu. Sur écran très court, l’introduction reste dans le flux de la page. Elle est réduite automatiquement lorsque le système demande moins de mouvement.
 La version SVG autonome est livrée dans le dossier parent. Le logo d’origine et le PNG de la première version sont conservés.
 Les sept projets disposent du même format de bandeau panoramique, avec parallaxe au défilement et effets au pointeur : étincelles dorées, bulles océaniques, griffures effilées, quatre éléments, arcs d’énergie et feuilles naturelles. Les bulles sont limitées à Percy Jackson ; l’intro ne contient que des cubes et des pixels. Tous sont directement accessibles depuis le menu avec leur nom et leur logo.
@@ -58,3 +58,5 @@ Les silhouettes de Teen Wolf, Avengers, Avatar, Percy Jackson et Newgen sont dé
 Les feuilles utilisent une photographie détourée CC0, décrite dans `ASSETS.md`. Les effets au pointeur ne capturent pas les clics, s’arrêtent après dissipation, hors écran, lors de la pause et lorsque le système réduit les animations. Les Canvas sont décoratifs et masqués aux lecteurs d’écran.
 
 Le bandeau supérieur est stylé dans `app/header.css`, avec une navigation compacte à partir de 1351 pixels et un menu mobile en dessous. La barre de défilement utilise les couleurs du studio. Les illustrations générées ne représentent pas des captures de gameplay.
+
+V5 : l’aperçu de développement a été mesuré à environ 120 images/s sur ce navigateur ; le dessin des cubes prenait environ 0,3–0,4 ms par image. Ces mesures dépendent de l’appareil et de l’écran. Les compteurs de diagnostic ne sont actifs qu’en développement. Pause pendant le défilement, reprise, redémarrage, variantes mobile et conservation du logo vérifiés.
