@@ -1,6 +1,6 @@
 # Immersive Studio
 
-Vitrine multilingue des sept projets Minecraft du studio, version 5.
+Vitrine multilingue des sept projets Minecraft du studio, version 6.
 
 ## Développement
 
@@ -57,6 +57,8 @@ Contrôles navigateur effectués sur mobile (390 × 844) et bureau (1600 × 950)
 Les silhouettes de Teen Wolf, Avengers, Avatar, Percy Jackson et Newgen sont définies dans `assets/wordmark-masks/`. `node scripts/export-wordmarks.mjs` exporte ces découpes vectorielles sur les pixels d’origine vers des PNG transparents et leurs versions WebP. Les textures restent opaques. Les PNG livrés se trouvent dans `public/images/` ; les originaux sont conservés.
 Les feuilles utilisent une photographie détourée CC0, décrite dans `ASSETS.md`. Les effets au pointeur ne capturent pas les clics, s’arrêtent après dissipation, hors écran, lors de la pause et lorsque le système réduit les animations. Les Canvas sont décoratifs et masqués aux lecteurs d’écran.
 
-Le bandeau supérieur est stylé dans `app/header.css`, avec une navigation compacte à partir de 1351 pixels et un menu mobile en dessous. La barre de défilement utilise les couleurs du studio. Les illustrations générées ne représentent pas des captures de gameplay.
+Le bandeau supérieur est stylé dans `app/header.css`, avec une navigation compacte à partir de 1551 pixels et un menu mobile en dessous. La barre de défilement utilise les couleurs du studio. Les illustrations générées ne représentent pas des captures de gameplay.
 
 V5 : l’aperçu de développement a été mesuré à environ 120 images/s sur ce navigateur ; le dessin des cubes prenait environ 0,3–0,4 ms par image. Ces mesures dépendent de l’appareil et de l’écran. Les compteurs de diagnostic ne sont actifs qu’en développement. Pause pendant le défilement, reprise, redémarrage, variantes mobile et conservation du logo vérifiés.
+
+V6 : nom complet de L’Héritage de Poudlard dans le menu, logos agrandis, collection centrée sur grand écran et fond dégradé lavande/violet. Le menu se replie sur les écrans plus étroits pour préserver la lisibilité.

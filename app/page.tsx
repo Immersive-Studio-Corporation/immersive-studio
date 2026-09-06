@@ -416,7 +416,7 @@ export default function Home() {
               </span>
               <span dir="auto">
                 {world.id === 'heritage'
-                  ? t.navHeritage
+                  ? world.name
                   : world.id === 'nations'
                     ? 'Avatar'
                     : world.name.replace(' RP', '')}

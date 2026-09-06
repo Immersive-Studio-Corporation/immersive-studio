@@ -33,14 +33,23 @@ html {
   gap: clamp(18px, 1.5vw, 36px);
   min-height: 88px;
   padding: 12px clamp(22px, 2.3vw, 64px);
-  background: #f7effbef;
+  background: linear-gradient(
+    112deg,
+    #f4e7ff 0%,
+    #e7cafa 35%,
+    #f7eaff 65%,
+    #d7b3f0 100%
+  );
   color: #301942;
-  backdrop-filter: blur(24px);
-  box-shadow: 0 4px 32px #3811540b;
+  border-bottom: 1px solid #b78dd650;
+  box-shadow:
+    inset 0 1px 0 #ffffffb0,
+    0 6px 28px #57217416;
 }
 .header > .brand {
   gap: 10px;
   width: auto;
+  flex-shrink: 0;
 }
 .header .brand > .studio-mark {
   width: 26px;
@@ -58,6 +67,8 @@ html {
 .main-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex: 1;
   gap: clamp(3px, 0.65vw, 18px);
   min-width: 0;
 }
@@ -98,8 +109,8 @@ html {
 .nav-project-icon {
   display: grid;
   place-items: center;
-  width: 33px;
-  height: 36px;
+  width: 44px;
+  height: 46px;
   flex-shrink: 0;
 }
 .main-nav .nav-icon-logo {
@@ -118,7 +129,7 @@ html {
 .main-nav .nav-icon-avengers,
 .main-nav .nav-icon-last,
 .main-nav .nav-icon-newgen {
-  width: 38px;
+  width: 52px;
 }
 .main-nav .mobile-studio-link {
   display: none;
@@ -193,7 +204,7 @@ html {
   overflow-y: auto;
   overscroll-behavior: contain;
 }
-@media (min-width: 1900px) {
+@media (min-width: 2100px) {
   .header {
     min-height: 96px;
     gap: 44px;
@@ -214,14 +225,14 @@ html {
     padding-inline: 9px;
   }
   .nav-project-icon {
-    width: 40px;
-    height: 43px;
+    width: 52px;
+    height: 54px;
   }
   .main-nav .nav-icon-teen,
   .main-nav .nav-icon-avengers,
   .main-nav .nav-icon-last,
   .main-nav .nav-icon-newgen {
-    width: 45px;
+    width: 62px;
   }
   .header-actions {
     gap: 14px;
@@ -231,7 +242,21 @@ html {
     font-size: 1rem;
   }
 }
-@media (max-width: 1500px) and (min-width: 1351px) {
+@media (min-width: 2400px) {
+  .header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 32px;
+  }
+  .header > .brand {
+    justify-self: start;
+  }
+  .header-actions {
+    justify-self: end;
+    margin-left: 0;
+  }
+}
+@media (max-width: 1900px) and (min-width: 1551px) {
   .header {
     padding-inline: 20px;
     gap: 16px;
@@ -244,14 +269,14 @@ html {
     gap: 5px;
   }
   .nav-project-icon {
-    width: 26px;
-    height: 32px;
+    width: 38px;
+    height: 42px;
   }
   .main-nav .nav-icon-teen,
   .main-nav .nav-icon-avengers,
   .main-nav .nav-icon-last,
   .main-nav .nav-icon-newgen {
-    width: 31px;
+    width: 46px;
   }
   .header-actions {
     gap: 5px;
@@ -260,7 +285,7 @@ html {
     display: none;
   }
 }
-@media (max-width: 1350px) {
+@media (max-width: 1550px) {
   .header {
     min-height: 78px;
     gap: 15px;
@@ -293,8 +318,8 @@ html {
     white-space: normal;
   }
   .main-nav .nav-project-icon {
-    width: 46px;
-    height: 42px;
+    width: 54px;
+    height: 50px;
   }
   .main-nav .mobile-studio-link {
     display: flex;
