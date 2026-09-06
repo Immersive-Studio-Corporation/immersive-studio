@@ -12,32 +12,32 @@ const geistMono = Geist_Mono({
   display: 'swap',
 });
 export const metadata: Metadata = {
-  title: 'Immersive Studio — D’autres mondes. Votre histoire.',
+  title: 'Immersive Studio — L’imaginaire. En grand.',
   description:
-    'Découvrez les six univers roleplay en développement d’Immersive Studio : L’Héritage de Poudlard, Percy Jackson, Teen Wolf, Les Quatres Nations, Avengers et The Last of Us.',
+    'Découvrez L’Héritage de Poudlard et les univers roleplay en préparation d’Immersive Studio. Des mondes à vivre, ensemble.',
   metadataBase: new URL('https://immersive-studio.derekhoganclem.chatgpt.site'),
   icons: {
-    icon: '/images/studio-mark.webp',
+    icon: '/images/studio-mark.svg',
     apple: '/images/studio-mark.webp',
   },
   openGraph: {
-    title: 'Immersive Studio — D’autres mondes. Votre histoire.',
+    title: 'Immersive Studio — L’imaginaire. En grand.',
     description:
-      'Un studio. Six univers roleplay. Votre prochaine histoire commence ici.',
+      'L’Héritage de Poudlard et cinq univers roleplay en préparation. Des mondes à vivre, ensemble.',
     locale: 'fr_FR',
     type: 'website',
   },
   twitter: {
     card: 'summary',
     title: 'Immersive Studio',
-    description: 'D’autres mondes. Votre histoire.',
+    description: 'L’imaginaire. En grand.',
   },
 };
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className="dark">
+    <html lang="fr">
       <body className={geistSans.variable + ' ' + geistMono.variable}>
         {children}
       </body>

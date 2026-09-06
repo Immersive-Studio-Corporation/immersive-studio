@@ -1,0 +1,32 @@
+export function StudioMark({ className = '' }: { className?: string }) {
+  return (
+    <svg
+      className={'studio-mark ' + className}
+      viewBox="0 0 500 690"
+      fill="none"
+      aria-hidden="true"
+    >
+      <g className="mark-cube-motion">
+        <g className="mark-cube">
+          <path d="M120 59 214 0 308 59 214 118Z" fill="#E4BDFF" />
+          <path d="M120 59 214 118 214 227 120 168Z" fill="#9B4CF2" />
+          <path d="M214 118 308 59 308 168 214 227Z" fill="#6327B0" />
+        </g>
+      </g>
+      <g className="mark-i-motion">
+        <path
+          className="mark-i"
+          d="M0 276 97 219 97 665 0 605Z"
+          fill="#873CE0"
+        />
+      </g>
+      <g className="mark-s-motion">
+        <path
+          className="mark-s"
+          d="M153 335 338 221 484 302 402 351 338 316 214 388 458 484 458 571 240 664 133 605 133 546 190 514 240 542 360 472 153 411Z"
+          fill="#542092"
+        />
+      </g>
+    </svg>
+  );
+}
