@@ -11,6 +11,11 @@ import {
   Boxes,
   BookOpen,
   Users,
+  Pause,
+  Play,
+  MessageCircle,
+  Megaphone,
+  Headphones,
 } from 'lucide-react';
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import type { CSSProperties } from 'react';
@@ -28,6 +33,8 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { StudioMark } from './studio-mark';
+import { CinemaField } from './cinema-field';
+import { ProjectBanner } from './project-banner';
 import { dictionaries, isLocale, languages } from './messages';
 import type { Locale } from './messages';
 
@@ -36,30 +43,35 @@ const HERITAGE = 'https://heritagedepoudlard.fr/';
 const worlds = [
   {
     id: 'percy',
+    backdrop: '/images/percy-world.webp',
     name: 'Percy Jackson RP',
     image: '/images/percy.webp',
     color: '#5AACE0',
   },
   {
     id: 'teen',
+    backdrop: '/images/teen-world.webp',
     name: 'Teen Wolf RP',
-    image: '/images/teen-wolf.webp',
+    image: '/images/teen-wordmark.webp',
     color: '#B0A1DD',
   },
   {
     id: 'nations',
+    backdrop: '/images/nations-world.webp',
     name: 'Les Quatres Nations',
-    image: '/images/nations.webp',
+    image: '/images/nations-emblem.webp',
     color: '#E2A359',
   },
   {
     id: 'avengers',
+    backdrop: '/images/avengers-world.webp',
     name: 'Avengers RP',
-    image: '/images/avengers.webp',
+    image: '/images/avengers-wordmark.webp',
     color: '#98BC72',
   },
   {
     id: 'last',
+    backdrop: '/images/survival-world.webp',
     name: 'The Last of Us RP',
     image: '/images/last-of-us.webp',
     color: '#B5C289',
@@ -120,6 +132,8 @@ export default function Home() {
   const locale = useSyncExternalStore(subscribeLocale, getLocale, serverLocale);
   const t = dictionaries[locale];
   const [menu, setMenu] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [activeProject, setActiveProject] = useState('');
   const [introKey, setIntroKey] = useState(0);
   const scene = useRef<HTMLElement>(null);
   const menuButton = useRef<HTMLButtonElement>(null);
@@ -179,31 +193,49 @@ export default function Home() {
     const element = scene.current;
     if (!element) return;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const compact = window.matchMedia('(max-height: 580px)');
     let frame = 0;
     const paint = () => {
       const rect = element.getBoundingClientRect();
       const stickyHeight =
         element.querySelector<HTMLElement>('.intro-sticky')?.offsetHeight ??
         window.innerHeight;
-      const p = reduced.matches
-        ? 0
-        : Math.max(
-            0,
-            Math.min(
-              1,
-              -rect.top / Math.max(1, element.offsetHeight - stickyHeight),
-            ),
-          );
-      const arc = Math.sin(p * Math.PI);
+      const p =
+        reduced.matches || compact.matches
+          ? 0
+          : paused
+            ? Number(element.style.getPropertyValue('--progress') || 0)
+            : Math.max(
+                0,
+                Math.min(
+                  1,
+                  -rect.top / Math.max(1, element.offsetHeight - stickyHeight),
+                ),
+              );
+      const ramp = (start: number, end: number) => {
+        const x = Math.max(0, Math.min(1, (p - start) / (end - start)));
+        return x * x * (3 - 2 * x);
+      };
+      const center = ramp(0.13, 0.56);
+      const flight = ramp(0.2, 0.82);
+      const bloom = Math.sin(flight * Math.PI);
       element.style.setProperty('--progress', String(p));
+      element.style.setProperty('--center', String(center));
+      element.style.setProperty('--bloom', String(bloom));
+      element.style.setProperty('--finale', String(ramp(0.82, 0.96)));
       element.style.setProperty(
         '--cube-x',
-        Math.sin(p * Math.PI * 2) * 85 + 'px',
+        Math.sin(flight * Math.PI * 4) * 150 * bloom + 'px',
       );
-      element.style.setProperty('--cube-y', -arc * 130 + 'px');
-      element.style.setProperty('--cube-r', p * 360 + 'deg');
-      element.style.setProperty('--split', arc * 90 + 'px');
-      element.dataset.phase = p > 0.28 ? 'logo' : 'intro';
+      element.style.setProperty('--cube-y', -bloom * 75 + 'px');
+      element.style.setProperty('--cube-r', flight * 720 + 'deg');
+      element.style.setProperty('--split', bloom * 115 + 'px');
+      element.style.setProperty(
+        '--letter-turn',
+        Math.sin(flight * Math.PI * 2) * 8 + 'deg',
+      );
+      element.dataset.phase = p > 0.22 ? 'logo' : 'intro';
+      element.dataset.chapter = p < 0.29 ? '1' : p < 0.74 ? '2' : '3';
       frame = 0;
     };
     const schedule = () => {
@@ -219,14 +251,51 @@ export default function Home() {
       window.removeEventListener('resize', schedule);
       reduced.removeEventListener('change', schedule);
     };
+  }, [paused]);
+  useEffect(() => {
+    const visible = new Map<string, number>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) =>
+          visible.set(entry.target.id, entry.intersectionRatio),
+        );
+        const closest = [...visible.entries()].sort((a, b) => b[1] - a[1])[0];
+        setActiveProject(closest && closest[1] > 0 ? closest[0] : '');
+      },
+      { rootMargin: '-145px 0px -20% 0px', threshold: [0, 0.15, 0.4, 0.65] },
+    );
+    document
+      .querySelectorAll('.project-panorama')
+      .forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => {
+    if (menu) document.querySelector<HTMLAnchorElement>('#main-nav a')?.focus();
+  }, [menu]);
+  useEffect(() => {
+    const header = document.querySelector<HTMLElement>('.header');
+    if (!header) return;
+    const sync = () =>
+      document.documentElement.style.setProperty(
+        '--header-height',
+        header.offsetHeight + 'px',
+      );
+    const observer = new ResizeObserver(sync);
+    observer.observe(header);
+    sync();
+    return () => {
+      observer.disconnect();
+      document.documentElement.style.removeProperty('--header-height');
+    };
   }, []);
   function replay() {
+    setPaused(false);
     setIntroKey((key) => key + 1);
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   return (
-    <>
+    <div className="site-shell" data-motion={paused ? 'paused' : 'running'}>
       <a href="#heritage" className="skip-link">
         {t.skip}
       </a>
@@ -237,17 +306,66 @@ export default function Home() {
           className={menu ? 'main-nav is-open' : 'main-nav'}
           aria-label={t.footerStudio}
         >
-          <a href="#heritage" onClick={() => setMenu(false)}>
-            {t.navHeritage}
-          </a>
-          <a href="#univers" onClick={() => setMenu(false)}>
-            {t.navWorlds}
-          </a>
-          <a href="#studio" onClick={() => setMenu(false)}>
+          {[
+            {
+              id: 'heritage',
+              name: 'L’Héritage de Poudlard',
+              image: '/images/heritage-logo.webp',
+              backdrop: '/images/heritage-background.webp',
+              color: '#b887ef',
+            },
+            ...worlds,
+          ].map((world) => (
+            <a
+              key={world.id}
+              href={'#' + world.id}
+              onClick={() => setMenu(false)}
+              aria-current={activeProject === world.id ? 'location' : undefined}
+            >
+              <span
+                className={'nav-project-icon nav-icon-' + world.id}
+                style={{ '--icon-color': world.color } as CSSProperties}
+                aria-hidden="true"
+              >
+                <Image
+                  className="nav-icon-scene"
+                  src={world.backdrop.replace('.webp', '-thumb.webp')}
+                  alt=""
+                  width={100}
+                  height={100}
+                />
+                <Image
+                  className="nav-icon-logo"
+                  src={world.image}
+                  alt=""
+                  width={100}
+                  height={100}
+                />
+              </span>
+              <span>{world.name}</span>
+            </a>
+          ))}
+          <a
+            className="mobile-studio-link"
+            href="#studio"
+            onClick={() => setMenu(false)}
+          >
             {t.navStudio}
+            <ArrowUpRight size={18} />
           </a>
         </nav>
         <div className="header-actions">
+          <button
+            className="motion-toggle"
+            onClick={() => setPaused(!paused)}
+            aria-label={paused ? t.motionResume : t.motionPause}
+            title={paused ? t.motionResume : t.motionPause}
+          >
+            {paused ? <Play size={18} /> : <Pause size={18} />}
+          </button>
+          <a className="header-studio-link" href="#studio">
+            {t.navStudio}
+          </a>
           <Select value={locale} onValueChange={changeLanguage}>
             <SelectTrigger className="language-trigger" aria-label={t.language}>
               <Globe2 size={20} />
@@ -300,6 +418,12 @@ export default function Home() {
         >
           <div className="intro-sticky">
             <div className="intro-color" aria-hidden="true" />
+            <CinemaField paused={paused} />
+            <div className="intro-chapters" aria-hidden="true">
+              <span>{t.introChapter1}</span>
+              <span>{t.introChapter2}</span>
+              <span>{t.introChapter3}</span>
+            </div>
             <div className="hero-copy">
               <p className="eyebrow">{t.heroTag}</p>
               <h1 id="hero-title">
@@ -325,7 +449,9 @@ export default function Home() {
               </p>
             </div>
             <div className="intro-bottom">
-              <span className="hero-side">{t.heroSide}</span>
+              <div className="intro-controls">
+                <span className="hero-side">{t.heroSide}</span>
+              </div>
               <a href="#heritage" className="scroll-cue">
                 <ArrowDown size={22} />
                 <span>{t.scroll}</span>
@@ -337,66 +463,39 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section
-          className="heritage-section"
-          id="heritage"
-          aria-labelledby="heritage-title"
-        >
+        <section className="heritage-section" aria-labelledby="heritage-title">
           <div className="section-wrap heritage-heading reveal">
             <p className="eyebrow">{t.heritageLabel}</p>
             <h2>{t.heritageIntro}</h2>
           </div>
-          <div className="heritage-panorama">
-            <Image
-              className="heritage-background"
-              src="/images/heritage-background.webp"
-              alt=""
-              width={1920}
-              height={1080}
-              loading="lazy"
-            />
-            <div className="heritage-shade" aria-hidden="true" />
-            <div className="section-wrap heritage-inner">
-              <div className="heritage-copy reveal">
-                <span className="status-chip">
-                  <i />
-                  {t.development}
-                </span>
-                <p className="heritage-genre">{t.heritageGenre}</p>
-                <h3 id="heritage-title">
-                  L’Héritage
-                  <br />
-                  de Poudlard
-                </h3>
-                <p>{t.heritageText}</p>
-                <a
-                  className="button button-light"
-                  href={HERITAGE}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t.heritageCta}
-                  <ArrowUpRight size={22} />
-                </a>
-                <small>{t.heritageNote}</small>
-              </div>
-              <Image
-                className="heritage-brand reveal"
-                src="/images/heritage-logo.webp"
-                alt=""
-                width={650}
-                height={650}
-                loading="lazy"
-              />
-            </div>
-          </div>
+          <ProjectBanner
+            id="heritage"
+            name="L’Héritage de Poudlard"
+            title={
+              <>
+                L’Héritage
+                <br />
+                de Poudlard
+              </>
+            }
+            image="/images/heritage-logo.webp"
+            backdrop="/images/heritage-background.webp"
+            color="#eac998"
+            genre={t.heritageGenre}
+            status={t.development}
+            text={t.heritageText}
+            cta={t.heritageCta}
+            href={HERITAGE}
+            note={t.heritageNote}
+            paused={paused}
+          />
         </section>
         <section
-          className="worlds-section section-wrap"
+          className="worlds-section"
           id="univers"
           aria-labelledby="worlds-title"
         >
-          <div className="section-heading reveal">
+          <div className="section-heading section-wrap reveal">
             <div>
               <p className="eyebrow">{t.worldsLabel}</p>
               <h2 id="worlds-title">
@@ -407,81 +506,20 @@ export default function Home() {
             </div>
             <p>{t.worldsText}</p>
           </div>
-          <div className="worlds-grid">
+          <div className="worlds-panoramas">
             {worlds.map((world) => (
-              <article
-                id={world.id}
+              <ProjectBanner
                 key={world.id}
-                className={'world-card reveal world-' + world.id}
-                style={{ '--world-color': world.color } as CSSProperties}
-              >
-                <a
-                  href={DISCORD}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="world-link"
-                  aria-label={world.name + ' — ' + t.followProject}
-                >
-                  <div className="world-art">
-                    {(world.id === 'percy' || world.id === 'avengers') && (
-                      <Image
-                        className="world-wash"
-                        src={world.image}
-                        alt=""
-                        width={1200}
-                        height={700}
-                        loading="lazy"
-                      />
-                    )}
-                    {world.id === 'nations' && (
-                      <Image
-                        className="world-backdrop"
-                        src="/images/nations-world.webp"
-                        alt=""
-                        width={1536}
-                        height={1024}
-                        loading="lazy"
-                      />
-                    )}
-                    {world.id === 'last' && (
-                      <Image
-                        className="world-backdrop"
-                        src="/images/survival-world.webp"
-                        alt=""
-                        width={1536}
-                        height={1024}
-                        loading="lazy"
-                      />
-                    )}
-                    <Image
-                      className="world-image"
-                      src={world.image}
-                      alt=""
-                      width={1200}
-                      height={700}
-                      loading="lazy"
-                    />
-                    <span className="world-genre">
-                      {t[(world.id + 'Genre') as keyof typeof t]}
-                    </span>
-                    <span className="world-open" aria-hidden="true">
-                      <ArrowUpRight size={28} />
-                    </span>
-                  </div>
-                  <div className="world-copy">
-                    <div className="world-title-row">
-                      <h3>{world.name}</h3>
-                      <span className="world-status">{t.preparation}</span>
-                    </div>
-                    <h4>{t[(world.id + 'Line') as keyof typeof t]}</h4>
-                    <p>{t[(world.id + 'Text') as keyof typeof t]}</p>
-                    <span className="text-link">
-                      {t.followProject}
-                      <ArrowUpRight size={20} />
-                    </span>
-                  </div>
-                </a>
-              </article>
+                {...world}
+                genre={t[(world.id + 'Genre') as keyof typeof t]}
+                status={t.preparation}
+                line={t[(world.id + 'Line') as keyof typeof t]}
+                text={t[(world.id + 'Text') as keyof typeof t]}
+                cta={t.followProject}
+                href={DISCORD}
+                illustration={t.visualNote}
+                paused={paused}
+              />
             ))}
           </div>
         </section>
@@ -490,14 +528,56 @@ export default function Home() {
           id="studio"
           aria-labelledby="studio-title"
         >
-          <div className="studio-intro reveal">
-            <p className="eyebrow">{t.studioLabel}</p>
-            <h2 id="studio-title">
-              {t.studioTitle1}
-              <br />
-              <em>{t.studioTitle2}</em>
-            </h2>
-            <p>{t.studioText}</p>
+          <div className="studio-layout">
+            <div className="studio-intro reveal">
+              <p className="eyebrow">{t.studioLabel}</p>
+              <h2 id="studio-title">
+                {t.studioTitle1}
+                <br />
+                <em>{t.studioTitle2}</em>
+              </h2>
+              <p>{t.studioText}</p>
+            </div>
+            <div className="studio-mosaic reveal">
+              {[
+                {
+                  image: '/images/heritage-background.webp',
+                  name: 'L’Héritage de Poudlard',
+                  id: 'heritage',
+                },
+                {
+                  image: '/images/nations-world.webp',
+                  name: 'Les Quatres Nations',
+                  id: 'nations',
+                },
+                {
+                  image: '/images/percy-world.webp',
+                  name: 'Percy Jackson RP',
+                  id: 'percy',
+                },
+              ].map((world) => (
+                <a
+                  key={world.id}
+                  href={'#' + world.id}
+                  className={'studio-scene studio-scene-' + world.id}
+                >
+                  <Image
+                    src={world.image}
+                    alt=""
+                    width={1000}
+                    height={700}
+                    loading="lazy"
+                  />
+                  <span>
+                    {world.name}
+                    <ArrowUpRight size={20} />
+                  </span>
+                </a>
+              ))}
+              <div className="studio-mosaic-stamp" aria-hidden="true">
+                <StudioMark />
+              </div>
+            </div>
           </div>
           <div className="studio-values">
             <article className="value-card reveal">
@@ -572,8 +652,70 @@ export default function Home() {
               <ArrowUpRight size={23} />
             </a>
           </div>
-          <div className="community-icon" aria-hidden="true">
-            <DiscordIcon size={330} />
+          <div className="discord-stage reveal">
+            <div className="discord-orbit-label discord-orbit-one">
+              <Megaphone size={21} />
+              {t.discordAnnouncements}
+            </div>
+            <div className="discord-orbit-label discord-orbit-two">
+              <Headphones size={21} />
+              {t.discordMeetups}
+            </div>
+            <div className="discord-server-card">
+              <div className="discord-card-cover">
+                <Image
+                  src="/images/nations-world.webp"
+                  alt=""
+                  width={1000}
+                  height={650}
+                  loading="lazy"
+                />
+                <span>
+                  <DiscordIcon size={22} />
+                  Discord
+                </span>
+              </div>
+              <div className="discord-server-avatar">
+                <StudioMark />
+              </div>
+              <div className="discord-card-content">
+                <p className="discord-eyebrow">{t.discordEyebrow}</p>
+                <h3>Immersive Studio</h3>
+                <p>{t.discordTagline}</p>
+                <div className="discord-world-icons" aria-hidden="true">
+                  {[
+                    '/images/heritage-logo.webp',
+                    ...worlds.map((world) => world.image),
+                  ].map((image) => (
+                    <Image
+                      key={image}
+                      src={image}
+                      alt=""
+                      width={80}
+                      height={80}
+                      loading="lazy"
+                    />
+                  ))}
+                </div>
+                <div className="discord-welcome">
+                  <MessageCircle size={21} />
+                  <span>{t.discordWelcome}</span>
+                </div>
+                <a
+                  href={DISCORD}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button discord-join-button"
+                >
+                  {t.join}
+                  <ArrowUpRight size={23} />
+                </a>
+              </div>
+            </div>
+            <div className="discord-orbit-label discord-orbit-three">
+              <MessageCircle size={21} />
+              {t.discordBackstage}
+            </div>
           </div>
         </section>
       </main>
@@ -627,6 +769,6 @@ export default function Home() {
         </div>
         <p className="fan-note">{t.fanNote}</p>
       </footer>
-    </>
+    </div>
   );
 }

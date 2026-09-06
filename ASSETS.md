@@ -48,3 +48,46 @@ Composition/framing: Wide landscape 1536x1024 or widest available landscape. Bui
 Lighting/mood: Warm cinematic daylight, well-lit detailed scene, still and contemplative.
 Color palette: Olive-green and amber, natural tonal separation.
 Constraints: No people, zombies, blood, text, logos, UI, watermarks or borders. Avoid photorealism, overdone AI glows, dark muddy shadows and exaggerated post-apocalyptic spectacle.
+
+## Version 3 — panoramas cinématiques
+
+Trois illustrations originales créées avec ImageGen, sans personnages, texte ou logo. Elles évoquent les thèmes des projets et ne sont pas des captures de gameplay. Les logos fournis sont superposés séparément, leurs fichiers restent inchangés.
+
+- mythological-ocean.png → public/images/percy-world.webp
+- supernatural-town.png → public/images/teen-world.webp
+- emerald-city.png → public/images/avengers-world.webp
+
+Prompts et provenance exacts :
+
+```json
+{
+  "mode": "built-in image_gen",
+  "purpose": "Original atmosphere illustrations, not actual gameplay",
+  "assets": [
+    {
+      "key": "mythological-ocean",
+      "prompt": "Use case: stylized-concept. Asset type: premium cinematic full-width website project banner, original atmosphere illustration, 16:9 landscape. Primary request: mythological ocean adventure, spectacular deep turquoise crashing sea around ancient Greek marble temple ruins on a rocky island. Dawn storm parting, radiant gold sunlight through clouds, subtle godly scale expressed through immense waves and architecture. Sophisticated detailed game environment concept art, dramatic natural textures and believable depth. Composition: wide panoramic view, place the marble island temple and most spectacular breaking wave in the right 55%; the left 45% remains open darker atmospheric storm sky and shadowy sea, with low visual detail and ample negative space for white website text. Keep important right focal details within the central vertical 65% for cropping to a wide 600px banner. Color palette: deep turquoise, navy, weathered ivory marble, restrained gold dawn light. Rich darks but readable details, atmospheric perspective, premium cinematic art direction. Constraints: no people, no characters, no words, no typography, no logos, no UI, no watermark; not a screenshot or actual gameplay. Landscape 16:9 image, edge-to-edge environment.",
+      "path": "C:/Users/Derek/Desktop/IMMERSIVE STUDIOS/work-v3/assets/mythological-ocean.png"
+    },
+    {
+      "key": "supernatural-town",
+      "prompt": "Use case: stylized-concept. Asset type: premium cinematic full-width website project banner, original atmosphere illustration, 16:9 landscape. Primary request: supernatural small-town mystery on conifer forest outskirts, a distant American town at night beneath a huge luminous moon and drifting mist. Sophisticated detailed game environment concept art, cinematic dark yet readable. Right side focal scene: silver moon hanging above misty mountains, tall conifers framing the distant town and faint street lights, eerie restrained blood-red glow in low fog near town. Left 45% is open shadowy blue-black forest-edge mist and subdued night sky, low detail atmospheric negative space for white website text. Keep important focal details in right 55%, within central vertical 65% for wide 600px-tall banner crop. Color palette: cold blue, ink navy, silver, very muted deep crimson accents; believable depth, rich tonal gradients, atmospheric photography-inspired lighting. Constraints: no people, no characters, no creatures, no words, no logos, no text, no UI, no watermark; no recognizable franchise imagery. Original cinematic world atmosphere, not actual gameplay. Landscape 16:9, edge-to-edge environment.",
+      "path": "C:/Users/Derek/Desktop/IMMERSIVE STUDIOS/work-v3/assets/supernatural-town.png"
+    },
+    {
+      "key": "emerald-city",
+      "prompt": "Use case: stylized-concept. Asset type: premium cinematic full-width website project banner, original atmosphere illustration, 16:9 landscape. Primary request: a vast contemporary futuristic superhero-world city skyline at late dusk, towering original skyscrapers, striking green and teal energy aurora weaving through a cloudy sky. Sophisticated detailed game environment concept art, cinematic scale, believable architectural material textures, urban depth, restrained glowing emerald highlights. Composition: panoramic elevated distant view, dramatic tallest skyscrapers and luminous green energy cloud formations in the right 55%; left 45% stays open darker atmospheric dusk sky and distant low city silhouettes, subdued enough for white text. Keep focal scene in central vertical 65% so cropping to a wide 600px banner retains skyline and energy aurora. Color palette: midnight blue, charcoal, teal and emerald luminous accents; dark but legible buildings and softly lit windows. Constraints: original city and building silhouettes only, no recognizable franchise buildings, no people, no heroes or characters, no logos, no words, no text, no UI, no watermark. Original environment illustration, not gameplay. Landscape 16:9, edge-to-edge environment.",
+      "path": "C:/Users/Derek/Desktop/IMMERSIVE STUDIOS/work-v3/assets/emerald-city.png"
+    }
+  ]
+}
+```
+
+Le fond de l’introduction est un Canvas procédural de géométrie abstraite (cubes et pixels) ; aucune vidéo externe n’est téléchargée.
+
+## Version 3 — silhouettes et feuille
+
+- Teen Wolf RP et Avengers RP : lettres et textures des logos fournis, isolées par des contours vectoriels éditables (`assets/wordmark-masks/`), export PNG/WebP via `scripts/export-wordmarks.mjs`.
+- Les Quatres Nations : cercle et quatre pointes du médaillon conservés opaques ; extérieur transparent, export PNG/WebP.
+- Les tentatives ImageGen de détourage avec damier peint n’ont pas été utilisées. Aucun logo n’a été remplacé par leur résultat.
+- Feuille naturelle : `leaf-sprite.webp`, dérivée par redimensionnement de `plant_17.png`, source [OpenGameArt](https://opengameart.org/node/20070), contributeur rubberduck, photographie burningwell selon la collection. Licence [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
