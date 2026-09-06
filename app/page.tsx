@@ -151,14 +151,14 @@ export default function Home() {
   }, [locale, t]);
   useEffect(() => {
     const close = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' && menu && !event.defaultPrevented) {
         setMenu(false);
         menuButton.current?.focus();
       }
     };
     document.addEventListener('keydown', close);
     return () => document.removeEventListener('keydown', close);
-  }, []);
+  }, [menu]);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) =>
