@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: 'Immersive Studio — L’imaginaire. En grand.',
   description:
     'Immersive Studio imagine des mondes dans Minecraft : L’Héritage de Poudlard, cinq univers roleplay en préparation et Newgen, notre futur projet de mini-jeux.',
-  metadataBase: new URL('https://immersive-studio.derekhoganclem.chatgpt.site'),
+  metadataBase: new URL('https://immersive.heritagedepoudlard.fr'),
   icons: {
     icon: '/images/studio-mark.svg',
     apple: '/images/studio-mark.webp',

@@ -43,8 +43,8 @@ Le site fonctionne sans base de données ni serveur applicatif en production.
 - Vercel : importer le dossier avec Node 22.x ; `vercel.json` est prêt.
 - Hébergeur existant : déposer tout le contenu de `dist/client` à la racine du domaine ou sous-domaine, en conservant `_next`.
 - `../immersive-studio-site.zip` contient la dernière version autonome.
-- Le domaine et l’hébergeur définitifs restent à confirmer. Les DNS n’ont pas été modifiés.
-- L’aperçu Sites conserve son accès privé.
+- Hébergement retenu : OG-YOSHUN (91.197.6.63), sous immersive.heritagedepoudlard.fr. Le propriétaire a ajouté le DNS A chez IONOS ; sa résolution est vérifiée. Activation administrateur Nginx/HTTPS encore nécessaire.
+- L’ancien aperçu Sites est public ; le domaine choisi pointe directement vers OG-YOSHUN.
 
 ## Vérification
 
@@ -62,3 +62,7 @@ Le bandeau supérieur est stylé dans `app/header.css`, avec une navigation comp
 V5 : l’aperçu de développement a été mesuré à environ 120 images/s sur ce navigateur ; le dessin des cubes prenait environ 0,3–0,4 ms par image. Ces mesures dépendent de l’appareil et de l’écran. Les compteurs de diagnostic ne sont actifs qu’en développement. Pause pendant le défilement, reprise, redémarrage, variantes mobile et conservation du logo vérifiés.
 
 V6 : nom complet de L’Héritage de Poudlard dans le menu, logos agrandis, collection centrée sur grand écran et fond dégradé lavande/violet. Le menu se replie sur les écrans plus étroits pour préserver la lisibilité.
+
+## Installation indépendante de ChatGPT
+
+La procédure et les configurations sont dans `hosting/yoshun/README.md`. Les fichiers publics sont déposés sur OG-YOSHUN sous `/home/hdpbots/immersive-studio/staging/20260906-domain`. La configuration Nginx a passé sa validation, et un serveur local temporaire a servi la page et ses 24 ressources distinctes avec succès. Ce serveur de test est arrêté. Le compte SSH disponible ne permet pas l’activation administrateur ; aucun hôte virtuel public n’a été changé.
