@@ -11,7 +11,7 @@
   "heroTag": "Créateurs de mondes Minecraft",
   "heroLine1": "L’imaginaire.",
   "heroLine2": "En grand.",
-  "heroText": "Minecraft est notre terrain de jeu. Nous y créons des mondes à explorer, des histoires à partager et des aventures dont vous êtes le personnage principal.",
+  "heroText": "Immersive Studio crée des univers roleplay dans Minecraft et prépare de futurs mini-jeux. Des mondes à explorer, des histoires à partager et des aventures dont vous êtes le personnage principal.",
   "explore": "Découvrir nos univers",
   "heroSide": "Des mondes à vivre. Ensemble.",
   "scroll": "Faites défiler. L’histoire commence.",
@@ -87,8 +87,8 @@
   "backTop": "Retour en haut",
   "footerBottom": "L’imagination se partage.",
   "fanNote": "Projets communautaires indépendants, sans affiliation officielle avec les ayants droit des univers présentés.",
-  "metadataTitle": "Immersive Studio — L’imaginaire. En grand.",
-  "metadataDescription": "Immersive Studio imagine des mondes dans Minecraft : L’Héritage de Poudlard, cinq univers roleplay en préparation et Newgen, notre futur projet de mini-jeux.",
+  "metadataTitle": "Immersive Studio — Minecraft roleplay et mini-jeux",
+  "metadataDescription": "Découvrez les projets Minecraft d’Immersive Studio : L’Héritage de Poudlard, nos univers roleplay en préparation et Newgen, futur projet de mini-jeux.",
   "motionPause": "Mettre les animations en pause",
   "motionResume": "Reprendre les animations",
   "introChapter1": "Une idée.",
@@ -111,5 +111,8 @@
   "newgenText": "Un nom : Newgen. Une envie : imaginer de nouveaux mini-jeux Minecraft, des défis inattendus et des moments à partager. Un projet pour plus tard, dont nous gardons encore les surprises.",
   "newgenCta": "Guetter les révélations",
   "newgenNote": "Concept en réflexion. Aucun lancement annoncé.",
-  "navNations": "4 Nations"
+  "navNations": "4 Nations",
+  "socialTitle": "Sur les réseaux",
+  "socialText": "Les coulisses des projets et les aventures de leur créateur, à suivre au quotidien.",
+  "socialCreator": "Le créateur · Aslan Hogan"
 }

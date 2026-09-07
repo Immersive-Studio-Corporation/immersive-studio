@@ -16,6 +16,9 @@ import {
   MessageCircle,
   Megaphone,
   Headphones,
+  Camera,
+  Music2,
+  Clapperboard,
 } from 'lucide-react';
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import type { CSSProperties } from 'react';
@@ -37,6 +40,7 @@ import { CinemaField } from './cinema-field';
 import { ProjectBanner } from './project-banner';
 import { dictionaries, isLocale, languages } from './messages';
 import type { Locale } from './messages';
+import { socialLinks } from './social-links';
 
 const DISCORD = 'https://discord.gg/YkPYhhtyPZ';
 const HERITAGE = 'https://heritagedepoudlard.fr/';
@@ -170,6 +174,12 @@ export default function Home() {
       ?.setAttribute('content', t.metadataTitle);
     document
       .querySelector('meta[property="og:description"]')
+      ?.setAttribute('content', t.metadataDescription);
+    document
+      .querySelector('meta[name="twitter:title"]')
+      ?.setAttribute('content', t.metadataTitle);
+    document
+      .querySelector('meta[name="twitter:description"]')
       ?.setAttribute('content', t.metadataDescription);
   }, [locale, t]);
   useEffect(() => {
@@ -504,11 +514,13 @@ export default function Home() {
               <span>{t.introChapter3}</span>
             </div>
             <div className="hero-copy">
-              <p className="eyebrow">{t.heroTag}</p>
-              <h1 id="hero-title">
+              <h1 id="hero-title" className="eyebrow">
+                Immersive Studio · {t.heroTag}
+              </h1>
+              <p className="hero-slogan">
                 {t.heroLine1}
                 <span>{t.heroLine2}</span>
-              </h1>
+              </p>
               <p className="hero-text">{t.heroText}</p>
               <a className="button button-dark" href="#heritage">
                 {t.explore}
@@ -717,7 +729,7 @@ export default function Home() {
                 <AccordionTrigger className="faq-trigger">
                   {t[('faq' + n + 'Q') as keyof typeof t]}
                 </AccordionTrigger>
-                <AccordionContent className="faq-answer">
+                <AccordionContent className="faq-answer" keepMounted>
                   <p>{t[('faq' + n + 'A') as keyof typeof t]}</p>
                 </AccordionContent>
               </AccordionItem>
@@ -819,6 +831,43 @@ export default function Home() {
         </section>
       </main>
       <footer className="footer section-wrap">
+        <nav className="social-section" aria-labelledby="social-title">
+          <div className="social-heading">
+            <h2 id="social-title">{t.socialTitle}</h2>
+            <p>{t.socialText}</p>
+          </div>
+          <div className="social-links">
+            {socialLinks.map((social) => (
+              <a
+                key={social.href}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                <span className="social-icon" aria-hidden="true">
+                  {social.platform === 'Instagram' ? (
+                    <Camera size={25} />
+                  ) : social.platform === 'YouTube' ? (
+                    <Clapperboard size={25} />
+                  ) : (
+                    <Music2 size={25} />
+                  )}
+                </span>
+                <span className="social-account">
+                  <small>
+                    {social.owner === 'heritage'
+                      ? 'L’Héritage de Poudlard'
+                      : t.socialCreator}
+                  </small>
+                  <strong>{social.platform}</strong>
+                  <span>{social.handle}</span>
+                </span>
+                <ArrowUpRight size={21} aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+        </nav>
         <div className="footer-top">
           <div className="footer-brand">
             <Brand label={t.home} />

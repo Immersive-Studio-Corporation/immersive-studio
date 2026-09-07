@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import fr from './locales/fr.json';
 import './globals.css';
 import './header.css';
 const geistSans = Geist({
@@ -13,9 +14,9 @@ const geistMono = Geist_Mono({
   display: 'swap',
 });
 export const metadata: Metadata = {
-  title: 'Immersive Studio — L’imaginaire. En grand.',
-  description:
-    'Immersive Studio imagine des mondes dans Minecraft : L’Héritage de Poudlard, cinq univers roleplay en préparation et Newgen, notre futur projet de mini-jeux.',
+  title: fr.metadataTitle,
+  description: fr.metadataDescription,
+  applicationName: 'Immersive Studio',
   metadataBase: new URL('https://immersive-studio.fr'),
   alternates: { canonical: '/' },
   icons: {
@@ -24,16 +25,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: '/',
-    title: 'Immersive Studio — L’imaginaire. En grand.',
-    description:
-      'Immersive Studio imagine des mondes dans Minecraft : L’Héritage de Poudlard, cinq univers roleplay en préparation et Newgen, notre futur projet de mini-jeux.',
+    siteName: 'Immersive Studio',
+    title: fr.metadataTitle,
+    description: fr.metadataDescription,
     locale: 'fr_FR',
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'Immersive Studio',
-    description: 'L’imaginaire. En grand.',
+    title: fr.metadataTitle,
+    description: fr.metadataDescription,
   },
 };
 export default function RootLayout({
@@ -42,6 +43,36 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={geistSans.variable + ' ' + geistMono.variable}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://immersive-studio.fr/#organization',
+                  name: 'Immersive Studio',
+                  url: 'https://immersive-studio.fr/',
+                  description: fr.studioText,
+                  logo: 'https://immersive-studio.fr/images/studio-mark.svg',
+                  sameAs: ['https://discord.gg/YkPYhhtyPZ'],
+                },
+                {
+                  '@type': 'WebSite',
+                  '@id': 'https://immersive-studio.fr/#website',
+                  name: 'Immersive Studio',
+                  url: 'https://immersive-studio.fr/',
+                  description: fr.metadataDescription,
+                  inLanguage: 'fr',
+                  publisher: {
+                    '@id': 'https://immersive-studio.fr/#organization',
+                  },
+                },
+              ],
+            }).replace(/</g, '\\u003c'),
+          }}
+        />
         {children}
       </body>
     </html>

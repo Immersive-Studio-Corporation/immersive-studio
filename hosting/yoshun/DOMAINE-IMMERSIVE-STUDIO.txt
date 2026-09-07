@@ -11,18 +11,18 @@ HTTP et www redirigés en 301 vers HTTPS sans www, avec conservation du chemin e
 24 ressources vérifiées. Métadonnées, canonical et og:url publiés avec https://immersive-studio.fr.
 Après publication, HTML et 6 CSS/JS référencés vérifiés en HTTPS.
 
-ANCIEN LIEN — À CORRIGER PAR YOSHUN
+ANCIEN LIEN — ABANDONNÉ PAR CHOIX DU PROPRIÉTAIRE
 https://immersive.heritagedepoudlard.fr présente maintenant le certificat c.yoshun.fr. L'erreur TLS empêche une redirection utilisable depuis les anciens liens HTTPS. Le nouveau domaine fonctionne.
 
-MESSAGE À COPIER
-Frérot, le nouveau domaine et www fonctionnent, merci ! Il reste juste l'ancien immersive.heritagedepoudlard.fr : il présente maintenant un certificat pour c.yoshun.fr. Tu peux lui remettre un hôte Nginx avec un certificat valide et une redirection 301 vers https://immersive-studio.fr, en conservant les chemins et paramètres ? Comme ça les anciens liens continuent de fonctionner.
+Le propriétaire a ensuite indiqué que cette adresse ne sert plus. Aucune intervention demandée à Yoshun sur cet ancien hôte. Aucun DNS supprimé par Codex.
 
 SUIVI TECHNIQUE
 Service existant : immersive-studio-web sur http://127.0.0.1:8088.
 Dossier : /home/hdpbots/immersive-studio/staging/20260906-domain.
-Export : immersive-studio-fr-20260906.tar.gz.
-Version extraite : releases/20260906-immersive-fr.
-Sauvegarde précédente : backups/before-20260906-immersive-fr.tar.gz.
+Export actuel : immersive-studio-seo-20260907.tar.gz.
+Version extraite : releases/20260907-seo-socials.
+Sauvegarde précédente : backups/before-20260907-seo-socials.tar.gz.
+Mise à jour du 7 septembre : SEO de marque, données structurées, robots.txt, sitemap.xml, FAQ accessible dans le HTML initial, cinq liens sociaux vérifiés. Les DNS et le serveur public sont inchangés.
 Publication fichier par fichier via remplacement atomique, sans redémarrage, anciens fichiers hashés conservés.
 Aucun DNS ni Nginx public modifié par Codex. Aucun message envoyé.
 Le renouvellement automatique des certificats reste géré par Yoshun et n'a pas été inspecté dans ces vérifications externes.
