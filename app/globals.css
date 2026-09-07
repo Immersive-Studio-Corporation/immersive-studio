@@ -605,64 +605,6 @@ h2 em {
   grid-template-columns: 1.4fr 1fr 1fr 0.8fr;
   gap: 45px;
 }
-.social-section {
-  padding-bottom: 52px;
-  margin-bottom: 52px;
-  border-bottom: 1px solid #bd93e433;
-}
-.social-heading h2 {
-  font-size: clamp(1.65rem, 3vw, 2.3rem);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-}
-.social-heading p {
-  color: #c6acd9;
-  margin-top: 10px;
-  max-width: 660px;
-  line-height: 1.7;
-}
-.social-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 255px), 1fr));
-  gap: 14px;
-  margin-top: 28px;
-}
-.social-link {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 22px 18px;
-  border: 1px solid #c09ae536;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #b578df16, #a773e505);
-  transition: background 180ms ease, border-color 180ms ease;
-}
-.social-link:hover {
-  background: #b578df26;
-  border-color: #c09ae580;
-}
-.social-icon {
-  color: #cba3f8;
-}
-.social-account {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-.social-account small, .social-account > span {
-  color: #cfb9e0;
-  font-size: 0.8125rem;
-}
-.social-account strong {
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-.social-link > svg {
-  margin-inline-start: auto;
-  color: #cba3f8;
-}
 .footer-brand .brand {
   color: #f3e5ff;
 }

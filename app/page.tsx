@@ -16,9 +16,6 @@ import {
   MessageCircle,
   Megaphone,
   Headphones,
-  Camera,
-  Music2,
-  Clapperboard,
 } from 'lucide-react';
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import type { CSSProperties } from 'react';
@@ -41,6 +38,7 @@ import { ProjectBanner } from './project-banner';
 import { dictionaries, isLocale, languages } from './messages';
 import type { Locale } from './messages';
 import { socialLinks } from './social-links';
+import { SocialBrandIcon, SocialMenu } from './social-menu';
 
 const DISCORD = 'https://discord.gg/YkPYhhtyPZ';
 const HERITAGE = 'https://heritagedepoudlard.fr/';
@@ -143,6 +141,7 @@ export default function Home() {
   const locale = useSyncExternalStore(subscribeLocale, getLocale, serverLocale);
   const t = dictionaries[locale];
   const [menu, setMenu] = useState(false);
+  const [socialOpen, setSocialOpen] = useState(false);
   const [paused, setPaused] = useState(false);
   const [activeProject, setActiveProject] = useState('');
   const [introKey, setIntroKey] = useState(0);
@@ -475,24 +474,39 @@ export default function Home() {
               ))}
             </SelectContent>
           </Select>
-          <a
-            className="header-discord"
-            aria-label={t.join}
-            href={DISCORD}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <DiscordIcon size={21} />
-            <span>Discord</span>
-            <ArrowUpRight size={18} />
-          </a>
+          <div className="header-community">
+            <a
+              className="header-discord"
+              aria-label={t.join}
+              href={DISCORD}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <DiscordIcon size={21} />
+              <span>Discord</span>
+            </a>
+            <SocialMenu
+              t={t}
+              open={socialOpen}
+              onOpenChange={(open) => {
+                setSocialOpen(open);
+                if (open) setMenu(false);
+              }}
+              discordIcon={<DiscordIcon size={21} />}
+              paused={paused}
+              rtl={locale === 'ar'}
+            />
+          </div>
           <button
             ref={menuButton}
             className="menu-toggle"
             aria-expanded={menu}
             aria-controls="main-nav"
             aria-label={menu ? t.menuClose : t.menuOpen}
-            onClick={() => setMenu(!menu)}
+            onClick={() => {
+              setMenu(!menu);
+              setSocialOpen(false);
+            }}
           >
             {menu ? <X /> : <Menu />}
           </button>
@@ -831,39 +845,29 @@ export default function Home() {
         </section>
       </main>
       <footer className="footer section-wrap">
-        <nav className="social-section" aria-labelledby="social-title">
-          <div className="social-heading">
-            <h2 id="social-title">{t.socialTitle}</h2>
-            <p>{t.socialText}</p>
-          </div>
-          <div className="social-links">
+        <nav className="footer-socials" aria-label={t.socialTitle}>
+          <p>{t.socialTitle}</p>
+          <div className="footer-social-links">
             {socialLinks.map((social) => (
               <a
                 key={social.href}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-link"
+                className="footer-social-link"
+                aria-label={
+                  social.platform +
+                  ' · ' +
+                  (social.owner === 'heritage'
+                    ? 'L’Héritage de Poudlard'
+                    : t.socialCreator) +
+                  ' · ' +
+                  social.handle
+                }
               >
-                <span className="social-icon" aria-hidden="true">
-                  {social.platform === 'Instagram' ? (
-                    <Camera size={25} />
-                  ) : social.platform === 'YouTube' ? (
-                    <Clapperboard size={25} />
-                  ) : (
-                    <Music2 size={25} />
-                  )}
-                </span>
-                <span className="social-account">
-                  <small>
-                    {social.owner === 'heritage'
-                      ? 'L’Héritage de Poudlard'
-                      : t.socialCreator}
-                  </small>
-                  <strong>{social.platform}</strong>
-                  <span>{social.handle}</span>
-                </span>
-                <ArrowUpRight size={21} aria-hidden="true" />
+                <SocialBrandIcon platform={social.platform} />
+                <span dir="ltr">{social.handle}</span>
+                <ArrowUpRight size={14} aria-hidden="true" />
               </a>
             ))}
           </div>

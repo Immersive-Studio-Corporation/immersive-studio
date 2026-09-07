@@ -19,9 +19,10 @@ Le propriétaire a ensuite indiqué que cette adresse ne sert plus. Aucune inter
 SUIVI TECHNIQUE
 Service existant : immersive-studio-web sur http://127.0.0.1:8088.
 Dossier : /home/hdpbots/immersive-studio/staging/20260906-domain.
-Export actuel : immersive-studio-seo-20260907.tar.gz.
-Version extraite : releases/20260907-seo-socials.
-Sauvegarde précédente : backups/before-20260907-seo-socials.tar.gz.
+Export actuel : immersive-studio-social-menu-20260907.tar.gz.
+Version extraite : releases/20260907-social-menu.
+Sauvegarde précédente : backups/before-20260907-social-menu.tar.gz.
+Seconde mise à jour du 7 septembre : vrais logos sociaux et panneau animé dans l’en-tête, sous le bouton voisin de Discord. Rappel compact des liens en pied de page.
 Mise à jour du 7 septembre : SEO de marque, données structurées, robots.txt, sitemap.xml, FAQ accessible dans le HTML initial, cinq liens sociaux vérifiés. Les DNS et le serveur public sont inchangés.
 Publication fichier par fichier via remplacement atomique, sans redémarrage, anciens fichiers hashés conservés.
 Aucun DNS ni Nginx public modifié par Codex. Aucun message envoyé.
