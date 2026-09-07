@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://immersive-studio.fr'),
   alternates: { canonical: '/' },
   icons: {
-    icon: '/images/studio-mark.svg',
-    apple: '/images/studio-mark.webp',
+    icon: { url: '/images/favicon.png', type: 'image/png', sizes: '192x192' },
+    apple: { url: '/images/apple-touch-icon.png', sizes: '180x180' },
   },
   openGraph: {
     url: '/',
