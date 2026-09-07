@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/popover';
 import type { Messages } from './messages';
 import { socialLinks } from './social-links';
+import { StudioMark } from './studio-mark';
 import type { ReactNode } from 'react';
 
 export function SocialBrandIcon({
@@ -97,7 +98,7 @@ export function SocialMenu({
           rel="noopener noreferrer"
           onClick={() => onOpenChange(false)}
         >
-          {discordIcon}
+          <StudioMark className="social-menu-studio-mark" />
           <span>
             <strong>Immersive Studio</strong>
             <small>{t.join}</small>

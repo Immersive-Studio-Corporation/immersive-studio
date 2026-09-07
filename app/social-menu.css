@@ -115,6 +115,14 @@
   flex-direction: column;
   gap: 4px;
 }
+.social-menu-discord .social-menu-studio-mark {
+  width: 29px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.social-menu-discord .mark-s {
+  fill: #bc83f3;
+}
 .social-menu-discord strong {
   font-size: 0.9rem;
   font-weight: 600;
