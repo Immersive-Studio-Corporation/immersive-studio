@@ -21,8 +21,8 @@ for world, names in {
         records.append(dict(old[name], id=f'{world}-{n}', project=world,
             local=str(ROOT.parent/'ARCHIVES TECHNIQUES/Update-20260920/retired-media/images/journey-4k'/f'{name}.webp')))
 
-pages = {'onepiece': 'one-piece', 'licaris': 'pokemon-anime', 'nations': 'avatar-the-last-airbender', 'narnia': 'the-chronicles-of-narnia'}
-choices = {'onepiece': ['33422-', '126937-', '5828318.'], 'licaris': ['139890-', '139979-', '5828418-'], 'nations': ['115172-', '114931-', '115020-'], 'narnia': ['364514-', '364553-']}
+pages = {'onepiece': 'one-piece', 'licaris': 'pokemon-anime', 'narnia': 'the-chronicles-of-narnia'}
+choices = {'onepiece': ['33422-', '126937-', '5828318.'], 'licaris': ['139890-', '139979-', '5828418-'], 'narnia': ['364514-', '364553-']}
 for world, prefix in pages.items():
     page = (ARCHIVE/(world+'.html')).read_text(encoding='utf8')
     rows = re.findall(r'data-fullimg="([^"]+)"[^>]*data-or="([^"]+)"[^>]*>(.*?)(?=<div id=|$)', page, re.S)

@@ -47,7 +47,6 @@ test('requested scene order does not alter Licaris', () => {
     'onepiece-2',
     'onepiece-1',
   ]);
-  assert.deepEqual(journeyArt.nations, ['nations-1', 'nations-3', 'nations-2']);
   assert.deepEqual(journeyArt.licaris, [
     'licaris-latios',
     'licaris-bulbasaur',

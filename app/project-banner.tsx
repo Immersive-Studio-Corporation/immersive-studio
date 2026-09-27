@@ -32,7 +32,6 @@ export function ProjectBanner(props: BannerProps) {
     heritage: [650, 366],
     percy: [1200, 1195],
     teen: [1000, 617],
-    nations: [1100, 1100],
     avengers: [1200, 492],
     last: [1100, 440],
     newgen: [1460, 490],

@@ -1522,24 +1522,8 @@ html {
   mask-image: radial-gradient(ellipse, #000 43%, #000b 62%, transparent 75%);
   scale: 1.22;
 }
-.project-nations .panorama-logo {
-  max-height: 570px;
-  mix-blend-mode: screen;
-}
 .project-last .panorama-logo {
   max-height: 480px;
-}
-.project-nations .panorama-shade {
-  background: linear-gradient(
-    90deg,
-    #09190ef0 0%,
-    #163f30c4 33%,
-    #2a483047 63%,
-    #14251815
-  );
-}
-.project-nations .panorama-emblem {
-  isolation: isolate;
 }
 .panorama-caption {
   position: absolute;
@@ -2041,9 +2025,6 @@ html {
     scale: 1.12;
     max-height: 195px;
   }
-  .project-nations .panorama-logo {
-    max-height: 225px;
-  }
   .project-last .panorama-emblem {
     width: 92%;
     height: 190px;
@@ -2053,9 +2034,7 @@ html {
   }
   .panorama-background {
     object-position: 67% center;
-  }
-  .panorama-shade,
-  .project-nations .panorama-shade {
+  }.panorama-shade {
     background: linear-gradient(
       0deg,
       #0a1224f5 0%,
@@ -2334,14 +2313,9 @@ html {
   .intro-sticky {
     min-height: 0;
   }
-}
-.project-teen .panorama-emblem,
-.project-nations .panorama-emblem,
+}.project-teen .panorama-emblem,
 .project-avengers .panorama-emblem {
   mix-blend-mode: screen;
-}
-.project-nations .panorama-emblem {
-  isolation: auto;
 }
 .project-teen .panorama-logo,
 .project-avengers .panorama-logo {
@@ -2356,25 +2330,15 @@ html {
   z-index: 4;
   pointer-events: none;
 }
-.project-nations .panorama-emblem,
-.project-nations .panorama-logo {
-  mix-blend-mode: normal;
-  opacity: 1;
-  isolation: auto;
-}
 @media (prefers-reduced-motion: reduce) {
   .world-effects {
     display: none;
   }
-}
-.project-teen .panorama-logo,
-.project-nations .panorama-logo {
+}.project-teen .panorama-logo {
   mask-image: none;
   mix-blend-mode: normal;
   opacity: 1;
-}
-.project-teen .panorama-emblem,
-.project-nations .panorama-emblem {
+}.project-teen .panorama-emblem {
   mix-blend-mode: normal;
   opacity: 1;
 }

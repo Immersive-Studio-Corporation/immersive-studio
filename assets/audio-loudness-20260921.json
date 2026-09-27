@@ -143,34 +143,6 @@
         "target_offset": "0.19"
       }
     },
-    "nations": {
-      "source": "public\\audio\\licensed\\nations.mp3",
-      "output": "public\\audio\\balanced-20260921\\nations.mp3",
-      "before": {
-        "input_i": "-20.26",
-        "input_tp": "-9.93",
-        "input_lra": "9.10",
-        "input_thresh": "-30.50",
-        "output_i": "-19.86",
-        "output_tp": "-5.56",
-        "output_lra": "9.00",
-        "output_thresh": "-30.09",
-        "normalization_type": "dynamic",
-        "target_offset": "-0.14"
-      },
-      "after": {
-        "input_i": "-20.26",
-        "input_tp": "-9.93",
-        "input_lra": "9.10",
-        "input_thresh": "-30.50",
-        "output_i": "-19.86",
-        "output_tp": "-5.55",
-        "output_lra": "9.00",
-        "output_thresh": "-30.09",
-        "normalization_type": "dynamic",
-        "target_offset": "-0.14"
-      }
-    },
     "percy": {
       "source": "public\\audio\\licensed\\percy.mp3",
       "output": "public\\audio\\balanced-20260921\\percy.mp3",

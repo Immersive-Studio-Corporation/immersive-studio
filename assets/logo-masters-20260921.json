@@ -97,11 +97,6 @@
     ],
     "output": "/images/logos-hd-20260921/narnia.svg"
   },
-  "nations": {
-    "source": "avatar-nations-lockup.svg",
-    "output": "/images/logos-hd-20260921/nations.svg",
-    "vector_lettering": true
-  },
   "walkingdead": {
     "source": "walkingdead-wordmark.svg",
     "output": "/images/logos-hd-20260921/walkingdead.svg",

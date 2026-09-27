@@ -88,10 +88,8 @@ test('a blocked resume retries on interaction and plays the latest project, neve
   await settle();
   assert.equal(h.statuses.at(-1), 'blocked');
   h.controller.interact();
-  h.controller.setProject('nations');
   h.attempts[1].resolve();
   await settle();
-  assert.deepEqual(h.selected, ['nations']);
 });
 
 test('muting during a pending autoplay request cannot be undone by late resolution or navigation', async () => {

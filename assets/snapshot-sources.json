@@ -403,32 +403,6 @@
     ]
   },
   {
-    "id": "nations-1",
-    "project": "nations",
-    "description": "Aang, Avatar: The Last Airbender Wallpaper, 4K Desktop",
-    "source_page": "https://wallpapercat.com/avatar-the-last-airbender-wallpapers",
-    "image_url": "https://wallpapercat.com/w/full/3/4/c/115172-3840x2160-desktop-4k-avatar-the-last-airbender-wallpaper-image.jpg",
-    "source_dimensions": [
-      3840,
-      2160
-    ],
-    "local_upscaling": false,
-    "outputs": [
-      {
-        "path": "/images/snapshots-20260921/nations-1.webp",
-        "width": 3840,
-        "height": 2160,
-        "bytes": 396328
-      },
-      {
-        "path": "/images/snapshots-20260921/nations-1-thumb.webp",
-        "width": 640,
-        "height": 360,
-        "bytes": 26880
-      }
-    ]
-  },
-  {
     "id": "narnia-1",
     "project": "narnia",
     "description": "Aslan the lion, Susan Pevensie with bow, Cair Paravel castle, 4K Desktop wallpaper",
@@ -603,56 +577,6 @@
         "width": 640,
         "height": 360,
         "bytes": 28220
-      }
-    ]
-  },
-  {
-    "id": "nations-2",
-    "source_page": "https://4kwallpapers.com/movies/avatar-aang-avatar-23273.html",
-    "image_url": "https://4kwallpapers.com/images/wallpapers/avatar-aang-avatar-3840x2160-23273.jpg",
-    "source_dimensions": [
-      3840,
-      2160
-    ],
-    "project": "nations",
-    "local_upscaling": false,
-    "outputs": [
-      {
-        "path": "/images/snapshots-20260921/nations-2.webp",
-        "width": 3840,
-        "height": 2160,
-        "bytes": 364626
-      },
-      {
-        "path": "/images/snapshots-20260921/nations-2-thumb.webp",
-        "width": 640,
-        "height": 360,
-        "bytes": 19412
-      }
-    ]
-  },
-  {
-    "id": "nations-3",
-    "source_page": "https://4kwallpapers.com/anime/avatar-aang-the-27040.html",
-    "image_url": "https://4kwallpapers.com/images/wallpapers/avatar-aang-the-3840x2160-27040.jpg",
-    "source_dimensions": [
-      3840,
-      2160
-    ],
-    "project": "nations",
-    "local_upscaling": false,
-    "outputs": [
-      {
-        "path": "/images/snapshots-20260921/nations-3.webp",
-        "width": 3840,
-        "height": 2160,
-        "bytes": 997780
-      },
-      {
-        "path": "/images/snapshots-20260921/nations-3-thumb.webp",
-        "width": 640,
-        "height": 360,
-        "bytes": 24416
       }
     ]
   },

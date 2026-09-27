@@ -243,9 +243,7 @@ html {
 }
 .main-nav .nav-icon-heritage .nav-icon-logo {
   scale: 1;
-}
-.main-nav .nav-icon-nations .nav-icon-logo,
-.main-nav .nav-icon-percy .nav-icon-logo,
+}.main-nav .nav-icon-percy .nav-icon-logo,
 .header-actions {
   gap: 7px;
   margin-left: 0;

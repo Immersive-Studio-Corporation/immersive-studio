@@ -30,7 +30,7 @@ for name, path in sources.items():
     svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{r-x}" height="{b-y}" viewBox="{x} {y} {r-x} {b-y}"><image width="{w}" height="{h}" href="data:image/webp;base64,{data}"/></svg>\n'
     (OUT/f'{name}.svg').write_text(svg,encoding='utf8')
     report[name] = {'source':str(path),'native_size':[w,h],'visible_bounds':[x,y,r,b],'output':f'/images/logos-hd-20260921/{name}.svg'}
-for name, file in [('nations','avatar-nations-lockup.svg'),('walkingdead','walkingdead-wordmark.svg')]:
+for name, file in [('walkingdead','walkingdead-wordmark.svg')]:
     shutil.copyfile(SITE/'public/images'/file,OUT/f'{name}.svg')
     report[name] = {'source':file,'output':f'/images/logos-hd-20260921/{name}.svg','vector_lettering':True}
 (SITE/'assets/logo-masters-20260921.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf8')

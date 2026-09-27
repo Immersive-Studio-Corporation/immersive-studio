@@ -8,8 +8,8 @@ FF = Path('C:/Users/Derek/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Mi
 OUT = SITE/'public/audio/balanced-20260921'
 REPORT = SITE/'assets/audio-loudness-20260921.json'
 OUT.mkdir(parents=True, exist_ok=True)
-sources = {name: SITE/'public/audio'/('licensed' if name in ('heritage','teen','nations','percy') else 'update-20260920')/f'{name}.mp3'
-           for name in ('intro','heritage','licaris','onepiece','teen','nations','percy','avengers','walkingdead','narnia')}
+sources = {name: SITE/'public/audio'/('licensed' if name in ('heritage','teen','percy') else 'update-20260920')/f'{name}.mp3'
+           for name in ('intro','heritage','licaris','onepiece','teen','percy','avengers','walkingdead','narnia')}
 # Keep each recording's dynamics; the perceived average level is what must match.
 target = 'loudnorm=I=-20:TP=-2:LRA=50'
 

@@ -42,15 +42,15 @@ assert 'music-trigger' in html and 'immersive-studio.fr' in html
 Assets().feed(html)
 assert 'audio/update-20260920/intro.mp3' in manifest['files']
 assert 'images/minecraft-logo.png' in manifest['files']
-for project in ('intro','heritage','licaris','onepiece','teen','nations','percy','avengers','walkingdead','narnia'):
+for project in ('intro','heritage','licaris','onepiece','teen','percy','avengers','walkingdead','narnia'):
     assert f'audio/balanced-20260921/{project}.mp3' in manifest['files']
     if project != 'intro':
         assert f'images/logos-hd-20260921/{project}.svg' in manifest['files']
-for project in ('heritage','percy','teen','nations'):
+for project in ('heritage','percy','teen'):
     assert f'audio/licensed/{project}.mp3' in manifest['files']
 for project in ('avengers','licaris','onepiece','walkingdead','narnia'):
     assert f'audio/update-20260920/{project}.mp3' in manifest['files']
-for project in ('heritage','onepiece','teen','nations','percy','avengers','walkingdead','narnia'):
+for project in ('heritage','onepiece','teen','percy','avengers','walkingdead','narnia'):
     for shot in (1,2,3):
         for height in (1080,720):
             assert f'videos/worlds-20260920/{project}-{shot}-{height}.mp4' in manifest['files']

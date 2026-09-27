@@ -2,7 +2,7 @@ IMMERSIVE STUDIO — VISUELS, SEPTEMBRE 2026
 
 Ces extraits illustrent les univers d’inspiration. Ils ne sont pas des captures de nos serveurs Minecraft.
 
-L’Héritage de Poudlard, One Piece RP, Teen Wolf RP, Avatar - Les quatre nations, Percy Jackson RP, Avengers RP, The Walking Dead RP et Narnia RP : trois extraits animés par univers fournis par le studio le 20 septembre 2026. Adaptation au format 16:9, exports H.264 1920 × 1080 et 1280 × 720, 60 images/s. Vitesse des sources conservée ; lecture en boucle continue ; interpolation des sources de cadence inférieure ; le niveau de détail reste celui des originaux. Sanji : suppression des images noires de début et de fin avant interpolation. Les crédits et marques présents dans les extraits sont conservés dans les fichiers sources.
+L’Héritage de Poudlard, One Piece RP, Teen Wolf RP, Percy Jackson RP, Avengers RP, The Walking Dead RP et Narnia RP : trois extraits animés par univers fournis par le studio le 20 septembre 2026. Adaptation au format 16:9, exports H.264 1920 × 1080 et 1280 × 720, 60 images/s. Vitesse des sources conservée ; lecture en boucle continue ; interpolation des sources de cadence inférieure ; le niveau de détail reste celui des originaux. Sanji : suppression des images noires de début et de fin avant interpolation. Les crédits et marques présents dans les extraits sont conservés dans les fichiers sources.
 
 Licaris : Latios / Latias, Bulbasaur Sunlight Forest, Lucario Power Surge. Vidéos MoeWalls fournies par le propriétaire le 14 septembre 2026 ; exports d’origine conservés sans modification.
 
@@ -70,10 +70,6 @@ onepiece-2 - 3840 x 2160
 Source : https://wallpapercat.com/one-piece-wallpapers
 Image : https://wallpapercat.com/w/full/3/3/6/126937-3840x2160-desktop-4k-one-piece-background-image.jpg
 
-nations-1 - 3840 x 2160
-Source : https://wallpapercat.com/avatar-the-last-airbender-wallpapers
-Image : https://wallpapercat.com/w/full/3/4/c/115172-3840x2160-desktop-4k-avatar-the-last-airbender-wallpaper-image.jpg
-
 narnia-1 - 3840 x 2160
 Source : https://wallpapercat.com/the-chronicles-of-narnia-wallpapers
 Image : https://wallpapercat.com/w/full/a/a/4/364514-3840x2160-desktop-4k-the-chronicles-of-narnia-wallpaper-photo.jpg
@@ -101,14 +97,6 @@ Image : https://wallpapercat.com/w/full/9/f/8/928548-3840x2160-desktop-4k-lucari
 onepiece-3 - 3840 x 2160
 Source : https://wallpapercat.com/one-piece-wallpapers
 Image : https://wallpapercat.com/w/full/a/d/4/5828319.jpg
-
-nations-2 - 3840 x 2160
-Source : https://4kwallpapers.com/movies/avatar-aang-avatar-23273.html
-Image : https://4kwallpapers.com/images/wallpapers/avatar-aang-avatar-3840x2160-23273.jpg
-
-nations-3 - 3840 x 2160
-Source : https://4kwallpapers.com/anime/avatar-aang-the-27040.html
-Image : https://4kwallpapers.com/images/wallpapers/avatar-aang-the-3840x2160-27040.jpg
 
 walkingdead-2 - 3840 x 2160
 Source : https://4kwallpapers.com/movies/norman-reedus-daryl-15672.html

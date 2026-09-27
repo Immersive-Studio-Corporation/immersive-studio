@@ -18,7 +18,6 @@ test('the nine worlds follow the requested publication order with three playable
       'licaris',
       'onepiece',
       'teen',
-      'nations',
       'percy',
       'avengers',
       'walkingdead',

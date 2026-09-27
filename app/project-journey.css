@@ -363,9 +363,7 @@
   height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 8px 14px #000a);
-}
-.journey-emblem.emblem-percy,
-.journey-emblem.emblem-nations {
+}.journey-emblem.emblem-percy {
   padding: 4%;
 }
 .journey-emblem.emblem-heritage {
@@ -740,9 +738,7 @@
     width: 50%;
     top: 14%;
     height: 80%;
-  }
-  .journey-emblem.emblem-percy,
-  .journey-emblem.emblem-nations {
+  }.journey-emblem.emblem-percy {
     padding: 8%;
   }
   .journey-halo {
