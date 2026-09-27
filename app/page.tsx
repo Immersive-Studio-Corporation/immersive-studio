@@ -41,7 +41,7 @@ import { StudioMark } from './studio-mark';
 import { ProjectJourney } from './project-journey';
 import { JourneySound } from './journey-sound';
 import type { JourneyProject } from './project-journey';
-import { sceneryFor, responsiveScenery } from './journey-art';
+import { responsiveScenery } from './journey-art';
 import { projectCatalog } from './journey-catalog';
 import { emptyAudioFrame } from './journey-audio-frame';
 import { dictionaries, isLocale, languages } from './messages';
@@ -481,7 +481,7 @@ export default function Home() {
             <div className="discord-server-card">
               <div className="discord-card-cover">
                 <Image
-                  {...responsiveScenery(sceneryFor('nations')[0])}
+                  {...responsiveScenery(projectCatalog[0].backdrop)}
                   alt=""
                   width={1000}
                   height={650}

@@ -21,13 +21,6 @@ export const officialSoundtracks = {
     publisher: 'Sony Music Masterworks',
     edition: 'Teen Wolf · série originale',
   },
-  nations: {
-    title: 'Avatar: The Last Airbender',
-    artist: 'Jeremy Zuckerman',
-    videoId: 'zMrMDvW5MaM',
-    publisher: 'Universal Music Group / Nickelodeon',
-    edition: 'Book 1: Water · série animée',
-  },
   avengers: {
     title: 'The Avengers',
     artist: 'Alan Silvestri',

@@ -17,11 +17,6 @@ export const nativeTracks = {
     artist: 'Dino Meneghin',
     src: '/audio/balanced-20260921/teen.mp3',
   },
-  nations: {
-    title: 'Avatar: The Last Airbender — Theme',
-    artist: 'Jeremy Zuckerman',
-    src: '/audio/balanced-20260921/nations.mp3',
-  },
   percy: {
     title: 'Percy Jackson: Sea of Monsters — Main Titles',
     artist: 'Andrew Lockington',
@@ -56,3 +51,4 @@ export const isAudioScene = (id: string): id is AudioScene =>
   id === 'intro' || isMusicProject(id);
 export const nativeTrackFor = (id: string) =>
   id === 'intro' ? introTrack : isMusicProject(id) ? nativeTracks[id] : null;
+
