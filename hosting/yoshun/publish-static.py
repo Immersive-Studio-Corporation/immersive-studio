@@ -27,6 +27,12 @@ def safe_target(relative):
 
 def replace(source, target):
     target.parent.mkdir(parents=True,exist_ok=True,mode=0o755)
+    current = target.parent
+    while current == LIVE or LIVE in current.parents:
+        current.chmod(0o755)
+        if current == LIVE:
+            break
+        current = current.parent
     temporary = target.with_name(target.name+'.publishing-'+release_id)
     shutil.copyfile(source,temporary)
     temporary.chmod(0o644)
