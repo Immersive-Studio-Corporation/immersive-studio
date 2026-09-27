@@ -1,70 +1,79 @@
-# Immersive Studio
+<div align="center">
 
-Mise à jour du **21 septembre 2026** : neuf univers, vidéos Full HD 60 images/s en boucle à vitesse normale, musique continue, logos animés du centre vers le texte et navigation par logos. 27 visuels fixes avec grands aperçus. Accueil Minecraft avec le skin officiel Aslan_Hogan en 3D, flottant parmi les cubes violets. Sanji recadré dans le temps pour retirer les images noires. Détails de publication : `hosting/yoshun/README.md`. Les descriptions des anciennes versions ci-dessous sont conservées à titre historique.
+# ✦ Immersive Studio
 
-Vitrine multilingue des sept projets Minecraft du studio, version 6.
+### Des univers. Des histoires. Une expérience.
 
-## Développement
+Site officiel d’**Immersive Studio**, studio créatif spécialisé dans la conception
+d’univers immersifs et d’expériences Minecraft Roleplay.
 
-Node.js **22.x** et npm. Node 24 présente un problème d’arrêt du processus de construction Vinext sous Windows.
+[![Website](https://img.shields.io/badge/Website-immersive--studio.fr-8A2BE2?style=for-the-badge&logo=googlechrome&logoColor=white)](https://immersive-studio.fr)
+[![GitHub](https://img.shields.io/badge/GitHub-Immersive%20Studio-181717?style=for-the-badge&logo=github)](https://github.com/Immersive-Studio-Corporation)
 
-- `npm ci`
-- `npm run dev`
-- `npm run build` produit le site statique dans `dist/client`.
-- `npm start` sert le résultat via Vinext pour une prévisualisation locale.
-- `npx oxlint app vite.config.ts next.config.ts` vérifie le code de la vitrine.
-- `npx tsc --noEmit` vérifie les types.
-  Les composants du starter non utilisés par la vitrine ont des avertissements de lint préexistants.
+</div>
 
-## Contenu et langues
+---
 
-Les liens du studio et les visuels des projets sont dans `app/page.tsx`.
-Les textes sont dans `app/locales/{langue}.json` : français, anglais, allemand, espagnol, chinois simplifié, coréen, japonais, portugais européen, italien, néerlandais, polonais, russe, turc, arabe, hindi et indonésien.
-Le sélecteur traduit toute la page, adapte sa langue, son sens de lecture et son titre, et mémorise le choix localement. Une URL avec `?lang=en`, par exemple, permet de partager un choix de langue.
-L’export HTML initial est en français ; la langue sélectionnée est appliquée à l’hydratation côté navigateur.
-Poudlard est présenté dans sa propre section, en développement ; les cinq autres univers roleplay sont en préparation. Newgen est un projet futur de mini-jeux, encore au stade du concept. Aucune date d’ouverture n’est promise.
-Le nouveau logo Percy Jackson vient du dossier Bureau/Percy Jackson RP/LOGO.png.
-Le projet des éléments est présenté sous le nom « Avatar — Les Quatre Nations » ; le menu utilise « Avatar ».
+## ✨ À propos
 
-## Identité et animation
+Ce dépôt contient le site officiel d’**Immersive Studio**.
 
-Le monogramme IS et son cube sont redessinés en SVG net, à partir de la géométrie du logo fourni.
-La séquence de défilement est une animation vectorielle, pas une vidéo : le cube et les lettres se déplacent et se réassemblent dans une scène fixe.
-La scène d’ouverture comporte trois temps sur environ quatre hauteurs d’écran. Un fond Canvas de cubes à facettes et de pixels accompagne le logo. Le dessin suit la cadence native de requestAnimationFrame (sans plafond à 30 images/seconde), avec moins de particules sur mobile et arrêt hors écran ou en arrière-plan. Trois chemins unitaires sont réutilisés pour les faces des cubes. Le défilement est interpolé dans le temps et les déplacements du logo utilisent translate3d au lieu de left/top animés. La géométrie de la scène est mesurée au redimensionnement.
-Le défilement reste natif. L’animation peut être passée, rejouée et mise en pause depuis le bouton du menu. Sur écran très court, l’introduction reste dans le flux de la page. Elle est réduite automatiquement lorsque le système demande moins de mouvement.
-La version SVG autonome est livrée dans le dossier parent. Le logo d’origine et le PNG de la première version sont conservés.
-Les sept projets disposent du même format de bandeau panoramique, avec parallaxe au défilement et effets au pointeur : étincelles dorées, bulles océaniques, griffures effilées, quatre éléments, arcs d’énergie et feuilles naturelles. Les bulles sont limitées à Percy Jackson ; l’intro ne contient que des cubes et des pixels. Tous sont directement accessibles depuis le menu avec leur nom et leur logo.
-Le studio présente une mosaïque de ses univers ; la carte Discord réunit l’identité du studio et les sept projets, sans compteurs ni messages fictifs.
-Les décors thématiques de Poudlard, Avatar, de la Survie, de Percy Jackson, de Teen Wolf, d’Avengers et de Newgen ont été créés avec ImageGen ; ils sont identifiés comme des illustrations d’ambiance. Sources et prompts : `ASSETS.md`.
-Les polices latines et les images WebP sont incluses dans l’export. Les caractères asiatiques utilisent aussi les polices disponibles sur l’appareil.
+Il présente les différents univers développés par le studio à travers une expérience
+web immersive mêlant :
 
-## Hébergement
+- 🎬 présentations cinématiques
+- 🎵 ambiances sonores
+- 🌍 univers interactifs
+- ✨ animations et effets visuels
+- 🖼️ galeries et aperçus
+- 🌐 interface multilingue
+- 📱 expérience responsive
 
-Le site fonctionne sans base de données ni serveur applicatif en production.
+L’objectif est de proposer une vitrine qui reflète directement l’identité créative
+de chaque projet.
 
-- Vercel : importer le dossier avec Node 22.x ; `vercel.json` est prêt.
-- Hébergeur existant : déposer tout le contenu de `dist/client` à la racine du domaine ou sous-domaine, en conservant `_next`.
-- `../immersive-studio-site.zip` contient la dernière version autonome.
-- Hébergement retenu : OG-YOSHUN (91.197.6.63), sur https://immersive-studio.fr. Service Docker rootless installé sur 127.0.0.1:8088. DNS IONOS, HTTPS 200 et redirections HTTP/www vers HTTPS sans www vérifiés le 6 septembre 2026. Les métadonnées canonical et og:url utilisent la nouvelle adresse.
-- L’ancien aperçu Sites est public ; le domaine principal pointe directement vers OG-YOSHUN. L'ancien sous-domaine immersive.heritagedepoudlard.fr présente une erreur de certificat depuis la bascule ; sa redirection doit être rétablie par Yoshun.
+---
 
-## Vérification
+## 🌌 Nos univers
 
-Construction statique avec Node 22, vérification TypeScript, lint du code de la vitrine, contrôle des 113 clés pour chaque langue et des ressources/liens de l’export.
-Adaptations mobile, navigation clavier, FAQ accessible et réduction des mouvements implémentées.
-Contrôles navigateur effectués sur mobile (390 × 844) et bureau (1600 × 950) : changement des seize langues, lecture RTL arabe, titres longs, absence de débordement horizontal, menu mobile, ancres des projets, transparence de Percy et nouveau décor de Poudlard. L’en-tête reste sur une seule ligne sur écran large. Les contenus italiens et russes ont été ajustés après détection de débordements.
+Immersive Studio développe plusieurs expériences inspirées de grands univers
+fantastiques, mythologiques et contemporains.
 
-## Logos détourés et effets
+Chaque projet possède sa propre identité visuelle, son ambiance et sa direction artistique.
 
-Les silhouettes de Teen Wolf, Avengers, Avatar, Percy Jackson et Newgen sont définies dans `assets/wordmark-masks/`. `node scripts/export-wordmarks.mjs` exporte ces découpes vectorielles sur les pixels d’origine vers des PNG transparents et leurs versions WebP. Les textures restent opaques. Les PNG livrés se trouvent dans `public/images/` ; les originaux sont conservés.
-Les feuilles utilisent une photographie détourée CC0, décrite dans `ASSETS.md`. Les effets au pointeur ne capturent pas les clics, s’arrêtent après dissipation, hors écran, lors de la pause et lorsque le système réduit les animations. Les Canvas sont décoratifs et masqués aux lecteurs d’écran.
+> Certains projets sont actuellement en développement ou en phase de conception.
 
-Le bandeau supérieur est stylé dans `app/header.css`, avec une navigation compacte à partir de 1551 pixels et un menu mobile en dessous. La barre de défilement utilise les couleurs du studio. Les illustrations générées ne représentent pas des captures de gameplay.
+<div align="center">
 
-V5 : l’aperçu de développement a été mesuré à environ 120 images/s sur ce navigateur ; le dessin des cubes prenait environ 0,3–0,4 ms par image. Ces mesures dépendent de l’appareil et de l’écran. Les compteurs de diagnostic ne sont actifs qu’en développement. Pause pendant le défilement, reprise, redémarrage, variantes mobile et conservation du logo vérifiés.
+### [Découvrir les univers →](https://immersive-studio.fr/#projets)
 
-V6 : nom complet de L’Héritage de Poudlard dans le menu, logos agrandis, collection centrée sur grand écran et fond dégradé lavande/violet. Le menu se replie sur les écrans plus étroits pour préserver la lisibilité.
+</div>
 
-## Installation indépendante de ChatGPT
+---
 
-La procédure et les configurations sont dans `hosting/yoshun/README.md`. Les fichiers publics sont déposés sur OG-YOSHUN sous `/home/hdpbots/immersive-studio/staging/20260906-domain`. Le conteneur autonome immersive-studio-web est démarré en Docker rootless sur 127.0.0.1:8088. Le domaine https://immersive-studio.fr est opérationnel : certificat validé, HTTPS 200, HTTP et www redirigés en 301 vers HTTPS sans www. Les 24 ressources publiques ont été vérifiées ; après publication des nouvelles métadonnées, le HTML et ses 6 CSS/JS ont été vérifiés de nouveau. L'export précédent est sauvegardé sous `backups/before-20260906-immersive-fr.tar.gz`. Le compte hdpbots n'a pas l'administration du serveur. Nginx public et certificats restent gérés par Yoshun, sans modification par Codex ; il reste à rétablir le certificat et la redirection de l'ancien sous-domaine.
+## 🛠️ Technologies
+
+<div align="center">
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+
+</div>
+
+---
+
+## 🚀 Développement
+
+### Prérequis
+
+- Node.js 22
+- npm
+
+### Installation
+
+```bash
+npm install
+npm run dev
