@@ -21,12 +21,6 @@ const identities = [
     color: '#B0A1DD',
   },
   {
-    id: 'nations',
-    name: 'Avatar - Les quatre nations',
-    image: '/images/logos-hd-20260921/nations.svg',
-    color: '#E2A359',
-  },
-  {
     id: 'percy',
     name: 'Percy Jackson RP',
     image: '/images/logos-hd-20260921/percy.svg',
