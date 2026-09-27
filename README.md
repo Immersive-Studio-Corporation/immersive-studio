@@ -63,17 +63,4 @@ Chaque projet possède sa propre identité visuelle, son ambiance et sa directio
 
 </div>
 
----
 
-## 🚀 Développement
-
-### Prérequis
-
-- Node.js 22
-- npm
-
-### Installation
-
-```bash
-npm install
-npm run dev
