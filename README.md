@@ -1,5 +1,7 @@
 # Immersive Studio
 
+Mise à jour du **21 septembre 2026** : neuf univers, vidéos Full HD 60 images/s en boucle à vitesse normale, musique continue, logos animés du centre vers le texte et navigation par logos. 27 visuels fixes avec grands aperçus. Accueil Minecraft avec le skin officiel Aslan_Hogan en 3D, flottant parmi les cubes violets. Sanji recadré dans le temps pour retirer les images noires. Détails de publication : `hosting/yoshun/README.md`. Les descriptions des anciennes versions ci-dessous sont conservées à titre historique.
+
 Vitrine multilingue des sept projets Minecraft du studio, version 6.
 
 ## Développement

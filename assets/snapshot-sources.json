@@ -1,0 +1,734 @@
+[
+  {
+    "name": "hogwarts-phoenix",
+    "universe": "Harry Potter",
+    "source_page": "https://wall.alphacoders.com/big.php?i=1198811",
+    "image_url": "https://images.alphacoders.com/119/1198811.jpeg",
+    "description": "Recognizable Hogwarts castle over the lake in gold-blue sunset, with fiery phoenix in the foreground. Text-free film promotional composition reproduced by community wallpaper site.",
+    "source_dimensions": [
+      3840,
+      2390
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/heritage-1.webp",
+        "width": 3840,
+        "height": 2390,
+        "bytes": 1518218
+      },
+      {
+        "path": "/images/snapshots-20260921/heritage-1-thumb.webp",
+        "width": 640,
+        "height": 398,
+        "bytes": 41354
+      }
+    ],
+    "id": "heritage-1",
+    "project": "heritage"
+  },
+  {
+    "name": "hogwarts-night",
+    "universe": "Harry Potter",
+    "source_page": "https://movie-screencaps.com/harry-potter-and-the-philosophers-stone-2001-4k/page/37",
+    "image_url": "https://i0.wp.com/imgs.screencaps.us/200/4k-hp1/full/4k-hp1-movie-screencaps.com-6601.jpg?ssl=1",
+    "description": "Original-film night arrival at Hogwarts: castle lit by warm windows, moon, clouds, mist and boat lights at the bottom. The moving camera crops the very top of the central tower in this film frame.",
+    "source_dimensions": [
+      3840,
+      1600
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/heritage-2.webp",
+        "width": 3840,
+        "height": 1600,
+        "bytes": 145674
+      },
+      {
+        "path": "/images/snapshots-20260921/heritage-2-thumb.webp",
+        "width": 640,
+        "height": 267,
+        "bytes": 10784
+      }
+    ],
+    "id": "heritage-2",
+    "project": "heritage"
+  },
+  {
+    "name": "hogwarts-great-hall",
+    "universe": "Harry Potter",
+    "source_page": "https://movie-screencaps.com/harry-potter-and-the-philosophers-stone-2001-4k/page/40",
+    "image_url": "https://i0.wp.com/imgs.screencaps.us/200/4k-hp1/full/4k-hp1-movie-screencaps.com-7110.jpg?ssl=1",
+    "description": "Original-film wide Great Hall entrance: four long student tables, floating candles, gargoyle braziers and staff table. McGonagall leads the first-years through the center aisle.",
+    "source_dimensions": [
+      3840,
+      1600
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/heritage-3.webp",
+        "width": 3840,
+        "height": 1600,
+        "bytes": 454968
+      },
+      {
+        "path": "/images/snapshots-20260921/heritage-3-thumb.webp",
+        "width": 640,
+        "height": 267,
+        "bytes": 41018
+      }
+    ],
+    "id": "heritage-3",
+    "project": "heritage"
+  },
+  {
+    "name": "percy-lightning",
+    "universe": "Percy Jackson",
+    "source_page": "https://wallpapercat.com/percy-jackson-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/b/1/9/535704-3840x2160-desktop-4k-percy-jackson-wallpaper.jpg",
+    "description": "Ensemble film avec Logan Lerman, Alexandra Daddario et Brandon T. Jackson, vagues et Empire State Building, sans texte.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/percy-1.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1311446
+      },
+      {
+        "path": "/images/snapshots-20260921/percy-1-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 77204
+      }
+    ],
+    "id": "percy-1",
+    "project": "percy"
+  },
+  {
+    "name": "percy-monsters",
+    "universe": "Percy Jackson",
+    "source_page": "https://wallpapercat.com/percy-jackson-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/f/3/c/535702-3840x2160-desktop-4k-percy-jackson-background-photo.jpg",
+    "description": "Composition rouge de promotion avec Logan Lerman, Alexandra Daddario et Brandon T. Jackson, sans titre.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/percy-2.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1587044
+      },
+      {
+        "path": "/images/snapshots-20260921/percy-2-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 71712
+      }
+    ],
+    "id": "percy-2",
+    "project": "percy"
+  },
+  {
+    "name": "percy-storm",
+    "universe": "Percy Jackson",
+    "source_page": "https://wallpapercat.com/logan-lerman-percy-jackson-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/f/7/7/920857-3840x2160-desktop-4k-logan-lerman-percy-jackson-background-photo.jpg",
+    "description": "Percy / Logan Lerman vu de dos, tenant un éclair au-dessus de sa tête, ciel bleu orageux. Composition de promotion du film de 2010, sans texte.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Film\\percy-jackson-2010-eclair-solo-3840x2160.jpg",
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/percy-3.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 893298
+      },
+      {
+        "path": "/images/snapshots-20260921/percy-3-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 30432
+      }
+    ],
+    "reuse": "Not established for commercial use. Copyright holders retain rights.",
+    "id": "percy-3",
+    "project": "percy"
+  },
+  {
+    "name": "avengers-newyork",
+    "universe": "Avengers",
+    "source_page": "https://www.themoviedb.org/movie/24428-the-avengers/images/backdrops",
+    "image_url": "https://image.tmdb.org/t/p/original/9BBTo63ANSmhC4e6r62OJFuK2GL.jpg",
+    "description": "Recognizable photographic MCU 2012 promotional ensemble: Iron Man, Thor, Captain America, Hulk, Black Widow, Hawkeye and Nick Fury in New York. Rich cyan and orange palette.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/avengers-1.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1914462
+      },
+      {
+        "path": "/images/snapshots-20260921/avengers-1-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 63998
+      }
+    ],
+    "id": "avengers-1",
+    "project": "avengers"
+  },
+  {
+    "name": "avengers-ultron",
+    "universe": "Avengers",
+    "source_page": "https://www.themoviedb.org/movie/99861-avengers-age-of-ultron/images/backdrops",
+    "image_url": "https://image.tmdb.org/t/p/original/kIBK5SKwgqIIuRKhhWrJn3XkbPq.jpg",
+    "description": "Existing photographic MCU Age of Ultron promotional ensemble amid city debris, with familiar Iron Man, Captain America, Thor, Hulk, Black Widow, Hawkeye and supporting characters. Lower-right corner has room beyond Thor and the shield for a small cube.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/avengers-2.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 2117766
+      },
+      {
+        "path": "/images/snapshots-20260921/avengers-2-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 45406
+      }
+    ],
+    "id": "avengers-2",
+    "project": "avengers"
+  },
+  {
+    "name": "avengers-endgame",
+    "universe": "Avengers",
+    "source_page": "https://www.themoviedb.org/movie/299534-avengers-endgame/images/backdrops",
+    "image_url": "https://image.tmdb.org/t/p/original/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
+    "description": "Ensemble Endgame sur ciel cosmique violet et bleu : Iron Man, Captain America, Thor, Black Widow, Captain Marvel et autres héros.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Heroes\\avengers-endgame-ensemble-3840.jpg",
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/avengers-3.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 2164184
+      },
+      {
+        "path": "/images/snapshots-20260921/avengers-3-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 58846
+      }
+    ],
+    "reuse": {
+      "copyright_holder": "Marvel / Disney and respective rights holders",
+      "license": "No open commercial-reuse license identified on the source image page.",
+      "status": "Copyrighted promotional / entertainment image. Download availability does not establish permission for commercial publication.",
+      "attribution_source": "The Movie Database (TMDB)",
+      "license_url": null
+    },
+    "id": "avengers-3",
+    "project": "avengers"
+  },
+  {
+    "name": "teen-wolf-movie",
+    "universe": "Teen Wolf",
+    "source_page": "https://wall.alphacoders.com/big.php?i=1321334",
+    "image_url": "https://images8.alphacoders.com/132/1321334.jpeg",
+    "description": "Montage photographique de personnages du film, Scott, Allison et Derek, fumee bleue, sans texte.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/teen-1.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 535642
+      },
+      {
+        "path": "/images/snapshots-20260921/teen-1-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 23448
+      }
+    ],
+    "id": "teen-1",
+    "project": "teen"
+  },
+  {
+    "name": "teen-wolf-pack",
+    "universe": "Teen Wolf",
+    "source_page": "https://www.presseportal.ch/de/pm/100001974/100795748",
+    "image_url": "https://www.presseportal.ch/de/download/image/582d81c3480000d51d69934e-teenwolf-gruppe.jpg",
+    "description": "Sept personnages de la saison 4 avancent dans la brume, Scott au centre, avec Stiles, Lydia, Malia, Kira, Derek et Liam. Photo officielle de promotion sans texte.",
+    "source_dimensions": [
+      2953,
+      1891
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Film\\teen-wolf-saison4-cast-brume-2953x1891.jpg",
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/teen-2.webp",
+        "width": 2953,
+        "height": 1891,
+        "bytes": 475400
+      },
+      {
+        "path": "/images/snapshots-20260921/teen-2-thumb.webp",
+        "width": 640,
+        "height": 410,
+        "bytes": 21784
+      }
+    ],
+    "attribution": "obs/RTL II",
+    "reuse": "Editorial reuse with attribution obs/RTL II, per source image caption. Commercial marketing reuse not established.",
+    "id": "teen-2",
+    "project": "teen"
+  },
+  {
+    "name": "teen-wolf-transformation",
+    "universe": "Teen Wolf",
+    "source_page": "https://getwallpapers.com/collection/teen-wolf-wallpapers#1015435",
+    "image_url": "https://getwallpapers.com/wallpaper/full/c/5/2/1015435-download-teen-wolf-wallpapers-3600x1421-high-resolution.jpg",
+    "description": "Composition photographique panoramique sur fond bleu nuit : Scott McCall / Tyler Posey aux yeux dorés, plusieurs étapes de transformation et figures de loup. Sans texte.",
+    "source_dimensions": [
+      3600,
+      1421
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Film\\teen-wolf-scott-transformation-panorama-3600x1421.jpg",
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/teen-3.webp",
+        "width": 3600,
+        "height": 1421,
+        "bytes": 589746
+      },
+      {
+        "path": "/images/snapshots-20260921/teen-3-thumb.webp",
+        "width": 640,
+        "height": 253,
+        "bytes": 22932
+      }
+    ],
+    "reuse": "Not established for commercial use. Copyright holders retain rights.",
+    "id": "teen-3",
+    "project": "teen"
+  },
+  {
+    "id": "onepiece-1",
+    "project": "onepiece",
+    "description": "Luffy, Straw hat in hand, Battle-worn sepia light beams, 4K Desktop wallpaper",
+    "source_page": "https://wallpapercat.com/one-piece-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/4/1/0/33422-3840x2160-desktop-4k-one-piece-background.jpg",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/onepiece-1.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1651602
+      },
+      {
+        "path": "/images/snapshots-20260921/onepiece-1-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 30228
+      }
+    ]
+  },
+  {
+    "id": "onepiece-2",
+    "project": "onepiece",
+    "description": "Luffy, Zoro, Nami, Usopp, Franky, Robin, Brook, Chopper, Sanji, Straw Hat Pirates, Post-timeskip lineup, Open sea backdrop, 4K Desktop wallpaper",
+    "source_page": "https://wallpapercat.com/one-piece-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/3/3/6/126937-3840x2160-desktop-4k-one-piece-background-image.jpg",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/onepiece-2.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1004260
+      },
+      {
+        "path": "/images/snapshots-20260921/onepiece-2-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 72990
+      }
+    ]
+  },
+  {
+    "id": "nations-1",
+    "project": "nations",
+    "description": "Aang, Avatar: The Last Airbender Wallpaper, 4K Desktop",
+    "source_page": "https://wallpapercat.com/avatar-the-last-airbender-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/3/4/c/115172-3840x2160-desktop-4k-avatar-the-last-airbender-wallpaper-image.jpg",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/nations-1.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 396328
+      },
+      {
+        "path": "/images/snapshots-20260921/nations-1-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 26880
+      }
+    ]
+  },
+  {
+    "id": "narnia-1",
+    "project": "narnia",
+    "description": "Aslan the lion, Susan Pevensie with bow, Cair Paravel castle, 4K Desktop wallpaper",
+    "source_page": "https://wallpapercat.com/the-chronicles-of-narnia-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/a/a/4/364514-3840x2160-desktop-4k-the-chronicles-of-narnia-wallpaper-photo.jpg",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/narnia-1.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1014324
+      },
+      {
+        "path": "/images/snapshots-20260921/narnia-1-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 43002
+      }
+    ]
+  },
+  {
+    "id": "walkingdead-1",
+    "project": "walkingdead",
+    "description": "Rick Grimes",
+    "source_page": "https://4kwallpapers.com/movies/rick-grimes-andrew-15655.html",
+    "image_url": "https://4kwallpapers.com/images/wallpapers/rick-grimes-andrew-3840x2160-15655.jpg",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/walkingdead-1.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 2249000
+      },
+      {
+        "path": "/images/snapshots-20260921/walkingdead-1-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 23824
+      }
+    ]
+  },
+  {
+    "id": "walkingdead-3",
+    "project": "walkingdead",
+    "description": "The Walking Dead",
+    "source_page": "https://4kwallpapers.com/movies/the-walking-dead-15671.html",
+    "image_url": "https://4kwallpapers.com/images/wallpapers/the-walking-dead-3840x2160-15671.jpg",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/walkingdead-3.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 676328
+      },
+      {
+        "path": "/images/snapshots-20260921/walkingdead-3-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 24712
+      }
+    ]
+  },
+  {
+    "id": "licaris-1",
+    "source_page": "https://wallpapercat.com/lucario-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/0/9/7/928545-3840x2160-desktop-4k-lucario-background-photo.jpg",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "project": "licaris",
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/licaris-1.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1201094
+      },
+      {
+        "path": "/images/snapshots-20260921/licaris-1-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 57598
+      }
+    ]
+  },
+  {
+    "id": "licaris-2",
+    "source_page": "https://wallpapercat.com/lugia-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/3/b/a/930220-3840x2160-desktop-4k-lugia-wallpaper-image.jpg",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "project": "licaris",
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/licaris-2.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 576738
+      },
+      {
+        "path": "/images/snapshots-20260921/licaris-2-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 35378
+      }
+    ]
+  },
+  {
+    "id": "licaris-3",
+    "source_page": "https://wallpapercat.com/lucario-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/9/f/8/928548-3840x2160-desktop-4k-lucario-background.jpg",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "project": "licaris",
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/licaris-3.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 431492
+      },
+      {
+        "path": "/images/snapshots-20260921/licaris-3-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 20224
+      }
+    ]
+  },
+  {
+    "id": "onepiece-3",
+    "source_page": "https://wallpapercat.com/one-piece-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/a/d/4/5828319.jpg",
+    "source_dimensions": [
+      7680,
+      4320
+    ],
+    "project": "onepiece",
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/onepiece-3.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 414260
+      },
+      {
+        "path": "/images/snapshots-20260921/onepiece-3-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 28220
+      }
+    ]
+  },
+  {
+    "id": "nations-2",
+    "source_page": "https://4kwallpapers.com/movies/avatar-aang-avatar-23273.html",
+    "image_url": "https://4kwallpapers.com/images/wallpapers/avatar-aang-avatar-3840x2160-23273.jpg",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "project": "nations",
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/nations-2.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 364626
+      },
+      {
+        "path": "/images/snapshots-20260921/nations-2-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 19412
+      }
+    ]
+  },
+  {
+    "id": "nations-3",
+    "source_page": "https://4kwallpapers.com/anime/avatar-aang-the-27040.html",
+    "image_url": "https://4kwallpapers.com/images/wallpapers/avatar-aang-the-3840x2160-27040.jpg",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "project": "nations",
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/nations-3.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 997780
+      },
+      {
+        "path": "/images/snapshots-20260921/nations-3-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 24416
+      }
+    ]
+  },
+  {
+    "id": "walkingdead-2",
+    "source_page": "https://4kwallpapers.com/movies/norman-reedus-daryl-15672.html",
+    "image_url": "https://4kwallpapers.com/images/wallpapers/norman-reedus-daryl-3840x2160-15672.jpg",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "project": "walkingdead",
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/walkingdead-2.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1996028
+      },
+      {
+        "path": "/images/snapshots-20260921/walkingdead-2-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 40924
+      }
+    ]
+  },
+  {
+    "id": "narnia-2",
+    "source_page": "https://wallpapercat.com/the-chronicles-of-narnia-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/6/7/b/364618-2160x3840-mobile-4k-the-chronicles-of-narnia-background.jpg",
+    "source_dimensions": [
+      2160,
+      3840
+    ],
+    "project": "narnia",
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/narnia-2.webp",
+        "width": 2160,
+        "height": 3840,
+        "bytes": 1483250
+      },
+      {
+        "path": "/images/snapshots-20260921/narnia-2-thumb.webp",
+        "width": 360,
+        "height": 640,
+        "bytes": 40164
+      }
+    ]
+  },
+  {
+    "id": "narnia-3",
+    "source_page": "https://wallpapercat.com/the-chronicles-of-narnia-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/2/d/d/364533-2560x1440-desktop-hd-the-chronicles-of-narnia-background.jpg",
+    "source_dimensions": [
+      2560,
+      1440
+    ],
+    "project": "narnia",
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/snapshots-20260921/narnia-3.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 1081142
+      },
+      {
+        "path": "/images/snapshots-20260921/narnia-3-thumb.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 78800
+      }
+    ]
+  }
+]

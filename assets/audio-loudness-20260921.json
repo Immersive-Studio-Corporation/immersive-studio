@@ -1,0 +1,287 @@
+{
+  "target_lufs": -20,
+  "true_peak_limit_dbtp": -2,
+  "default_volume": 0.15,
+  "tracks": {
+    "intro": {
+      "source": "public\\audio\\update-20260920\\intro.mp3",
+      "output": "public\\audio\\balanced-20260921\\intro.mp3",
+      "before": {
+        "input_i": "-15.67",
+        "input_tp": "-0.42",
+        "input_lra": "14.70",
+        "input_thresh": "-28.26",
+        "output_i": "-20.72",
+        "output_tp": "-6.32",
+        "output_lra": "10.40",
+        "output_thresh": "-32.38",
+        "normalization_type": "dynamic",
+        "target_offset": "0.72"
+      },
+      "after": {
+        "input_i": "-20.27",
+        "input_tp": "-5.02",
+        "input_lra": "14.70",
+        "input_thresh": "-32.76",
+        "output_i": "-20.71",
+        "output_tp": "-6.32",
+        "output_lra": "10.40",
+        "output_thresh": "-32.37",
+        "normalization_type": "dynamic",
+        "target_offset": "0.71"
+      }
+    },
+    "heritage": {
+      "source": "public\\audio\\licensed\\heritage.mp3",
+      "output": "public\\audio\\balanced-20260921\\heritage.mp3",
+      "before": {
+        "input_i": "-20.67",
+        "input_tp": "-2.33",
+        "input_lra": "12.90",
+        "input_thresh": "-31.60",
+        "output_i": "-18.04",
+        "output_tp": "-2.00",
+        "output_lra": "12.20",
+        "output_thresh": "-28.41",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.96"
+      },
+      "after": {
+        "input_i": "-20.00",
+        "input_tp": "-2.26",
+        "input_lra": "12.40",
+        "input_thresh": "-30.95",
+        "output_i": "-18.67",
+        "output_tp": "-2.00",
+        "output_lra": "14.10",
+        "output_thresh": "-29.11",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.33"
+      }
+    },
+    "licaris": {
+      "source": "public\\audio\\update-20260920\\licaris.mp3",
+      "output": "public\\audio\\balanced-20260921\\licaris.mp3",
+      "before": {
+        "input_i": "-12.04",
+        "input_tp": "2.00",
+        "input_lra": "5.90",
+        "input_thresh": "-22.67",
+        "output_i": "-20.30",
+        "output_tp": "-5.96",
+        "output_lra": "6.20",
+        "output_thresh": "-30.83",
+        "normalization_type": "dynamic",
+        "target_offset": "0.30"
+      },
+      "after": {
+        "input_i": "-20.27",
+        "input_tp": "-6.49",
+        "input_lra": "5.90",
+        "input_thresh": "-30.79",
+        "output_i": "-20.29",
+        "output_tp": "-6.23",
+        "output_lra": "6.20",
+        "output_thresh": "-30.82",
+        "normalization_type": "dynamic",
+        "target_offset": "0.29"
+      }
+    },
+    "onepiece": {
+      "source": "public\\audio\\update-20260920\\onepiece.mp3",
+      "output": "public\\audio\\balanced-20260921\\onepiece.mp3",
+      "before": {
+        "input_i": "-9.56",
+        "input_tp": "0.65",
+        "input_lra": "9.80",
+        "input_thresh": "-19.86",
+        "output_i": "-18.44",
+        "output_tp": "-5.72",
+        "output_lra": "8.90",
+        "output_thresh": "-28.73",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.56"
+      },
+      "after": {
+        "input_i": "-20.25",
+        "input_tp": "-9.88",
+        "input_lra": "9.80",
+        "input_thresh": "-30.55",
+        "output_i": "-18.43",
+        "output_tp": "-5.70",
+        "output_lra": "8.90",
+        "output_thresh": "-28.73",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.57"
+      }
+    },
+    "teen": {
+      "source": "public\\audio\\licensed\\teen.mp3",
+      "output": "public\\audio\\balanced-20260921\\teen.mp3",
+      "before": {
+        "input_i": "-20.25",
+        "input_tp": "-9.38",
+        "input_lra": "8.40",
+        "input_thresh": "-30.74",
+        "output_i": "-20.19",
+        "output_tp": "-9.14",
+        "output_lra": "8.40",
+        "output_thresh": "-30.68",
+        "normalization_type": "dynamic",
+        "target_offset": "0.19"
+      },
+      "after": {
+        "input_i": "-20.26",
+        "input_tp": "-9.35",
+        "input_lra": "8.40",
+        "input_thresh": "-30.75",
+        "output_i": "-20.19",
+        "output_tp": "-9.09",
+        "output_lra": "8.40",
+        "output_thresh": "-30.69",
+        "normalization_type": "dynamic",
+        "target_offset": "0.19"
+      }
+    },
+    "nations": {
+      "source": "public\\audio\\licensed\\nations.mp3",
+      "output": "public\\audio\\balanced-20260921\\nations.mp3",
+      "before": {
+        "input_i": "-20.26",
+        "input_tp": "-9.93",
+        "input_lra": "9.10",
+        "input_thresh": "-30.50",
+        "output_i": "-19.86",
+        "output_tp": "-5.56",
+        "output_lra": "9.00",
+        "output_thresh": "-30.09",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.14"
+      },
+      "after": {
+        "input_i": "-20.26",
+        "input_tp": "-9.93",
+        "input_lra": "9.10",
+        "input_thresh": "-30.50",
+        "output_i": "-19.86",
+        "output_tp": "-5.55",
+        "output_lra": "9.00",
+        "output_thresh": "-30.09",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.14"
+      }
+    },
+    "percy": {
+      "source": "public\\audio\\licensed\\percy.mp3",
+      "output": "public\\audio\\balanced-20260921\\percy.mp3",
+      "before": {
+        "input_i": "-19.85",
+        "input_tp": "-3.66",
+        "input_lra": "18.10",
+        "input_thresh": "-31.13",
+        "output_i": "-18.56",
+        "output_tp": "-2.00",
+        "output_lra": "10.80",
+        "output_thresh": "-28.88",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.44"
+      },
+      "after": {
+        "input_i": "-20.25",
+        "input_tp": "-4.08",
+        "input_lra": "18.10",
+        "input_thresh": "-31.54",
+        "output_i": "-18.56",
+        "output_tp": "-2.00",
+        "output_lra": "10.80",
+        "output_thresh": "-28.88",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.44"
+      }
+    },
+    "avengers": {
+      "source": "public\\audio\\update-20260920\\avengers.mp3",
+      "output": "public\\audio\\balanced-20260921\\avengers.mp3",
+      "before": {
+        "input_i": "-9.35",
+        "input_tp": "1.29",
+        "input_lra": "17.90",
+        "input_thresh": "-20.47",
+        "output_i": "-19.16",
+        "output_tp": "-3.01",
+        "output_lra": "14.70",
+        "output_thresh": "-30.07",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.84"
+      },
+      "after": {
+        "input_i": "-20.25",
+        "input_tp": "-9.34",
+        "input_lra": "17.90",
+        "input_thresh": "-31.35",
+        "output_i": "-19.16",
+        "output_tp": "-2.97",
+        "output_lra": "14.70",
+        "output_thresh": "-30.08",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.84"
+      }
+    },
+    "walkingdead": {
+      "source": "public\\audio\\update-20260920\\walkingdead.mp3",
+      "output": "public\\audio\\balanced-20260921\\walkingdead.mp3",
+      "before": {
+        "input_i": "-17.14",
+        "input_tp": "-0.41",
+        "input_lra": "13.00",
+        "input_thresh": "-27.65",
+        "output_i": "-18.68",
+        "output_tp": "-2.00",
+        "output_lra": "11.20",
+        "output_thresh": "-29.06",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.32"
+      },
+      "after": {
+        "input_i": "-20.26",
+        "input_tp": "-3.48",
+        "input_lra": "13.00",
+        "input_thresh": "-30.76",
+        "output_i": "-18.68",
+        "output_tp": "-2.00",
+        "output_lra": "11.20",
+        "output_thresh": "-29.06",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.32"
+      }
+    },
+    "narnia": {
+      "source": "public\\audio\\update-20260920\\narnia.mp3",
+      "output": "public\\audio\\balanced-20260921\\narnia.mp3",
+      "before": {
+        "input_i": "-11.99",
+        "input_tp": "0.34",
+        "input_lra": "12.10",
+        "input_thresh": "-22.67",
+        "output_i": "-18.04",
+        "output_tp": "-2.00",
+        "output_lra": "9.60",
+        "output_thresh": "-28.42",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.96"
+      },
+      "after": {
+        "input_i": "-20.26",
+        "input_tp": "-7.87",
+        "input_lra": "12.10",
+        "input_thresh": "-30.93",
+        "output_i": "-18.04",
+        "output_tp": "-2.00",
+        "output_lra": "9.60",
+        "output_thresh": "-28.41",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.96"
+      }
+    }
+  }
+}

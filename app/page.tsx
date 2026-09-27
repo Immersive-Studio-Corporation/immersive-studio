@@ -2,7 +2,6 @@
 
 import {
   ArrowUpRight,
-  ArrowDown,
   Menu,
   X,
   Globe2,
@@ -17,7 +16,13 @@ import {
   Megaphone,
   Headphones,
 } from 'lucide-react';
-import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from 'react';
 import type { CSSProperties } from 'react';
 import Image from 'next/image';
 import {
@@ -33,8 +38,12 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { StudioMark } from './studio-mark';
-import { CinemaField } from './cinema-field';
-import { ProjectBanner } from './project-banner';
+import { ProjectJourney } from './project-journey';
+import { JourneySound } from './journey-sound';
+import type { JourneyProject } from './project-journey';
+import { sceneryFor, responsiveScenery } from './journey-art';
+import { projectCatalog } from './journey-catalog';
+import { emptyAudioFrame } from './journey-audio-frame';
 import { dictionaries, isLocale, languages } from './messages';
 import type { Locale } from './messages';
 import { socialLinks } from './social-links';
@@ -42,50 +51,6 @@ import { SocialBrandIcon, SocialMenu } from './social-menu';
 
 const DISCORD = 'https://discord.gg/YkPYhhtyPZ';
 const HERITAGE = 'https://heritagedepoudlard.fr/';
-const worlds = [
-  {
-    id: 'percy',
-    backdrop: '/images/percy-world.webp',
-    name: 'Percy Jackson RP',
-    image: '/images/percy-emblem.webp',
-    color: '#5AACE0',
-  },
-  {
-    id: 'teen',
-    backdrop: '/images/teen-world.webp',
-    name: 'Teen Wolf RP',
-    image: '/images/teen-wordmark.webp',
-    color: '#B0A1DD',
-  },
-  {
-    id: 'nations',
-    backdrop: '/images/nations-world.webp',
-    name: 'Avatar — Les Quatre Nations',
-    image: '/images/nations-emblem.webp',
-    color: '#E2A359',
-  },
-  {
-    id: 'avengers',
-    backdrop: '/images/avengers-world.webp',
-    name: 'Avengers RP',
-    image: '/images/avengers-wordmark.webp',
-    color: '#98BC72',
-  },
-  {
-    id: 'last',
-    backdrop: '/images/survival-world.webp',
-    name: 'The Last of Us RP',
-    image: '/images/last-of-us.webp',
-    color: '#B5C289',
-  },
-] as const;
-const newgen = {
-  id: 'newgen',
-  name: 'Newgen',
-  image: '/images/newgen-wordmark.webp',
-  backdrop: '/images/newgen-world.webp',
-  color: '#b4ecfa',
-} as const;
 
 function subscribeLocale(onChange: () => void) {
   window.addEventListener('immersive-language', onChange);
@@ -144,10 +109,36 @@ export default function Home() {
   const [socialOpen, setSocialOpen] = useState(false);
   const [paused, setPaused] = useState(false);
   const [activeProject, setActiveProject] = useState('');
+  const audioFrame = useRef(emptyAudioFrame());
   const [introKey, setIntroKey] = useState(0);
-  const scene = useRef<HTMLElement>(null);
-  const introProgress = useRef(0);
   const menuButton = useRef<HTMLButtonElement>(null);
+
+  const journeyProjects = useMemo<JourneyProject[]>(
+    () =>
+      projectCatalog.map((project) => {
+        if (project.id === 'heritage')
+          return {
+            ...project,
+            genre: t.heritageGenre,
+            status: t.development,
+            line: t.heritageIntro,
+            text: t.heritageText,
+            cta: t.heritageCta,
+            href: HERITAGE,
+            note: t.heritageNote,
+          };
+        return {
+          ...project,
+          genre: t[(project.id + 'Genre') as keyof typeof t],
+          status: t.preparation,
+          line: t[(project.id + 'Line') as keyof typeof t],
+          text: t[(project.id + 'Text') as keyof typeof t],
+          cta: t.followProject,
+          href: DISCORD,
+        };
+      }),
+    [t],
+  );
 
   function changeLanguage(value: string | null) {
     if (!isLocale(value)) return;
@@ -208,152 +199,6 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
   useEffect(() => {
-    const element = scene.current;
-    const sticky = element?.querySelector<HTMLElement>('.intro-sticky');
-    if (!element || !sticky) return;
-    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-    const compact = matchMedia('(max-height: 580px)');
-    let frame = 0,
-      last = 0,
-      startY = 0,
-      extent = 1;
-    let current = introProgress.current,
-      painted = -1,
-      visible = true;
-    const targetProgress = () =>
-      reduced.matches || compact.matches
-        ? 0
-        : Math.max(0, Math.min(1, (scrollY - startY) / extent));
-    const paint = (p: number) => {
-      if (p === painted) return;
-      painted = p;
-      introProgress.current = p;
-      const ramp = (start: number, end: number) => {
-        const x = Math.max(0, Math.min(1, (p - start) / (end - start)));
-        return x * x * (3 - 2 * x);
-      };
-      const center = ramp(0.13, 0.56);
-      const flight = ramp(0.2, 0.82);
-      const bloom = Math.sin(flight * Math.PI);
-      element.style.setProperty('--progress', String(p));
-      element.style.setProperty('--center', String(center));
-      element.style.setProperty('--bloom', String(bloom));
-      element.style.setProperty('--finale', String(ramp(0.82, 0.96)));
-      element.style.setProperty(
-        '--cube-x',
-        Math.sin(flight * Math.PI * 4) * 150 * bloom + 'px',
-      );
-      element.style.setProperty('--cube-y', -bloom * 75 + 'px');
-      element.style.setProperty('--cube-r', flight * 720 + 'deg');
-      element.style.setProperty('--split', bloom * 115 + 'px');
-      element.style.setProperty(
-        '--letter-turn',
-        Math.sin(flight * Math.PI * 2) * 8 + 'deg',
-      );
-      const phase = p > 0.22 ? 'logo' : 'intro';
-      const chapter = p < 0.29 ? '1' : p < 0.74 ? '2' : '3';
-      if (element.dataset.phase !== phase) element.dataset.phase = phase;
-      if (element.dataset.chapter !== chapter)
-        element.dataset.chapter = chapter;
-    };
-    const tick = (now: number) => {
-      frame = 0;
-      if (paused || document.hidden) {
-        last = 0;
-        return;
-      }
-      const target = targetProgress();
-      const dt = Math.min((now - (last || now - 16.67)) / 1000, 0.05);
-      last = now;
-      // Time-based easing fills the gaps between wheel events at any refresh rate.
-      current += (target - current) * (1 - Math.exp(-dt / 0.065));
-      if (
-        !visible ||
-        reduced.matches ||
-        compact.matches ||
-        Math.abs(target - current) < 0.00005
-      )
-        current = target;
-      paint(current);
-      if (current !== target) frame = requestAnimationFrame(tick);
-      else last = 0;
-    };
-    const schedule = () => {
-      if (!frame && !paused && !document.hidden)
-        frame = requestAnimationFrame(tick);
-    };
-    const measure = () => {
-      const rect = element.getBoundingClientRect();
-      startY = rect.top + scrollY;
-      extent = Math.max(1, element.offsetHeight - sticky.offsetHeight);
-      element.style.setProperty('--stage-width', sticky.offsetWidth + 'px');
-      element.style.setProperty('--stage-height', sticky.offsetHeight + 'px');
-      schedule();
-    };
-    const visibility = () => {
-      cancelAnimationFrame(frame);
-      frame = 0;
-      last = 0;
-      if (!document.hidden) schedule();
-    };
-    const preference = () => {
-      if (reduced.matches || compact.matches) {
-        current = 0;
-        paint(0);
-      }
-      measure();
-    };
-    const observer = new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
-      if (!visible) {
-        cancelAnimationFrame(frame);
-        frame = 0;
-        last = 0;
-        if (!paused) {
-          current = targetProgress();
-          paint(current);
-        }
-      } else schedule();
-    });
-    const sizes = new ResizeObserver(measure);
-    sizes.observe(element);
-    sizes.observe(sticky);
-    observer.observe(element);
-    measure();
-    if (reduced.matches || compact.matches) current = 0;
-    paint(current);
-    window.addEventListener('scroll', schedule, { passive: true });
-    document.addEventListener('visibilitychange', visibility);
-    reduced.addEventListener('change', preference);
-    compact.addEventListener('change', preference);
-    return () => {
-      cancelAnimationFrame(frame);
-      sizes.disconnect();
-      observer.disconnect();
-      window.removeEventListener('scroll', schedule);
-      document.removeEventListener('visibilitychange', visibility);
-      reduced.removeEventListener('change', preference);
-      compact.removeEventListener('change', preference);
-    };
-  }, [paused, introKey]);
-  useEffect(() => {
-    const visible = new Map<string, number>();
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) =>
-          visible.set(entry.target.id, entry.intersectionRatio),
-        );
-        const closest = [...visible.entries()].sort((a, b) => b[1] - a[1])[0];
-        setActiveProject(closest && closest[1] > 0 ? closest[0] : '');
-      },
-      { rootMargin: '-145px 0px -20% 0px', threshold: [0, 0.15, 0.4, 0.65] },
-    );
-    document
-      .querySelectorAll('.project-panorama')
-      .forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-  useEffect(() => {
     if (menu) document.querySelector<HTMLAnchorElement>('#main-nav a')?.focus();
   }, [menu]);
   useEffect(() => {
@@ -373,7 +218,6 @@ export default function Home() {
     };
   }, []);
   function replay() {
-    introProgress.current = 0;
     setPaused(false);
     setIntroKey((key) => key + 1);
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -391,17 +235,7 @@ export default function Home() {
           className={menu ? 'main-nav is-open' : 'main-nav'}
           aria-label={t.footerStudio}
         >
-          {[
-            {
-              id: 'heritage',
-              name: 'L’Héritage de Poudlard',
-              image: '/images/heritage-logo.webp',
-              backdrop: '/images/heritage-luminous.webp',
-              color: '#b887ef',
-            },
-            ...worlds,
-            newgen,
-          ].map((world) => (
+          {projectCatalog.map((world) => (
             <a
               key={world.id}
               href={'#' + world.id}
@@ -423,13 +257,6 @@ export default function Home() {
                   height={100}
                 />
               </span>
-              <span dir="auto">
-                {world.id === 'heritage'
-                  ? world.name
-                  : world.id === 'nations'
-                    ? 'Avatar'
-                    : world.name.replace(' RP', '')}
-              </span>
             </a>
           ))}
           <a
@@ -442,6 +269,14 @@ export default function Home() {
           </a>
         </nav>
         <div className="header-actions">
+          <JourneySound
+            frame={audioFrame}
+            projectName={
+              journeyProjects.find((project) => project.id === activeProject)
+                ?.name || ''
+            }
+            t={t}
+          />
           <button
             className="motion-toggle"
             onClick={() => setPaused(!paused)}
@@ -513,140 +348,14 @@ export default function Home() {
         </div>
       </header>
       <main>
-        <section
-          ref={scene}
-          className="intro-scroll"
-          id="accueil"
-          aria-labelledby="hero-title"
-        >
-          <div className="intro-sticky">
-            <div className="intro-color" aria-hidden="true" />
-            <CinemaField paused={paused} progress={introProgress} />
-            <div className="intro-chapters" aria-hidden="true">
-              <span>{t.introChapter1}</span>
-              <span>{t.introChapter2}</span>
-              <span>{t.introChapter3}</span>
-            </div>
-            <div className="hero-copy">
-              <h1 id="hero-title" className="eyebrow">
-                Immersive Studio · {t.heroTag}
-              </h1>
-              <p className="hero-slogan">
-                {t.heroLine1}
-                <span>{t.heroLine2}</span>
-              </p>
-              <p className="hero-text">{t.heroText}</p>
-              <a className="button button-dark" href="#heritage">
-                {t.explore}
-                <ArrowDown size={22} />
-              </a>
-            </div>
-            <div className="intro-logo" aria-hidden="true" key={introKey}>
-              <StudioMark className="logo-assembly" />
-              <div className="logo-shadow" />
-            </div>
-            <div className="intro-finale" aria-hidden="true">
-              <span>IMMERSIVE STUDIO</span>
-              <p>
-                {t.introLine1}
-                <br />
-                <strong>{t.introLine2}</strong>
-              </p>
-            </div>
-            <div className="intro-bottom">
-              <div className="intro-controls">
-                <span className="hero-side">{t.heroSide}</span>
-              </div>
-              <a href="#heritage" className="scroll-cue">
-                <ArrowDown size={22} />
-                <span>{t.scroll}</span>
-              </a>
-              <a className="skip-animation" href="#heritage">
-                {t.skipAnimation}
-                <ArrowUpRight size={18} />
-              </a>
-            </div>
-          </div>
-        </section>
-        <section className="heritage-section" aria-labelledby="heritage-title">
-          <div className="section-wrap heritage-heading reveal">
-            <p className="eyebrow">{t.heritageLabel}</p>
-            <h2>{t.heritageIntro}</h2>
-          </div>
-          <ProjectBanner
-            id="heritage"
-            name="L’Héritage de Poudlard"
-            title={
-              <>
-                L’Héritage
-                <br />
-                de Poudlard
-              </>
-            }
-            image="/images/heritage-logo.webp"
-            backdrop="/images/heritage-luminous.webp"
-            color="#eac998"
-            genre={t.heritageGenre}
-            status={t.development}
-            text={t.heritageText}
-            cta={t.heritageCta}
-            href={HERITAGE}
-            note={t.heritageNote}
-            illustration={t.visualNote}
-            paused={paused}
-          />
-        </section>
-        <section
-          className="worlds-section"
-          id="univers"
-          aria-labelledby="worlds-title"
-        >
-          <div className="section-heading section-wrap reveal">
-            <div>
-              <p className="eyebrow">{t.worldsLabel}</p>
-              <h2 id="worlds-title">
-                {t.worldsTitle1}
-                <br />
-                <em>{t.worldsTitle2}</em>
-              </h2>
-            </div>
-            <p>{t.worldsText}</p>
-          </div>
-          <div className="worlds-panoramas">
-            {worlds.map((world) => (
-              <ProjectBanner
-                key={world.id}
-                {...world}
-                genre={t[(world.id + 'Genre') as keyof typeof t]}
-                status={t.preparation}
-                line={t[(world.id + 'Line') as keyof typeof t]}
-                text={t[(world.id + 'Text') as keyof typeof t]}
-                cta={t.followProject}
-                href={DISCORD}
-                illustration={t.visualNote}
-                paused={paused}
-              />
-            ))}
-          </div>
-        </section>
-        <section className="newgen-section" aria-labelledby="newgen-heading">
-          <div className="section-wrap newgen-heading reveal">
-            <p className="eyebrow">{t.newgenLabel}</p>
-            <h2 id="newgen-heading">{t.newgenHeading}</h2>
-          </div>
-          <ProjectBanner
-            {...newgen}
-            genre={t.newgenGenre}
-            status={t.newgenStatus}
-            line={t.newgenLine}
-            text={t.newgenText}
-            cta={t.newgenCta}
-            href={DISCORD}
-            note={t.newgenNote}
-            illustration={t.visualNote}
-            paused={paused}
-          />
-        </section>
+        <ProjectJourney
+          audioFrame={audioFrame}
+          projects={journeyProjects}
+          t={t}
+          paused={paused}
+          replayKey={introKey}
+          onProjectChange={setActiveProject}
+        />
         <section
           className="studio-section section-wrap"
           id="studio"
@@ -663,30 +372,14 @@ export default function Home() {
               <p>{t.studioText}</p>
             </div>
             <div className="studio-mosaic reveal">
-              {[
-                {
-                  image: '/images/heritage-luminous.webp',
-                  name: 'L’Héritage de Poudlard',
-                  id: 'heritage',
-                },
-                {
-                  image: '/images/nations-world.webp',
-                  name: 'Avatar — Les Quatre Nations',
-                  id: 'nations',
-                },
-                {
-                  image: '/images/percy-world.webp',
-                  name: 'Percy Jackson RP',
-                  id: 'percy',
-                },
-              ].map((world) => (
+              {projectCatalog.slice(0, 3).map((world) => (
                 <a
                   key={world.id}
                   href={'#' + world.id}
                   className={'studio-scene studio-scene-' + world.id}
                 >
                   <Image
-                    src={world.image}
+                    {...responsiveScenery(world.backdrop)}
                     alt=""
                     width={1000}
                     height={700}
@@ -788,7 +481,7 @@ export default function Home() {
             <div className="discord-server-card">
               <div className="discord-card-cover">
                 <Image
-                  src="/images/nations-world.webp"
+                  {...responsiveScenery(sceneryFor('nations')[0])}
                   alt=""
                   width={1000}
                   height={650}
@@ -807,20 +500,18 @@ export default function Home() {
                 <h3>Immersive Studio</h3>
                 <p>{t.discordTagline}</p>
                 <div className="discord-world-icons" aria-hidden="true">
-                  {[
-                    '/images/heritage-logo.webp',
-                    ...worlds.map((world) => world.image),
-                    newgen.image,
-                  ].map((image) => (
-                    <Image
-                      key={image}
-                      src={image}
-                      alt=""
-                      width={80}
-                      height={80}
-                      loading="lazy"
-                    />
-                  ))}
+                  {projectCatalog
+                    .map((project) => project.image)
+                    .map((image) => (
+                      <Image
+                        key={image}
+                        src={image}
+                        alt=""
+                        width={80}
+                        height={80}
+                        loading="lazy"
+                      />
+                    ))}
                 </div>
                 <div className="discord-welcome">
                   <MessageCircle size={21} />
@@ -886,7 +577,7 @@ export default function Home() {
             <a href={HERITAGE} target="_blank" rel="noopener noreferrer">
               L’Héritage de Poudlard
             </a>
-            {[...worlds, newgen].map((world) => (
+            {projectCatalog.slice(1).map((world) => (
               <a key={world.id} href={'#' + world.id}>
                 {world.name}
               </a>

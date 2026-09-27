@@ -1,0 +1,110 @@
+{
+  "heritage": {
+    "source": "C:\\Users\\Derek\\Desktop\\HÉRITAGE DE POUDLARD\\boostercards\\art_sources\\heritage_logo_original.png",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "visible_bounds": [
+      237,
+      45,
+      1644,
+      975
+    ],
+    "output": "/images/logos-hd-20260921/heritage.svg"
+  },
+  "licaris": {
+    "source": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-14\\Licaris\\Originaux\\licaris-logo.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "visible_bounds": [
+      12,
+      0,
+      1241,
+      1254
+    ],
+    "output": "/images/logos-hd-20260921/licaris.svg"
+  },
+  "onepiece": {
+    "source": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\UPDATE 20-09-2026\\LOGO\\ONE PIECE.png",
+    "native_size": [
+      1720,
+      964
+    ],
+    "visible_bounds": [
+      167,
+      122,
+      1626,
+      528
+    ],
+    "output": "/images/logos-hd-20260921/onepiece.svg"
+  },
+  "teen": {
+    "source": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\site\\public\\images\\teen-wordmark.png",
+    "native_size": [
+      1000,
+      617
+    ],
+    "visible_bounds": [
+      22,
+      14,
+      978,
+      600
+    ],
+    "output": "/images/logos-hd-20260921/teen.svg"
+  },
+  "percy": {
+    "source": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\site\\public\\images\\percy-emblem.png",
+    "native_size": [
+      1200,
+      1195
+    ],
+    "visible_bounds": [
+      16,
+      14,
+      1182,
+      1180
+    ],
+    "output": "/images/logos-hd-20260921/percy.svg"
+  },
+  "avengers": {
+    "source": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\site\\public\\images\\avengers-wordmark.png",
+    "native_size": [
+      1200,
+      492
+    ],
+    "visible_bounds": [
+      12,
+      15,
+      1187,
+      471
+    ],
+    "output": "/images/logos-hd-20260921/avengers.svg"
+  },
+  "narnia": {
+    "source": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\site\\public\\images\\narnia-logo.png",
+    "native_size": [
+      2172,
+      724
+    ],
+    "visible_bounds": [
+      76,
+      8,
+      2102,
+      692
+    ],
+    "output": "/images/logos-hd-20260921/narnia.svg"
+  },
+  "nations": {
+    "source": "avatar-nations-lockup.svg",
+    "output": "/images/logos-hd-20260921/nations.svg",
+    "vector_lettering": true
+  },
+  "walkingdead": {
+    "source": "walkingdead-wordmark.svg",
+    "output": "/images/logos-hd-20260921/walkingdead.svg",
+    "vector_lettering": true
+  }
+}

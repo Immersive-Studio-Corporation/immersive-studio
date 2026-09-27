@@ -1,0 +1,789 @@
+[
+  {
+    "name": "percy-lightning",
+    "universe": "Percy Jackson",
+    "source_page": "https://wallpapercat.com/percy-jackson-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/b/1/9/535704-3840x2160-desktop-4k-percy-jackson-wallpaper.jpg",
+    "description": "Ensemble film avec Logan Lerman, Alexandra Daddario et Brandon T. Jackson, vagues et Empire State Building, sans texte.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/journey-4k/percy-lightning.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1277312
+      },
+      {
+        "path": "/images/journey-4k/percy-lightning-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 740924
+      },
+      {
+        "path": "/images/journey-4k/percy-lightning-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 391410
+      }
+    ]
+  },
+  {
+    "name": "percy-monsters",
+    "universe": "Percy Jackson",
+    "source_page": "https://wallpapercat.com/percy-jackson-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/f/3/c/535702-3840x2160-desktop-4k-percy-jackson-background-photo.jpg",
+    "description": "Composition rouge de promotion avec Logan Lerman, Alexandra Daddario et Brandon T. Jackson, sans titre.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/journey-4k/percy-monsters.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1559486
+      },
+      {
+        "path": "/images/journey-4k/percy-monsters-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 829802
+      },
+      {
+        "path": "/images/journey-4k/percy-monsters-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 394486
+      }
+    ]
+  },
+  {
+    "name": "teen-wolf-movie",
+    "universe": "Teen Wolf",
+    "source_page": "https://wall.alphacoders.com/big.php?i=1321334",
+    "image_url": "https://images8.alphacoders.com/132/1321334.jpeg",
+    "description": "Montage photographique de personnages du film, Scott, Allison et Derek, fumee bleue, sans texte.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/journey-4k/teen-wolf-movie.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 529936
+      },
+      {
+        "path": "/images/journey-4k/teen-wolf-movie-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 263938
+      },
+      {
+        "path": "/images/journey-4k/teen-wolf-movie-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 117558
+      }
+    ]
+  },
+  {
+    "name": "avatar-aang",
+    "universe": "Avatar The Last Airbender",
+    "source_page": "https://www.themoviedb.org/tv/246-avatar-the-last-airbender/images/backdrops",
+    "image_url": "https://image.tmdb.org/t/p/original/zKJgj5FiX2ZC74aE3oTJ7tlFHuZ.jpg",
+    "description": "Existing animation-style Aang promotional illustration, crouching with staff on mountain; visually recognizable canonical animated character. Open blue landscape to the left suitable for foreground text.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/journey-4k/avatar-aang.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 208048
+      },
+      {
+        "path": "/images/journey-4k/avatar-aang-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 105582
+      },
+      {
+        "path": "/images/journey-4k/avatar-aang-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 56318
+      }
+    ]
+  },
+  {
+    "name": "avengers-newyork",
+    "universe": "Avengers",
+    "source_page": "https://www.themoviedb.org/movie/24428-the-avengers/images/backdrops",
+    "image_url": "https://image.tmdb.org/t/p/original/9BBTo63ANSmhC4e6r62OJFuK2GL.jpg",
+    "description": "Recognizable photographic MCU 2012 promotional ensemble: Iron Man, Thor, Captain America, Hulk, Black Widow, Hawkeye and Nick Fury in New York. Rich cyan and orange palette.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/journey-4k/avengers-newyork.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1897636
+      },
+      {
+        "path": "/images/journey-4k/avengers-newyork-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 867672
+      },
+      {
+        "path": "/images/journey-4k/avengers-newyork-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 351380
+      }
+    ]
+  },
+  {
+    "name": "last-overgrown",
+    "universe": "The Last of Us",
+    "source_page": "https://store.steampowered.com/app/1888930/The_Last_of_Us_Part_I/",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1888930/ss_8cd55ab975b2e47f4d4d9a0da4ae6948040ef807.jpg?t=1750959031",
+    "description": "Ellie overlooking the overgrown city and giraffes; original publisher screenshot. Excellent expansive landscape.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/journey-4k/last-overgrown.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 2061384
+      },
+      {
+        "path": "/images/journey-4k/last-overgrown-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 962358
+      },
+      {
+        "path": "/images/journey-4k/last-overgrown-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 405206
+      }
+    ]
+  },
+  {
+    "name": "hogwarts-phoenix",
+    "universe": "Harry Potter",
+    "source_page": "https://wall.alphacoders.com/big.php?i=1198811",
+    "image_url": "https://images.alphacoders.com/119/1198811.jpeg",
+    "description": "Recognizable Hogwarts castle over the lake in gold-blue sunset, with fiery phoenix in the foreground. Text-free film promotional composition reproduced by community wallpaper site.",
+    "source_dimensions": [
+      5120,
+      3187
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/journey-4k/hogwarts-phoenix.webp",
+        "width": 3840,
+        "height": 2390,
+        "bytes": 1707768
+      },
+      {
+        "path": "/images/journey-4k/hogwarts-phoenix-2560.webp",
+        "width": 2560,
+        "height": 1594,
+        "bytes": 717016
+      },
+      {
+        "path": "/images/journey-4k/hogwarts-phoenix-1600.webp",
+        "width": 1600,
+        "height": 996,
+        "bytes": 281462
+      }
+    ]
+  },
+  {
+    "name": "hogwarts-night",
+    "universe": "Harry Potter",
+    "source_page": "https://movie-screencaps.com/harry-potter-and-the-philosophers-stone-2001-4k/page/37",
+    "image_url": "https://i0.wp.com/imgs.screencaps.us/200/4k-hp1/full/4k-hp1-movie-screencaps.com-6601.jpg?ssl=1",
+    "description": "Original-film night arrival at Hogwarts: castle lit by warm windows, moon, clouds, mist and boat lights at the bottom. The moving camera crops the very top of the central tower in this film frame.",
+    "source_dimensions": [
+      3840,
+      1600
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/journey-4k/hogwarts-night.webp",
+        "width": 3840,
+        "height": 1600,
+        "bytes": 155168
+      },
+      {
+        "path": "/images/journey-4k/hogwarts-night-2560.webp",
+        "width": 2560,
+        "height": 1067,
+        "bytes": 78446
+      },
+      {
+        "path": "/images/journey-4k/hogwarts-night-1600.webp",
+        "width": 1600,
+        "height": 667,
+        "bytes": 41722
+      }
+    ]
+  },
+  {
+    "name": "hogwarts-great-hall",
+    "universe": "Harry Potter",
+    "source_page": "https://movie-screencaps.com/harry-potter-and-the-philosophers-stone-2001-4k/page/40",
+    "image_url": "https://i0.wp.com/imgs.screencaps.us/200/4k-hp1/full/4k-hp1-movie-screencaps.com-7110.jpg?ssl=1",
+    "description": "Original-film wide Great Hall entrance: four long student tables, floating candles, gargoyle braziers and staff table. McGonagall leads the first-years through the center aisle.",
+    "source_dimensions": [
+      3840,
+      1600
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/journey-4k/hogwarts-great-hall.webp",
+        "width": 3840,
+        "height": 1600,
+        "bytes": 468646
+      },
+      {
+        "path": "/images/journey-4k/hogwarts-great-hall-2560.webp",
+        "width": 2560,
+        "height": 1067,
+        "bytes": 268208
+      },
+      {
+        "path": "/images/journey-4k/hogwarts-great-hall-1600.webp",
+        "width": 1600,
+        "height": 667,
+        "bytes": 153522
+      }
+    ]
+  },
+  {
+    "name": "avengers-ultron",
+    "universe": "Avengers",
+    "source_page": "https://www.themoviedb.org/movie/99861-avengers-age-of-ultron/images/backdrops",
+    "image_url": "https://image.tmdb.org/t/p/original/kIBK5SKwgqIIuRKhhWrJn3XkbPq.jpg",
+    "description": "Existing photographic MCU Age of Ultron promotional ensemble amid city debris, with familiar Iron Man, Captain America, Thor, Hulk, Black Widow, Hawkeye and supporting characters. Lower-right corner has room beyond Thor and the shield for a small cube.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/journey-4k/avengers-ultron.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 2167588
+      },
+      {
+        "path": "/images/journey-4k/avengers-ultron-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 761646
+      },
+      {
+        "path": "/images/journey-4k/avengers-ultron-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 256252
+      }
+    ]
+  },
+  {
+    "name": "last-seattle",
+    "universe": "The Last of Us",
+    "source_page": "https://www.playstation.com/en-us/games/the-last-of-us-part-ii-remastered/",
+    "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-part-ii-remastered-gameplay-screenshot-03-en-13oct23?$native$",
+    "description": "Ellie left of center overlooking a daylight Seattle cityscape reclaimed by trees. Wide bright clouded sky and city depth on the right.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/journey-4k/last-seattle.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1424386
+      },
+      {
+        "path": "/images/journey-4k/last-seattle-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 631600
+      },
+      {
+        "path": "/images/journey-4k/last-seattle-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 263926
+      }
+    ]
+  },
+  {
+    "name": "last-sunset",
+    "universe": "The Last of Us",
+    "source_page": "https://www.playstation.com/en-us/games/the-last-of-us-part-ii-remastered/",
+    "image_url": "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-part-ii-remastered-wm-screenshot-22-en-21nov23?$native$",
+    "description": "Abby in the left third of an abandoned, overgrown Seattle brick alley at sunset; golden clocktower view, abandoned vehicle, deep pavement perspective on the right. Small original Captured on PS5 text remains bottom-right.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "outputs": [
+      {
+        "path": "/images/journey-4k/last-sunset.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1025996
+      },
+      {
+        "path": "/images/journey-4k/last-sunset-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 519430
+      },
+      {
+        "path": "/images/journey-4k/last-sunset-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 220864
+      }
+    ]
+  },
+  {
+    "name": "percy-storm",
+    "universe": "Percy Jackson",
+    "source_page": "https://wallpapercat.com/logan-lerman-percy-jackson-wallpapers",
+    "image_url": "https://wallpapercat.com/w/full/f/7/7/920857-3840x2160-desktop-4k-logan-lerman-percy-jackson-background-photo.jpg",
+    "description": "Percy / Logan Lerman vu de dos, tenant un éclair au-dessus de sa tête, ciel bleu orageux. Composition de promotion du film de 2010, sans texte.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Film\\percy-jackson-2010-eclair-solo-3840x2160.jpg",
+    "outputs": [
+      {
+        "path": "/images/journey-4k/percy-storm.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 965310
+      },
+      {
+        "path": "/images/journey-4k/percy-storm-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 392596
+      },
+      {
+        "path": "/images/journey-4k/percy-storm-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 198156
+      }
+    ],
+    "reuse": "Not established for commercial use. Copyright holders retain rights."
+  },
+  {
+    "name": "teen-wolf-pack",
+    "universe": "Teen Wolf",
+    "source_page": "https://www.presseportal.ch/de/pm/100001974/100795748",
+    "image_url": "https://www.presseportal.ch/de/download/image/582d81c3480000d51d69934e-teenwolf-gruppe.jpg",
+    "description": "Sept personnages de la saison 4 avancent dans la brume, Scott au centre, avec Stiles, Lydia, Malia, Kira, Derek et Liam. Photo officielle de promotion sans texte.",
+    "source_dimensions": [
+      2953,
+      1891
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Film\\teen-wolf-saison4-cast-brume-2953x1891.jpg",
+    "outputs": [
+      {
+        "path": "/images/journey-4k/teen-wolf-pack.webp",
+        "width": 2953,
+        "height": 1891,
+        "bytes": 576776
+      },
+      {
+        "path": "/images/journey-4k/teen-wolf-pack-2560.webp",
+        "width": 2560,
+        "height": 1639,
+        "bytes": 277070
+      },
+      {
+        "path": "/images/journey-4k/teen-wolf-pack-1600.webp",
+        "width": 1600,
+        "height": 1025,
+        "bytes": 130742
+      }
+    ],
+    "attribution": "obs/RTL II",
+    "reuse": "Editorial reuse with attribution obs/RTL II, per source image caption. Commercial marketing reuse not established."
+  },
+  {
+    "name": "teen-wolf-transformation",
+    "universe": "Teen Wolf",
+    "source_page": "https://getwallpapers.com/collection/teen-wolf-wallpapers#1015435",
+    "image_url": "https://getwallpapers.com/wallpaper/full/c/5/2/1015435-download-teen-wolf-wallpapers-3600x1421-high-resolution.jpg",
+    "description": "Composition photographique panoramique sur fond bleu nuit : Scott McCall / Tyler Posey aux yeux dorés, plusieurs étapes de transformation et figures de loup. Sans texte.",
+    "source_dimensions": [
+      3600,
+      1421
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Film\\teen-wolf-scott-transformation-panorama-3600x1421.jpg",
+    "outputs": [
+      {
+        "path": "/images/journey-4k/teen-wolf-transformation.webp",
+        "width": 3600,
+        "height": 1421,
+        "bytes": 625288
+      },
+      {
+        "path": "/images/journey-4k/teen-wolf-transformation-2560.webp",
+        "width": 2560,
+        "height": 1010,
+        "bytes": 380526
+      },
+      {
+        "path": "/images/journey-4k/teen-wolf-transformation-1600.webp",
+        "width": 1600,
+        "height": 632,
+        "bytes": 170770
+      }
+    ],
+    "reuse": "Not established for commercial use. Copyright holders retain rights."
+  },
+  {
+    "name": "avatar-team",
+    "universe": "Avatar The Last Airbender",
+    "source_page": "https://www.themoviedb.org/tv/246-avatar-the-last-airbender/images/backdrops",
+    "image_url": "https://image.tmdb.org/t/p/original/5wsY5FRTkDL3cUVRcA6F987khQW.jpg",
+    "description": "Aang, Katara et Sokka en action parmi les ruines et montagnes.",
+    "source_dimensions": [
+      3100,
+      1740
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Heroes\\avatar-team-ruins-3100.jpg",
+    "outputs": [
+      {
+        "path": "/images/journey-4k/avatar-team.webp",
+        "width": 3100,
+        "height": 1740,
+        "bytes": 579360
+      },
+      {
+        "path": "/images/journey-4k/avatar-team-2560.webp",
+        "width": 2560,
+        "height": 1437,
+        "bytes": 311746
+      },
+      {
+        "path": "/images/journey-4k/avatar-team-1600.webp",
+        "width": 1600,
+        "height": 898,
+        "bytes": 180712
+      }
+    ],
+    "reuse": {
+      "copyright_holder": "Nickelodeon / Viacom and respective rights holders",
+      "license": "No open commercial-reuse license identified on the source image page.",
+      "status": "Copyrighted promotional / entertainment image. Download availability does not establish permission for commercial publication.",
+      "attribution_source": "The Movie Database (TMDB)",
+      "license_url": null
+    }
+  },
+  {
+    "name": "avatar-water",
+    "universe": "Avatar The Last Airbender",
+    "source_page": "https://www.themoviedb.org/tv/246-avatar-the-last-airbender/images/backdrops",
+    "image_url": "https://image.tmdb.org/t/p/original/jppALtG56PQOtSYw5SSA7ZBRLvu.jpg",
+    "description": "Aang devant une cité de glace de la Tribu de l’Eau, cape orange et architecture bleue.",
+    "source_dimensions": [
+      3200,
+      1800
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Heroes\\avatar-aang-water-tribe-3200.jpg",
+    "outputs": [
+      {
+        "path": "/images/journey-4k/avatar-water.webp",
+        "width": 3200,
+        "height": 1800,
+        "bytes": 627074
+      },
+      {
+        "path": "/images/journey-4k/avatar-water-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 293176
+      },
+      {
+        "path": "/images/journey-4k/avatar-water-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 151680
+      }
+    ],
+    "reuse": {
+      "copyright_holder": "Nickelodeon / Viacom and respective rights holders",
+      "license": "No open commercial-reuse license identified on the source image page.",
+      "status": "Copyrighted promotional / entertainment image. Download availability does not establish permission for commercial publication.",
+      "attribution_source": "The Movie Database (TMDB)",
+      "license_url": null
+    }
+  },
+  {
+    "name": "avengers-endgame",
+    "universe": "Avengers",
+    "source_page": "https://www.themoviedb.org/movie/299534-avengers-endgame/images/backdrops",
+    "image_url": "https://image.tmdb.org/t/p/original/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
+    "description": "Ensemble Endgame sur ciel cosmique violet et bleu : Iron Man, Captain America, Thor, Black Widow, Captain Marvel et autres héros.",
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Heroes\\avengers-endgame-ensemble-3840.jpg",
+    "outputs": [
+      {
+        "path": "/images/journey-4k/avengers-endgame.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 2411146
+      },
+      {
+        "path": "/images/journey-4k/avengers-endgame-2560.webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 1030584
+      },
+      {
+        "path": "/images/journey-4k/avengers-endgame-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 412228
+      }
+    ],
+    "reuse": {
+      "copyright_holder": "Marvel / Disney and respective rights holders",
+      "license": "No open commercial-reuse license identified on the source image page.",
+      "status": "Copyrighted promotional / entertainment image. Download availability does not establish permission for commercial publication.",
+      "attribution_source": "The Movie Database (TMDB)",
+      "license_url": null
+    }
+  },
+  {
+    "name": "newgen-arrival",
+    "universe": "Newgen",
+    "source_page": "Création originale via ImageGen",
+    "image_url": null,
+    "description": "Concept visuel original de hub Newgen : architecture Minecraft moderne, portails et îlots de mini-jeux.",
+    "source_dimensions": [
+      1672,
+      941
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Newgen\\generated\\newgen-01-arrivee.png",
+    "outputs": [
+      {
+        "path": "/images/journey-4k/newgen-arrival.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 528158
+      },
+      {
+        "path": "/images/journey-4k/newgen-arrival-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 384204
+      }
+    ],
+    "reuse": "Création originale générée"
+  },
+  {
+    "name": "newgen-portals",
+    "universe": "Newgen",
+    "source_page": "Création originale via ImageGen",
+    "image_url": null,
+    "description": "Concept visuel original de hub Newgen : architecture Minecraft moderne, portails et îlots de mini-jeux.",
+    "source_dimensions": [
+      1672,
+      941
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Newgen\\generated\\newgen-02-place-portails.png",
+    "outputs": [
+      {
+        "path": "/images/journey-4k/newgen-portals.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 633732
+      },
+      {
+        "path": "/images/journey-4k/newgen-portals-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 465342
+      }
+    ],
+    "reuse": "Création originale générée"
+  },
+  {
+    "name": "newgen-panorama",
+    "universe": "Newgen",
+    "source_page": "Création originale via ImageGen",
+    "image_url": null,
+    "description": "Concept visuel original de hub Newgen : architecture Minecraft moderne, portails et îlots de mini-jeux.",
+    "source_dimensions": [
+      1672,
+      941
+    ],
+    "local_upscaling": false,
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-13\\Newgen\\generated\\newgen-03-panorama.png",
+    "outputs": [
+      {
+        "path": "/images/journey-4k/newgen-panorama.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 655044
+      },
+      {
+        "path": "/images/journey-4k/newgen-panorama-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 481598
+      }
+    ],
+    "reuse": "Création originale générée"
+  },
+  {
+    "name": "licaris-latios",
+    "universe": "Licaris",
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-14\\Licaris\\Videos\\latios-latias-pokemon-moewalls-com.mp4",
+    "credit": "Vidéo fournie par le propriétaire, fichier MoeWalls",
+    "outputs": [
+      {
+        "path": "/images/journey-4k/licaris-latios.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 269526
+      },
+      {
+        "path": "/images/journey-4k/licaris-latios-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 238302
+      }
+    ],
+    "videos": [
+      {
+        "path": "/videos/licaris/licaris-latios-1080.mp4",
+        "height": 1080,
+        "bytes": 6536247
+      },
+      {
+        "path": "/videos/licaris/licaris-latios-720.mp4",
+        "height": 720,
+        "bytes": 2380544
+      }
+    ]
+  },
+  {
+    "name": "licaris-bulbasaur",
+    "universe": "Licaris",
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-14\\Licaris\\Videos\\bulbasaur-sunlight-forest-pokemon-moewalls-com.mp4",
+    "credit": "Vidéo fournie par le propriétaire, fichier MoeWalls",
+    "outputs": [
+      {
+        "path": "/images/journey-4k/licaris-bulbasaur.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 230788
+      },
+      {
+        "path": "/images/journey-4k/licaris-bulbasaur-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 185348
+      }
+    ],
+    "videos": [
+      {
+        "path": "/videos/licaris/licaris-bulbasaur-1080.mp4",
+        "height": 1080,
+        "bytes": 1620224
+      },
+      {
+        "path": "/videos/licaris/licaris-bulbasaur-720.mp4",
+        "height": 720,
+        "bytes": 642805
+      }
+    ]
+  },
+  {
+    "name": "licaris-lucario",
+    "universe": "Licaris",
+    "source_file": "C:\\Users\\Derek\\Desktop\\IMMERSIVE STUDIOS\\VISUELS MARKETING\\13 - Univers et musiques\\2026-09-14\\Licaris\\Videos\\lucario-power-surge-pokemon-moewalls-com.mp4",
+    "credit": "Vidéo fournie par le propriétaire, fichier MoeWalls",
+    "outputs": [
+      {
+        "path": "/images/journey-4k/licaris-lucario.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 154192
+      },
+      {
+        "path": "/images/journey-4k/licaris-lucario-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 134062
+      }
+    ],
+    "videos": [
+      {
+        "path": "/videos/licaris/licaris-lucario-1080.mp4",
+        "height": 1080,
+        "bytes": 27813854
+      },
+      {
+        "path": "/videos/licaris/licaris-lucario-720.mp4",
+        "height": 720,
+        "bytes": 9792992
+      }
+    ]
+  }
+]
